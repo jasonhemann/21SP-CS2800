@@ -1,0 +1,50 @@
+# main links
+main:
+  - title: "Homework"
+    url: https://handins.ccs.neu.edu/courses/108/assignments
+    url: /hw/
+  - title: "Lab Assignments"
+    url: /labs/
+  - title: "Lectures"
+    url: /lec/
+  - title: "Office Hours"
+    url: /office-hours/
+  - title: "Schedule"
+    url: /schedule/    
+  - title: "Readings"
+    url: /readings/    
+
+# sidebar links    
+sidebar-site-map:
+  - title: "Homework"
+    url: https://handins.ccs.neu.edu/courses/108/assignments
+    url: /hw/
+  - title: "Lab Assignments"
+    url: /labs/
+  - title: "Lectures"
+    url: /lec/
+  - title: "Office Hours"
+    url: /office-hours/
+  - title: "Schedule"
+    url: /schedule/
+  - title: "Readings"
+    url: /readings/
+  - title: "Piazza"
+    url: https://piazza.com/class/kepqlb8j4us4ga
+  - title: "Handins/Bottlenose"
+    url: https://handins.ccs.neu.edu/courses/108
+    url: javascript:void(0)
+  - title: "Syllabus"
+    url: /syllabus/
+  - title: "Tech"
+    url: /tech/
+  - title: "FAQ"
+    url: /FAQ/
+  - title: "Site Source"
+    url: https://github.ccs.neu.edu/jhemann/21SP-CS2800
+  - title: "Enrichment"
+    url: /enrichment/
+  - title: "How's My Driving?"
+    url: /hows-my-driving/
+
+
