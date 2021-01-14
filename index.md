@@ -28,18 +28,17 @@ This being a [NUflex](https://nuflex.northeastern.edu/) class,
 students may attend in different ways. Please defer to the [dynamic
 scheduler](https://nuflex.northeastern.edu/dynamic-scheduling/) on how to attend on any given day.
 
- |         |   |       |   |   |           |
  | Lecture |   | Jason |   |   | or [Zoom] |
-
+ |         |   |       |   |   |           |
 
 
 Students registered for one of several lab sections. 
 
  | Lab Section | Instructor | Day | Time | Virtual Location |
- |             |            |     |      |                  |
- |             |            |     |      |                  |
- |             |            |     |      |                  |
- |             |            |     |      |                  |
- |             |            |     |      |                  |
- |             |            |     |      |                  |
+ |             | Drew       | Fri |      |                  |
+ |             | Drew       | Fri |      |                  |
+ |             | Drew       | Fri |      |                  |
+ |             | Drew       | Fri |      |                  |
+ |             | Drew       | Fri |      |                  |
+ |             | Drew       | Fri |      |                  |
 
