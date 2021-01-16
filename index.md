@@ -35,7 +35,8 @@ scheduler](https://nuflex.northeastern.edu/dynamic-scheduling/) on how to attend
 
 
 
-Students registered for one of several lab sections. 
+Students registered for one of several lab sections. Please attend
+your specific lab section. 
 
  | Lab Section | Instructor | Day |        Time | Virtual Location |
  |       37310 | Drew       | Fri |  9:50-10:40 | Zoom             |
