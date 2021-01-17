@@ -247,46 +247,44 @@ that comes up please see me.
 
 # Projects 
 
-We have two projects in this course. Together with your partner/mob,
-you should start thinking about something worth proving. These might
-come from Fundies I, Fundies II, from your math classes, or somewhere
-else from your own experience. These should be large enough to be of
-interest and challenging. The proof should be in some way
-enlightening.
+I suggest roughly two areas of focus for your projects in this
+course. Together with your partner/mob, you should start thinking
+about what you might want to do. One likely option is something
+related to SAT/SMT solving, likely a reduction of some
+existing-but-unsolved problem to SAT in a way that produces
+answers. The other style is a formal mechanized proof of some small,
+real-world example worth proving. These might be something from
+Fundies I, Fundies II, from your math classes, or somewhere else from
+your own experience. These should be large enough to be of interest,
+so that ACL2 cannot automate it for you, but not thesis-level
+challenging. The proof should be in some way enlightening, and your
+presentation and accompanying documentation will exhibit this.
 
-## First Project
+I will release the project guidelines approximately one month before
+its due date. When I do so you will have also a timeline outlining
+your due dates for each stage. You should expect the following stages:
 
-I will grade the first of these projects "more easily" than I would
-otherwise have done so. I will ensure this by fitting grades to a
-roughly normal distribution with a median no lower than a B+
-average. I will for this first project also grade more lightly on
-grammar where it does not seriously impede my understanding. You
-should schedule a slot for your pair/mob to present
-[here](https://calendar.google.com/calendar/selfsched?sstoken=UUVKdFI5MHpUQ1FlfGRlZmF1bHR8ZTIwOGYzMTQ1NjFjNTRlNDU4NDZmODc5MmFiMjIxNGI).
-
-## Second Project
-
-Based both on feedback and experience I have revised how I manage and
-execute the second of these projects. I release the project guidelines
-approximately one month before its due date. When I do so you will
-have also a timeline outlining your due dates for each stage. You
-should expect the following stages:
-
-  - Roughly four days to one week after I've assigned your second
-    project, your group will meet with me virtually to discuss your
-    project idea and get clearance to proceed.
+  - Roughly four days to one week after I've assigned your project,
+    your group will meet virtually with me or one of several
+    designated TAs to discuss your project idea and get clearance to
+    proceed.
 	
   - Roughly two weeks before its due date, you will submit to me a
     progress report with source code and your status at this point. 
 	
   - Roughly two to four days before the due date, you will have
-    submitted to me a "receipt" for an
+    submitted to me a "receipt" for either having checked out from the
+    library one of several well-known and trusted [style
+    guides](https://subjectguides.lib.neu.edu/c.php?g=713111&p=5073143#s-lg-box-wrapper-18808483)
+    for having had an
     [appointment](https://cssh.northeastern.edu/writingcenter/tutoring/online-appointments/)
     at the writing center where you have copy-edited your draft. They
     have a [whole bevy of resources for you]({{ site.baseurl
-    }}/faq/improve-writing/).
+    }}/faq/improve-writing/). Please note I am asking you to do more
+    than an elementary grammar check and appropriate citations, I want
+    you to thoroughly copy-edit your prose before submitting.
 
-  - Roughly a month after I've assigned your second project, your
+  - Roughly a month after I've assigned your project, your
     group will submit to me via a Dropbox your project report, either:
 	  1. as a zip archive containing your PDF and your source code,
          with suitable instructions for me to build and run your
@@ -294,9 +292,9 @@ should expect the following stages:
 	  2. If your document contains a link to a source repository that
          I can access, you may simply submit a stand-alone PDF.
 
-  - Roughly a 28 to 34 days after I've assigned your second project,
-    your group will meet with me virtually to discuss and demonstrate
-    your project and results. 
+  - Roughly a 28 to 34 days after I've assigned your project, your
+    group will meet with me virtually to discuss and demonstrate your
+    project and results.
 
 # TRACE evaluations
 
