@@ -214,6 +214,19 @@ your colleagues in both lecture and lab sections. These can take the
 form of small group "breakout room" work, open class votes and
 discussions, or walk us all through some of your answers. 
 
+### Recording 
+
+I do not permit electronic video and/or audio recording of class in
+either modality. Unless the student obtains permission from the
+instructor electronic video and/or audio recording of class is
+prohibited. If permission is granted, any distribution of the
+recording is prohibited. Students with specific electronic recording
+accommodations authorized by the [DRC](Academic_Accommodations) do not
+require instructor permission; however, the instructor must be
+notified of any such accommodation prior to recording. Any
+distribution of such recordings is prohibited. Obviously I cannot
+[stop you](https://obsproject.com/), but it's to both our benefits.
+
 # Homework 
 
 In order to better scaffold your homework assignments and in order to
