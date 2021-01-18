@@ -235,7 +235,9 @@ half. Unless otherwise stated, I will release your homework
 assignments on Monday evenings. You will have the opportunity in lab
 to discuss and go over questions on the first half of these
 assignments, giving you both more incentive to get a jump start and
-also opportunities to check your understanding.
+also opportunities to check your understanding. We will grade both
+parts of your homework by the [following rubric]({{ site.baseurl
+}}/assets/images/grading_flowchart.png).
 
 ## Submissions
 
