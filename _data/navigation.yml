@@ -1,7 +1,7 @@
 # main links
 main:
   - title: "Homework"
-    url: javascript:void(0)
+    url: /hw/ 
   - title: "Lectures"
     url: /lec/
   - title: "Office Hours"
@@ -14,7 +14,7 @@ main:
 # sidebar links    
 sidebar-site-map:
   - title: "Homework"
-    url: javascript:void(0)
+    url: /hw/
   - title: "Lectures"
     url: /lec/
   - title: "Office Hours"
