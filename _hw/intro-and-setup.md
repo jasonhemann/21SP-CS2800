@@ -7,6 +7,11 @@ layout: single
   
   - Set up the technology we will use for this course. 
   - Begin to explore programming in ACL2s.
+  - Prepare for the second half of your homework assignment.
+  
+## After you complete these steps, proceed to the next part of this assignment.
+
+   Find the next part of your assignment [here]({{ site.baseurl}}/assets/code/hw1.lisp).
 
 ## Technology Setup and Installation
 
@@ -39,7 +44,6 @@ You can run ACL2s using the Khoury Virtual Desktops Infrastructure (VDI). See th
 ## PollEverywhere
 
   6. Make sure you can log in to your Northeastern (via your `@northeastern.edu` address) [PollEverywhere account and verify your phone number](https://web.northeastern.edu/nle/poll-everywhere-resources/#menu-item-359:~:text=faculty%2Fstaff-,Students,Verifying%20your%20phone%20number%20if%20you%E2%80%99re%20using%20text%20messages) if you answer PollEverywhere questions via text. 
-
 
 ## Optional - Local ACL2s Installation
 
