@@ -10,10 +10,10 @@ Here we go.
 (N.B. You need about 9GB of free space on your hard drive to install and run the VM.)
 
   1. Install [VirtualBox version
-6.1.16](https://www.virtualbox.org/wiki/Downloads). This is the VM we will be using to run ACL2s. We have tested on version 6.1.16, but it is possible that other Virtualbox 6.1 releases will also work. (N.B. On recent versions of OSX the installation may fail the first time you try it for lack of sufficient permission.)
+6.1.16](https://www.virtualbox.org/wiki/Download_Old_Builds_6_1). This is the VM we will be using to run ACL2s. We have tested on version 6.1.16, but it is possible that other Virtualbox 6.1 releases will also work. (N.B. On recent versions of OSX the installation may fail the first time you try it for lack of sufficient permission.)
     a. If you encounter this failure, go to `System Preferences > Security & Privacy > General` tab and click the `allow` button at the bottom of the screen. This button should have some text to the left of it about Oracle Software. If you can't click on the button, you may need to unlock the settings (click on the lock icon). You may need to do something similar for any software you install.
   2. Open VirtualBox, and leave it open. 
-  3. Download, then install the [VirtualBox extensions for your VirtualBox Version](https://www.virtualbox.org/wiki/Downloads#VirtualBox6.1.16OracleVMVirtualBoxExtensionPack). After downloading the file, you have to actually install the extensions. If you click on `Preferences > Extensions` you will see a green `+` icon that allows you to add extensions. Select the file you downloaded.
+  3. Download, then install  the [VirtualBox extensions for your VirtualBox Version](https://www.oracle.com/virtualization/technologies/vm/downloads/virtualbox-downloads.html#extpack). After downloading the file, you have to actually install the extensions. If you click on `Preferences > Extensions` you will see a green `+` icon that allows you to add extensions. Select the file you downloaded.
   4. Download, then install [Xquartz](https://dl.bintray.com/xquartz/downloads/XQuartz-2.7.11.dmg). 
   5. Open Xquartz and click on `Applications > Terminal` to open the `xterm` program, and keep it open. Use this `xterm` for all the `xterm` commands we ask you to perform below.
   6. Install [Vagrant version 2.2.10](https://releases.hashicorp.com/vagrant/2.2.10/vagrant_2.2.10_x86_64.dmg). 

@@ -10,9 +10,9 @@ Here we go.
 (N.B. You need about 9GB of free space on your hard drive to install and run the VM.)
 
   1. Install [VirtualBox version
-6.1.16](https://www.virtualbox.org/wiki/Downloads). This is the VM we will be using to run ACL2s. We have tested on version 6.1.16, but it is possible that other Virtualbox 6.1 releases will also work.
+6.1.16](https://www.virtualbox.org/wiki/Download_Old_Builds_6_1). This is the VM we will be using to run ACL2s. We have tested on version 6.1.16, but it is possible that other Virtualbox 6.1 releases will also work.
   2. Open VirtualBox, and leave it open. 
-  3. Download, then install the [VirtualBox extensions for your VirtualBox Version](https://www.virtualbox.org/wiki/Downloads#VirtualBox6.1.16OracleVMVirtualBoxExtensionPack). After downloading the file, you have to actually install the extensions. If you click on `Preferences > Extensions` you will see a green `+` icon that allows you to add extensions. Select the file you downloaded.
+  3. Download, then install the [VirtualBox extensions for your VirtualBox Version](https://www.oracle.com/virtualization/technologies/vm/downloads/virtualbox-downloads.html#extpack). After downloading the file, you have to actually install the extensions. If you click on `Preferences > Extensions` you will see a green `+` icon that allows you to add extensions. Select the file you downloaded.
   4. Install Vagrant version 2.2.10 ([x86\_64](https://releases.hashicorp.com/vagrant/2.2.10/vagrant_2.2.10_x86_64.msi)) ([i686](https://releases.hashicorp.com/vagrant/2.2.10/vagrant_2.2.10_i686.msi)). 
   5. Open Powershell or another terminal of your choosing; keep it open.
   6. On your machine, from that terminal, create a directory right inside your home folder where you want ACL2s to reside---for instance `acl2s`. Make sure there are no spaces in the full directory name or path. (If you do not understand this step so far, read an introduction to basic unix commands, and then return.) 
