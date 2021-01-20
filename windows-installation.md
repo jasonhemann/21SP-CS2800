@@ -25,6 +25,34 @@ Here we go.
 		```
 
       This will take a while (perhaps up to ~10 minutes) as your computer downloads a collection of files and creates your virtual machine. **Do not close the VirtualBox or move on to the next step until the process is done**. You will know the installation finished when that terminal where you ran `vagrant up` prints your shell prompt again. If you get errors about VT-x being disabled, look see [this post](https://github.com/scotch-io/scotch-box/issues/195). You have to enable virtualization technology in your bios.
+	  
+# Two Choices
+
+  You now have two choices for how to proceed with your installation. 
+  
+  
+# XServer Option  
+
+ This is our preferred option for you to proceed with your installation
+
+ 1. Install an Xserver on your machine, such as [Xming](https://sourceforge.net/projects/xming/), and run ACL2s using your Xserver instead of logging into the VM.
+
+ 1. Type the following commands in an xterm/terminal/powershell from the acl2 directory. 
+
+	```bash
+	vagrant ssh -- -Y
+	eclipse 
+   ```
+
+ 2. Make sure that you choose the default workspace location so that the aforementioned synced directories. 
+ 3. When you close the `VirtualBox` machine choose the `Power off machine` option. You have other options, but this is the most robust.
+
+# Direct VM
+ 
+  This is our less preferred option, but possible. 
+
+  1. Change the line `vb.gui = false` in your `Vagrantfile` to `vb.gui = true`. Save. Then run `vagrant destroy` and then `vagrant up`.
+
   10. Log into the VirtualBox VM window.
 
 		```bash
@@ -46,16 +74,3 @@ Here we go.
   14. When you close the VirtualBox machine choose the `Power off machine` option. You have other options, but this is the most robust.
   15. To restart ACL2s later follow the instructions above starting with the `vagrant up` step.
 
-# XServer Option
-
-This is optional, but for those of you who you have an Xserver on your machine, such as [Xming](https://sourceforge.net/projects/xming/), you can run ACL2s using your Xserver instead of logging into the VM.
-
- 1. Type the following commands in an xterm/terminal/powershell from the acl2 directory.
-
-	```bash
-	vagrant ssh -- -Y
-	eclipse 
-   ```
-
- 2. Make sure that you choose the default workspace location so that the aforementioned synced directories. 
- 3. When you close the `VirtualBox` machine choose the `Power off machine` option. You have other options, but this is the most robust.

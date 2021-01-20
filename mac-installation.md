@@ -46,7 +46,8 @@ This is optional, but potentially useful if you have persistent display problems
 
   1. Open an xterm. 
   2. Go to the directory we suggested naming `acl2s`. 
-  3. If the VM is not running, start it with `vagrant up`. 
+  1. Change the line `vb.gui = false` in your `Vagrantfile` to `vb.gui = true`. Save. 
+  1. Then run `vagrant destroy` and then `vagrant up`.
   4. Log into the VirtualBox VM window.
 
 		```bash
