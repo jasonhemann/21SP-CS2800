@@ -124,7 +124,7 @@ I will assign overall course grades as follows:
 	 | Midterm Exam              |         15 |
      | Project Proposal          |          5 |
 	 | Project Progress Report   |         10 |
-     | Project, Presentation     |         20 |
+     | Project, Presentation     |         15 |
      | TRACE evaluation          |          2 |
      | Total                     |        102 |
 
