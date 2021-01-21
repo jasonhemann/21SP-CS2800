@@ -39,7 +39,7 @@ You can run ACL2s using the Khoury Virtual Desktops Infrastructure (VDI). See th
 
 ## Hypothes.is 
 
-  5. [Register here](https://hypothes.is/signup) for Hypothes.is, the collaborative editing tool. Our group, for which you should register, is [fa20cs2800](https://hypothes.is/groups/97DiEo3n/fa20cs2800). When we begin our reading assignments, you will wish to take notes with your classmates. 
+  5. [Register here](https://hypothes.is/signup) for Hypothes.is, the collaborative editing tool. Our group, for which you should register, is [cs2800](https://hypothes.is/groups/97DiEo3n/cs2800). When we begin our reading assignments, you will wish to take notes with your classmates. 
   
 ## PollEverywhere
 
