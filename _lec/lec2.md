@@ -76,11 +76,11 @@ We'll say "All" when we allow anything in the universe.
 #### Exercises:
    Your objectives are to express these in each of the above. 
 
-   1. `()`
-   1. `(a . d)`
-   1. `(d g)`
-   1. `((c ()) a ())`
-   1. `(() . ((b . ()) . ()))`
+   1. `'()`
+   1. `'(a . d)`
+   1. `'(d g)`
+   1. `'((c ()) a ())`
+   1. `'(() . ((b . ()) . ()))`
 
 ## Expressions
 
