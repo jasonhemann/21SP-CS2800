@@ -83,11 +83,11 @@ links to its ~.md~ file in this repository.
 It is my intention to use Canvas solely as a shallow wrapper around
 our course website.
       
-## Handin Server
+## GradeScope
 
-We will use the [Handin server](http://handins.ccs.neu.edu/) (bottlenose) to submit homework. You
-will likely have experience with this platform from Fundies I; if you
-do not, please read the [Handin Server Guide](http://ccs.neu.edu/home/blerner/handin-server/handin-server-guide.html). 
+I'll be setting up (presently) GradeScope for use for our homework
+assignments. You should find this tool already present and loaded for
+you in your [Canvas] page.
 
 ## PollEverywhere
 
