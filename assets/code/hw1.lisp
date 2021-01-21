@@ -106,7 +106,7 @@ able to access the files you added.
 #| 
 
    6. When you have completed this, submit it to the HW1 Dropbox on
-   handins. We will implicitly presume that you know to follow this
+   gradescope. We will implicitly presume that you know to follow this
    step from now on.
 
 |# 
