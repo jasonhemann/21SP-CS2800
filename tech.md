@@ -149,7 +149,7 @@ articles](http://northeastern.service-now.com/tech?id=kb_category&kb_category=6b
 If you would like to work with ACL2s in a local installation, please
 follow the installation instructions as part of the [first
 lab](javascript:void(0)). You will know you have this installed
-correctly if you can use [CodeTogether].
+correctly if you can use CodeTogether.
 
 ## Office hours
 
@@ -163,9 +163,11 @@ for help.
 ## CodeTogether 
 
 We will expect you to be able to share your screen with us (and one
-another) via the CodeTogether platform. You can install it from [here](https://www.codetogether.com/download/drag-to-install/)
-by following their instructions. If you have difficulty you can get
-the best help from [CodeTogether chat](https://gitter.im/CodeTogether-com/community). 
+another) via the CodeTogether platform. This extension will come
+bundled with your Eclipse installation, however, it is a separate
+product. If you need help with its usage or to report bugs, the best
+help from [CodeTogether
+chat](https://gitter.im/CodeTogether-com/community).
 
 ## Applause!
 
