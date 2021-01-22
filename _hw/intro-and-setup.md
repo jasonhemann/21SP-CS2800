@@ -29,9 +29,8 @@ participate in class.
 
 
 ## Piazza 
-  1. If you have not already, bookmark [Piazza.com](http://piazza.com/) in your browser, so you can access it outside of Teams. 
+  1. If you have not already, bookmark [Piazza.com](http://piazza.com/) in your browser, so you can access it outside of Canvas. 
   2. Use our Piazza forum to ask for and provide help on the following, should you run into issues. (NB If these or other instructions are missing important information, submit a pull request!)
-  3. The top and only post on that Piazza site has a link to the course site on the handins (bottlenose) server. 
    
 ## Running ACL2s on Khoury Virtual Desktops
 
