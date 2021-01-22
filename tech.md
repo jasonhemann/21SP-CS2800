@@ -67,7 +67,7 @@ wish. Users of other browsers can [install the bookmarklet](https://web.hypothes
 all our ~.pdf~ documents via hypothesis. FYI, if you are on an Android
 device, you can send any page to hypothesis via the [following app](https://play.google.com/store/apps/details?id=com.navasgroup.annoteweb).
 
-Join our group [https://hypothes.is/groups/97DiEo3n/cs2800] !
+Join [our group](https://hypothes.is/groups/97DiEo3n/cs2800) !
 
 ## Course Homepage
 
