@@ -75,7 +75,7 @@ This semester I split the difference between exam-based summative
 assessments that are more traditional in this course with
 project-based ["authentic
 assessments"](https://learning.northeastern.edu/event/workshop-using-projects-and-presentations-as-assessment-strategies-in-nuflex/). These
-projects will be uniquely tailored with and for the individually group
+projects will be uniquely tailored with and for the particular group
 of students, and may take the forms of proofs for topics that have
 come up in practice or programmatic reduction of a real world example.
 
@@ -335,9 +335,10 @@ here. Pair programming is not intended to divide-and-conquer, but
 instead for students to collaboratively solve problems together. You
 are only twice as fast working separately if the typing is by and away
 the hardest part of programming. Which it is not. Whatever size group
-you work in, you should still plan to [all work synchronously and
-simultaneously together](https://www.remotemobprogramming.org/). Note
-a larger group is not necessarily better.
+you work in (between 2 and 4 people), you should still plan to [all
+work synchronously and simultaneously
+together](https://www.remotemobprogramming.org/). Note a larger group
+is not necessarily better.
 
 You should at least try to do some of this wholly on your own. It's
 good to have a baseline early on to know [if you have this material
