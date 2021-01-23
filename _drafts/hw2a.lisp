@@ -41,10 +41,8 @@ page
 
 (test? (implies (ne-tlp l) (equal (snoc (rdc l) (rac l)) l)))
 
-
 ;; 5. Define NAT-TO-BINARY, that takes a nat and returns a little-endian
 ;; binary number. 
-
 
 (check= (nat-to-binary 0) '())
 (check= (nat-to-binary 1) '(t))

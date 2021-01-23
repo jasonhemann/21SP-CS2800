@@ -19,11 +19,11 @@
  yourselves enough time to develop solutions and feel free to define
  helper functions as needed.
 
- NOTE: We'll scatter properties, checked with THM or TEST?,
- throughout this solution. These are not a required part of the
- homework; we include them as (1) an aid in debugging the code and
- (2) machine-checked documentation. You are of course welcome to start
- to play with them. 
+ NOTE: You can scatter properties, checked with THM or TEST?,
+ throughout your solution. These are not a required part of the
+ homework; we often use them as (1) an aid in debugging the code and
+ (2) machine-checked documentation (3) in our autograder. You are of
+ course welcome to start to play with them.
 
 |# 
 
@@ -38,10 +38,11 @@
 
 |# 
 
-(thm (implies (ne-tlp xs)
-              (= (len (drop-last xs))
-                 (- (len xs) 1))))
 
+(defthm drop-list-removes-one
+  (implies (ne-tlp xs)
+	   (= (len (drop-last xs))
+	      (- (len xs) 1))))
 
 ;;; 2. Define and test a function INSERT-RIGHT that takes two symbols
 ;;; and a true list and returns a new list with the second symbol
