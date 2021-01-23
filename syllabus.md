@@ -235,9 +235,7 @@ half. Unless otherwise stated, I will release your homework
 assignments on Monday evenings. You will have the opportunity in lab
 to discuss and go over questions on the first half of these
 assignments, giving you both more incentive to get a jump start and
-also opportunities to check your understanding. We will grade both
-parts of your homework by the [following rubric]({{ site.baseurl
-}}/assets/images/grading_flowchart.png).
+also opportunities to check your understanding.
 
 ## Submissions
 
@@ -330,19 +328,27 @@ College](https://www.khoury.northeastern.edu/information-for-overview/current-un
 
 ## Teamwork and Collaboration
 
-Pair programming is a central part of the undergraduate curriculum
-here. Pair programming is not intended to divide-and-conquer, but
-instead for students to collaboratively solve problems together. You
-are only twice as fast working separately if the typing is by and away
-the hardest part of programming. Which it is not. Whatever size group
-you work in (between 2 and 4 people, from within the same lab
-section), you should still plan to [all work synchronously and
-simultaneously together](https://www.remotemobprogramming.org/). Note
-a larger group is not necessarily better.
+I had originally stipulated that groups of at least 2 from within the
+same lab section. *Gradescope cannot enforce either, so I will not
+require them.* You can work with up to 3 others, for a total of 4
+people in a group. You aren't required to work with anyone else if you
+don't wish. You can work with students from any other sections you
+wish. You will submit a single submission for your entire group, and
+it is your responsibility to include the names of your group members.
 
-You should at least try to do some of this wholly on your own. It's
-good to have a baseline early on to know [if you have this material
-under your belt or if you are getting
+Do bear in mind pair programming is a central part of the
+undergraduate curriculum here. Pair programming is not intended to
+divide-and-conquer, but instead for students to collaboratively solve
+problems together. You are only twice as fast working separately if
+the typing is by and away the hardest part of programming. Which it is
+not.
+
+Whatever size group you work in you should still plan to [all work
+synchronously and simultaneously
+together](https://www.remotemobprogramming.org/). Note a larger group
+is not necessarily better. You should at least try to do some of this
+wholly on your own. It's good to have a baseline early on to know [if
+you have this material under your belt or if you are getting
 lost](https://martinfowler.com/articles/on-pair-programming.html#couldIReallyDoThisByMyself). Ultimately,
 you should be responsible for and have a firm understanding of all
 work submitted under your name. You should be able to demonstrate this
