@@ -68,6 +68,11 @@ social:
   - "https://twitter.com/jhemann"
   - "https://stackexchange.com/users/5478012/"
 
+# liquid:
+#   error_mode: strict
+#   strict_variables: true
+#   strict_filters: true
+  
 # Analytics
 analytics:
   provider               : false # false (default), "google", "google-universal", "google-gtag", "custom"
@@ -146,7 +151,11 @@ exclude:
   - tmp
   - /docs # ignore Minimal Mistakes /docs
   - /test # ignore Minimal Mistakes /test
-  - "**/.#*"  # ignore open files
+  - "*#*"  # ignore open files
+
+watch_exclude:
+  - "*#*"  # ignore open files
+
 keep_files:
   - .git
   - .svn
@@ -191,12 +200,14 @@ plugins:
   - jekyll-sitemap
   - jekyll-feed
   - jekyll-include-cache
-
+  - jekyll-optional-front-matter
+  - jekyll-watch-exclude 
 # mimic GitHub Pages with --safe
 whitelist:
   - jekyll-sitemap
   - jekyll-feed
   - jekyll-include-cache
+  - jekyll-optional-front-matter
           
 collections:
   enrichment:

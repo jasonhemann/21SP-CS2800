@@ -5,7 +5,7 @@ toc: true
 toc_label: "Syllabus Contents"
 ---
 
-## Collaborative Course Construction and Feedback 
+### Collaborative Course Construction and Feedback 
 
 We are together in unprecedented times. The typical course structure
 implicitly assumes regular whole-class in-person meetings. As has been
@@ -23,7 +23,7 @@ go. Please do not hesitate. You can see any and all changes on the
 course website's repository. Students in prior semesters gave a good
 deal of feedback, and at times I wish they'd given more, and sooner.
 
-# Purpose and Objectives
+## Purpose and Objectives
 
 CS 2800 will introduce you to formal logic and its deep connections to
 computing. The goal of the course is to introduce fundamental,
@@ -56,7 +56,7 @@ system](http://acl2s.ccs.neu.edu/acl2s/doc). **Please do not use the
 installation instructions on the this website. Instead follow the
 first lab assignment.**
 
-# Contact
+## Contact
 
 The best way to get in contact for personal, private (FERPA, etc)
 messages is via my email address
@@ -69,7 +69,7 @@ re-post it on Piazza, answer it there, and forward you the link.
 A great regular way to reach out for help is via our [office
 hours]({{ site.baseurl }}/office-hours/).
 
-# Recent Changes
+## Recent Changes
 
 This semester I split the difference between exam-based summative
 assessments that are more traditional in this course with
@@ -91,7 +91,7 @@ automated theorem proving or the like, please let me know on that too!
 [I'm excited to talk more about it all
 :-)](https://scholar.google.com/citations?user=SePR8OkAAAAJ)
 
-# Required Texts 
+## Required Texts 
 
 There are no required texts for this course. Our course will follow a
 draft of [Pete Manolios's](https://www.ccs.neu.edu/~pete/) [/Reasoning
@@ -99,7 +99,7 @@ About Programs/ (2021)]({{ site.baseurl }}/readings/). You will find these
 notes linked from this website. I invite you to collaboratively
 annotate these notes with me, and with each other.
 
-# Technology and Platforms
+## Technology and Platforms
 
 As a course and a student body, we are more remote than usual, and
 preferable. We will leverage a number of Northeastern's technology
@@ -113,7 +113,7 @@ Eclipse, VirtualBox, CodeTogether, WaitWhile, PollEverywhere, and
 Hypothes.is. Please see the [technology page]({{ site.baseurl
 }}/tech/) for more details.
 
-# Grade Breakdown
+## Grade Breakdown
 
 I will assign overall course grades as follows:
 
@@ -141,7 +141,7 @@ semester. This means I *cannot* give you a more precise estimate of
 your grade than what you calculate from the raw score. I detail below
 the aforementioned individual components of your final grade.
 
-## Total Running Grade Calculation
+### Total Running Grade Calculation
 
 We will track the completion portions of your lab and homework grades,
 as well as your project grades, in
@@ -152,14 +152,14 @@ of the participation component of your grade because, logically, there
 [are no pop
 quizzes](https://en.wikipedia.org/wiki/Unexpected_hanging_paradox).
 
-## Combined Lecture and Lab Grade
+### Combined Lecture and Lab Grade
 
 You have enrolled in both CS2800 and a section of CS2801, the
 corresponding lab course. Both are components of this course grade and
 tightly interwoven with each other. As a consequence I will be
 assigning you a single grade across 
 
-# Midterm Exam 
+## Midterm Exam 
 
 We will have one midterm exam. I have yet to determine its format, and
 I am actively soliciting your input and advice as to what format this
@@ -172,7 +172,7 @@ project](Projects) component. During finals week, we will schedule
 slots for [groups](Teamwork_and_Collaboration) of students to present
 their final projects.
 
-<!-- ## Alternate/Additional Assignment/Project Option -->
+<!-- ### Alternate/Additional Assignment/Project Option -->
 
 <!-- Throughout the semester there may be multiple opportunities for extra -->
 <!-- credit. I want to give students an opportunity to demonstrate mastery -->
@@ -186,7 +186,7 @@ their final projects.
 <!-- substitute. Certainly not the easy way to receive full marks. But a -->
 <!-- way to redistribute some portion of the grade.  -->
 
-# Participation
+## Participation
 
 I expect you to attend lecture and lab each class period. Your
 attendance is a prerequisite for a substantial portion of the course's
@@ -196,7 +196,7 @@ is a prerequisite for participation. We will have reading content
 quizzes and elicit oral or group explanations as proxies for
 participation. 
 
-## Content Quiz, Pre-reading
+### Content Quiz, Pre-reading
 
 Before class, I will expect you to have read the notes as marked on
 the schedule. These act as a forcing function for the lecture notes
@@ -205,7 +205,7 @@ completion, others for accuracy. These lecture quizzes belongs under
 your participation grade.
 
 
-## Oral Explanation and Participation
+### Oral Explanation and Participation
 
 Proof has a [social
 component](https://www.jstor.org/stable/3482651). As such, part of
@@ -214,7 +214,7 @@ your colleagues in both lecture and lab sections. These can take the
 form of small group "breakout room" work, open class votes and
 discussions, or walk us all through some of your answers. 
 
-### Recording 
+#### Recording 
 
 I do not permit electronic video and/or audio recording of class in
 either modality. Unless the student obtains permission from the
@@ -227,7 +227,7 @@ notified of any such accommodation prior to recording. Any
 distribution of such recordings is prohibited. Obviously I cannot
 [stop you](https://obsproject.com/), but it's to both our benefits.
 
-# Homework 
+## Homework 
 
 In order to better scaffold your homework assignments and in order to
 let us help you better, I have divided homework assignments in
@@ -237,7 +237,7 @@ to discuss and go over questions on the first half of these
 assignments, giving you both more incentive to get a jump start and
 also opportunities to check your understanding.
 
-## Submissions
+### Submissions
 
 For a homework released on Monday, the first half is due Saturday at
 1pm, and the second half due the following Wednesday at 10pm (again
@@ -245,7 +245,7 @@ unless otherwise indicated). Unless otherwise indicated, you will
 submit your homework on Gradescope. You will work on homework in your
 chosen [group](Teamwork_and_Collaboration).
 
-## Late / Mistaken Assignment Policy
+### Late / Mistaken Assignment Policy
 
 To universally, uniformly and preemptively account for any number of
 situations that arise, *I will drop every student's lowest homework
@@ -258,7 +258,7 @@ I shan't accept late submissions except under the most exceptional of
 circumstances (family emergencies, hospitalizations, the like)---if
 that comes up please see me.
 
-# Projects 
+## Projects 
 
 I suggest roughly two areas of focus for your projects in this
 course. Together with your partner/mob, you should start thinking
@@ -309,7 +309,7 @@ your due dates for each stage. You should expect the following stages:
     group will meet with me virtually to discuss and demonstrate your
     project and results.
 
-# TRACE evaluations
+## TRACE evaluations
 
 I encourage students to take time and submit TRACE evaluations. Your
 time is busy at the end of the term when these are available. In order
@@ -317,7 +317,7 @@ to fairly compensate you for that time, if 85% or more of the students
 enrolled in a section complete these TRACE evaluations, then I shall
 add two points onto the class-wide final average.
 
-# Academic Integrity Policy
+## Academic Integrity Policy
 
 Students of course play an integral part in ensuring they receive the
 full benefit of their coursework. The students of 2800 are certainly
@@ -326,7 +326,7 @@ University](http://www.northeastern.edu/osccr/academic-integrity-policy/),
 the [Khoury
 College](https://www.khoury.northeastern.edu/information-for-overview/current-undergrad/undergraduate-advising-academic-support/academic-policies/).
 
-## Teamwork and Collaboration
+### Teamwork and Collaboration
 
 I had originally stipulated that groups of at least 2 from within the
 same lab section. *Gradescope cannot enforce either, so I will not
@@ -354,7 +354,7 @@ you should be responsible for and have a firm understanding of all
 work submitted under your name. You should be able to demonstrate this
 mastery when we request.
 
-### Group Dynamics and Difficulties
+#### Group Dynamics and Difficulties
 
 If you find that your group is no longer able to work effectively
 together or that not everyone can equally participate, please bring
@@ -362,7 +362,7 @@ this to your lab instructor's attention. Your lab instructor may have
 suggestions about how to improve your group cohesion, or may use the
 staff privilege to reallocate group members. 
 
-# Academic Accommodations 
+## Academic Accommodations 
 
 If you have accommodations from the [Disability Resource Center
 (DRC)](http://www.northeastern.edu/drc/) please submit your Professor
@@ -375,7 +375,7 @@ I encourage all students who may benefit from learning more about DRC
 services to [contact the
 DRC](http://www.northeastern.edu/drc/#fp-blog-entry:~:text=Contact%20Information).
 
-# Health and Safety
+## Health and Safety
 
 The university has put into place a robust plan to make the campus
 healthy and safe for all — but you must do your part. On August 22, all
@@ -430,7 +430,7 @@ To summarize:
   Keep in mind the “Protect the Pack” theme. Remember that our
   individual actions will help everyone stay safe this fall."
 
-# Equity and Compliance
+## Equity and Compliance
 
 One of our responsibilities in supporting student learning 360° is to
 help create a safe learning environment both in person and
@@ -451,7 +451,7 @@ utmost concern, and all involved will only share information with
 those that need to know to ensure the University can respond and
 assist.
 
-# Acknowledgments 
+## Acknowledgments 
 
 Pete Manolios is responsible for much of our course infrastructure and
 assignments. Pete Manolios and [Stavros
