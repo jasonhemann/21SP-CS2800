@@ -18,6 +18,7 @@ classes: wide
 - Results of the [SAT Solver Competition](http://hdl.handle.net/10138/237063) at the [2018 Computational Logic Olympic Games](https://www.labri.fr/perso/lsimon/flog2018/)
 - [SAT/SMT by Example](https://sat-smt.codes/SAT_SMT_by_example.pdf) As it suggests, scores of examples. Also a good place to start. SAT != SMT. 
 - [CNF, DNF Normalization, Visualized](https://www.mathematik.uni-marburg.de/~thormae/lectures/ti1/code/normalform/index.html)
+- [Zhegalkin polynomials](https://en.wikipedia.org/wiki/Zhegalkin_polynomial)
 - [Quine-McCluskey Algorithm, Visualized](https://www.mathematik.uni-marburg.de/~thormae/lectures/ti1/code/qmc/)
 - [It's tough to organize a pub crawl](http://www.math.uwaterloo.ca/tsp/pubs/)
 - [A Profile of Mathematical Logic](https://store.doverpublications.com/0486434753.html) (A fun, quick-ish read on the story of modern logic)
