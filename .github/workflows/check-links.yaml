@@ -1,0 +1,10 @@
+
+on: page_build
+jobs:
+  linkinator:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: JustinBeckwith/linkinator-action@v1
+        with:
+          paths: https://pages.github.ccs.neu.edu/jhemann/21SP-CS4400
