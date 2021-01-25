@@ -112,21 +112,21 @@ is a prelude.
 	(lcons (head x) (tapp (tail x) y))))
 ```
 
-1. evaluating `f`'s input contract on any (well-formed) inputs whatsover
-   will not lead to any contract violations, and
-
-2. evaluating the body of f on any inputs that satisfy `f`'s input
-   contract will never lead to a contract violation for any function
-   that may be called during thisevaluation,including functions that
-   are called directly or indirectly, and
-
-3. the evaluation of `f`'s body on any inputs that satisfy `f`'s input
-   contract will terminate,and
-
-4. the evaluation of `f`'s body on any inputs that satisfy `f`'s input
-   contract will yield avalue that satisfies `f`'s output
-   contract.Therefore, for logic mode definitions, ACL2s only needs to
-   check input contract for "top-level" forms. 
+> 1. evaluating `f`'s input contract on any (well-formed) inputs whatsover
+>    will not lead to any contract violations, and
+> 
+> 2. evaluating the body of f on any inputs that satisfy `f`'s input
+>    contract will never lead to a contract violation for any function
+>    that may be called during this evaluation,including functions that
+>    are called directly or indirectly, and
+> 
+> 3. the evaluation of `f`'s body on any inputs that satisfy `f`'s input
+>    contract will terminate, and
+> 
+> 4. the evaluation of `f`'s body on any inputs that satisfy `f`'s input
+>    contract will yield a value that satisfies `f`'s output
+>    contract.Therefore, for logic mode definitions, ACL2s only needs to
+>    check input contract for "top-level" forms. 
 
 # `quasiquote` and `unquote`
 
