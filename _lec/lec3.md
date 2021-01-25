@@ -122,14 +122,14 @@ Here: integrated as part of the language => can be checked statically by the com
 	 // k<=10 is invariant here
 	 assert(k<=10);  // assertion statement
    }
-	```
+   ```
 
-	```lisp
-	(definec len (l :tl) :nat
-	  (if (endp {(tlp l)} l) 
-		0
-		(+ 1 (len (rest l)))))
-	```
+ ```lisp
+  (definec len (l :tl) :nat
+	(if (endp {(tlp l)} l) 
+	  0
+	  (+ 1 (len (rest l)))))
+ ```
 
 ## Natural Recursion
 
