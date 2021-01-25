@@ -10,7 +10,19 @@ following expression:
 
 `(a (b c d) . e)`
 
-# What questions do we have? 
+### The dot/box notation of this structure.
+
+### Why did one of those "end in a dot"? 
+
+## `cons`, `car` and `cdr`
+
+ Check your understanding:
+ How are `left` and `right` different from `car` and `cdr`?
+ How are `first` and `rest` different from `car` and `cdr`?
+ 
+ Which of these do you think is the more important difference?
+
+# What further questions do we have? 
 
   - Question from the reading?
   - Question from the HW? 
@@ -31,13 +43,17 @@ following expression:
 
 `(test? (implies (natp n) (equal (even-integerp n) (even-natp n))))`
 
+### PollEverywhere `atom` question. 
+
+#### The recognizer `atom`, which is not like the others
+
 # All functions must terminate! (You gotta make'em!)
 
+##  `car` and `cdr`, revisited.
+
+`countdown`, fails to terminate. Contracts!
+
 ### `defunc` functions
-
-`definec` short-hand version of `defunc`
-
-## What about more complicated properties? 
 
 More powerful, because these permit us to define arbitrary contracts.
 
@@ -47,6 +63,12 @@ contracts: A simple and useful class of invariants about inputs and outputs
 :input-contract ...
 :output-contract ...
 ```
+
+`definec` short-hand version of `defunc`
+
+## What about more complicated properties? 
+
+We still have the defunc bits when we want it!
 
 ## NEW! in ACL2s / this course
 
