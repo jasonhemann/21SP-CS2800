@@ -10,7 +10,6 @@ following expression:
 
 `(a (b c d) . e)`
 
-
 # What questions do we have? 
 
   - Question from the reading?
@@ -21,8 +20,8 @@ following expression:
 
 ## Tests
 
-I *have* just been writing programs at the REPL. As we know that's a
-*terrible* testing strategy!
+ I *have* just been writing programs at the REPL. As we know that's a
+ *terrible* testing strategy!
 
 ### `check=` tests
 
@@ -32,62 +31,13 @@ I *have* just been writing programs at the REPL. As we know that's a
 
 `(test? (implies (natp n) (equal (even-integerp n) (even-natp n))))`
 
-## More bits of syntax
-
-### PollEverywhere `atom` question. 
-
-#### The recognizer `atom`, which is not like the others
-
-### `let`, `let*` 
-
-### Simultaneous vs structured
-
-## Datatypes
-
-# Defining datatypes 
-
-## `defdata`
-
-### Union types 
-
-`(defdata fullname (list string string))`
-
-Union types let us take the union of existing types. E.g.,
-
-`(defdata intstr (oneof integer string))`
-
-## Recursive type expressions 
-
-Recursive type expressions involve the `oneof` combinator (noun: a
-thing that combines. Like "regulators" regulate) and product
-combinations, where additionally there is a (potentially-recursive)
-reference to the type being defined.
-
-`(defdata loi (listof integer))`
-
-This defines the type consisting of lists of integers.
-
-For example,here is another way of defining a list of integers.
-
-`(defdata loi (oneof nil (cons integer loi)))`
-
 # All functions must terminate! (You gotta make'em!)
-
-`countdown`, fails to terminate. Contracts!
-
-### constructing `enum` data 
-
-#### range data
-
-`(defdata probability (range rational (0 <= _ <= 1)))`
-
-`(defdata big-nat (range integer ((expt 2 64) < _))`
-
-## What about more complicated properties? 
 
 ### `defunc` functions
 
 `definec` short-hand version of `defunc`
+
+## What about more complicated properties? 
 
 More powerful, because these permit us to define arbitrary contracts.
 
@@ -169,5 +119,8 @@ is a prelude.
    contract will yield avalue that satisfies `f`'s output
    contract.Therefore, for logic mode definitions, ACL2s only needs to
    check input contract for "top-level" forms. 
-   
-   
+
+# `quasiquote` and `unquote`
+
+## Just the facts ma'am.
+
