@@ -27,8 +27,8 @@
 
 |# 
 
-;;; 1. Define the function DROP-LAST that drops the last element of a
-;;; non-empty list.
+;;; 1. Define the function DROP-LAST that takes a true-list and
+;;; returns a list without the last element of its input.
 
 
 #|
@@ -86,7 +86,7 @@ at the top level of the list.
 > (remove 'x '(a (x y) b x c x d (x)))
 (A (X Y) B C D (X))
 
-You can try it at the REPL. In the followng problem, you should not
+You can try it at the REPL. In the following problem, you should not
 use REMOVE.
 
 |# 
@@ -96,12 +96,10 @@ use REMOVE.
 ;;; of the symbol removed.
 
 
-
-;;; 5. Define and test a procedure MIRROR that takes a
-;;; CONS-constructed binary tree (like those we discussed in lecture)
-;;; and recursively exchanges each CAR with its CDR.
-
-
+;;; 5. Define and test a procedure MIRROR that takes an element of the
+;;; acl2 universe (including CONS-constructed binary trees like those
+;;; we discussed in lecture) and recursively exchanges each CAR with
+;;; its CDR. 
 
 (check= (mirror 'a) 'a)
 (check= (mirror '(1) '(nil . 1)))
@@ -109,8 +107,9 @@ use REMOVE.
 	'((f . e) (((d . c) b . a) . h) . g))
 (check= (mirror (mirror '(on (the (wall))))) '(on (the (wall))))
 
-;;; 6. Define a function CONS-CELL-COUNT that counts the number of CONS
-;;; cells (i.e. the number of pairs) in a given structure
+;;; 6. Define a function CONS-CELL-COUNT that takes an element of the
+;;; acl2 universe and counts the number of CONS cells (i.e. the number
+;;; of pairs) in the input.
 
 (check= (cons-cell-count 'fish) 0)
 (check= (cons-cell-count '()) 0)
@@ -151,25 +150,26 @@ use REMOVE.
               (= (* 2 (bb-to-n x)) (bb-to-n (cons nil x)))))
 
 ;;; 8. Write a function LIST-INDEX-OF that takes an ACL2 value x, and
-;;; a list l containing at least one x, and returns the 0-based index
-;;; of the first x in l.
+;;; a true-list l containing at least one x, and returns the 0-based
+;;; index of the first x in l. 
 
 
-;;; 9. Write a function ZIP-LISTS that takes two lists l1 and
-;;; l2. ZIP-LISTS returns a list formed from pairs of elements taken
-;;; from with the car coming from l1 and the cdr coming from l2. If
-;;; the lists are of uneven length, then drop the tail of the longer
-;;; one.
+;;; 9. Write a function ZIP-LISTS that takes two true-lists l1 and
+;;; l2. ZIP-LISTS returns an alist formed from pairs of elements
+;;; taken from with the car coming from l1 and the cdr coming from
+;;; l2. If the lists are of uneven length, then drop the tail of the
+;;; longer one.
 
 
 (test? (implies (and (tlp l1) (tlp l2))
 		(= (len (zip-lists l1 l2)) (min (len l1) (len l2)))))
 
 
-
-;;; 10. Write a function UNZIP-LISTS that recursively deconstructs a
-;;; list of pairs and returns (as a pair) a list of the cars in order
-;;; followed by a list of the cdrs also in order.
+;;; 10. Write a function UNZIP-LISTS that recursively deconstructs an
+;;;  alist and returns a pair of true-lists. The car of this pair is a
+;;;  true list of the cars, in order, of each pair in the input. The
+;;;  cdr of this pair is a true list of the cdrs, in order, of each
+;;;  pair in the input.
 
 
 (check= (unzip-lists '((a . b) (c . d) (e . f))) '((a c e) . (b d f)))
@@ -184,7 +184,7 @@ use REMOVE.
 
 #|
 
-Recall the following definitions from the lecture notes.
+Recall the following definitions from the Manolios text. 
 
 (definec listp (l :all) :bool 
   (or (consp l)

@@ -1,6 +1,6 @@
 #| 
 
-In the first half of thsi homework, we will practice some skills you
+In the first half of this homework, we will practice some skills you
 will need throughout this course. You may even find some of these
 functions helpful to you in the second half of this homework
 
@@ -16,33 +16,47 @@ page
 (set-defunc-function-contract-strictp nil)
 (set-defunc-body-contracts-strictp nil)
 
-;; 1. Define a function MY-MEMBER that behaves like Lisp's MEMBER
-;; function
+#| 
+
+To answer the following questions, write each function using definec.
+Do not make use of any lisp functions that make the problems trivial.
+So, for the most part these should be explicitly recursive functions
+whose body is a cond. You should find yourself making freqent use of
+cons, car, and cdr.
+
+|#
+
+
+;; 1. Define a function MY-MEMBER takes an element of the universe and
+;; a true list and that behaves like Lisp's MEMBER function: 
 
 
 
 ;; 2. Define MY-SNOC, a version of lisp's SNOC function (it's like
-;; cons, but backward). The first argument should be a true-list.
+;; cons, but backward). The first argument should be a true-list, the
+;; second any element of the acl2 universe.
 
 
 (check= (my-snoc '(a b c d) 'e) '(a b c d e)) 
 
-;; 3. Define a function RAC that returns the last element of a non-empty
-;; list. (RAC, because it's like CAR, but the other way.)
+;; 3. Define a function RAC that returns the last element of a
+;; non-empty true-list. (RAC, because it's like CAR, but the other
+;; way.)
 
 
 (check= (rac '(a)) 'a)
 (check= (rac '(a b c)) 'c)
 
-;; 4. Define a function RDC that returns a list of all but the last
-;; element of a non-empty list. (RDC, because it's like CDR, but the
-;; other way.)
+;; 4. Define a function RDC that takes a non-empty true-list and
+;; returns a list of all but the last element of its input. (RDC,
+;; because it's like CDR, but the other way.)
 
 
 (test? (implies (ne-tlp l) (equal (snoc (rdc l) (rac l)) l)))
 
-;; 5. Define NAT-TO-BINARY, that takes a nat and returns a little-endian
-;; binary number. 
+;; 5. Define NAT-TO-BINARY, that takes a nat and returns a
+;; little-endian binary number. You can decide how you want to
+;; describe the output.
 
 (check= (nat-to-binary 0) '())
 (check= (nat-to-binary 1) '(t))
@@ -63,7 +77,7 @@ property, and those elements that do not have the property.
 |# 
 
 ;; 7. Define LIST-SET, a predicate on true-lists that returns t when
-;; the list is free of duplicates, and nil otherwise.
+;; the true-list is free of duplicates, and nil otherwise.
 
 
 (check (list-set '(a b c d f (a b c))))
@@ -87,9 +101,12 @@ implementation is correct. Consider and bear this in mind.
 ;; s1 and s2 and returns a list-set containing all the elements of s1
 ;; that are not elements of s2. 
 
-;; 9. Define PALINDROME-ME, a function on true lists that turns each list
-;; into a palindromed version of itself.
 
+;; 9. Define PALINDROME-ME, a function that takes a true-list and
+;; returning the result of appending the input to the reverse of the
+;; input. That returns a palindromed version of the original input.
+;; You should feel free to use append and reverse functions in your
+;; answer to this problem.
 
 (check= (palindrome-me '(a b c d e)) '(a b c d e e d c b a))
 
