@@ -16,12 +16,6 @@ following expression:
 
 ## `cons`, `car` and `cdr`
 
- Check your understanding:
- How are `left` and `right` different from `car` and `cdr`?
- How are `first` and `rest` different from `car` and `cdr`?
- 
- Which of these do you think is the more important difference?
-
 # What further questions do we have? 
 
   - Question from the reading?
@@ -30,28 +24,21 @@ following expression:
   - Question from here?
   - Question from the audience at home?
 
-## Tests
-
- I *have* just been writing programs at the REPL. As we know that's a
- *terrible* testing strategy!
-
-### `check=` tests
-
-### property-based testing 
-
-`(test? (equal (app (list x y) (list)) (list x y)))`
-
-`(test? (implies (natp n) (equal (even-integerp n) (even-natp n))))`
-
 ### PollEverywhere `atom` question. 
 
 #### The recognizer `atom`, which is not like the others
 
 # All functions must terminate! (You gotta make'em!)
 
+`(defun countdown )`, fails to terminate. Contracts!
+
 ##  `car` and `cdr`, revisited.
 
-`countdown`, fails to terminate. Contracts!
+ Check your understanding:
+ How are `left` and `right` different from `car` and `cdr`?
+ How are `first` and `rest` different from `car` and `cdr`?
+ 
+ Which of these do you think is the more important difference?
 
 ### `defunc` functions
 
@@ -105,7 +92,6 @@ Here: integrated as part of the language => can be checked statically by the com
 
 ## Natural Recursion
 
-
 ```lisp
 (defun plus (x :nat y :nat) :nat
   (cond
@@ -130,7 +116,7 @@ is a prelude.
    will not lead to any contract violations, and
 
 2. evaluating the body of f on any inputs that satisfy `f`'s input
-   contract will never leadto a contract violation for any function
+   contract will never lead to a contract violation for any function
    that may be called during thisevaluation,including functions that
    are called directly or indirectly, and
 
