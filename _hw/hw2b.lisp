@@ -63,8 +63,6 @@
 
 ; ******************* END INITIALIZATION FOR ACL2s MODE ******************* ;
 ;$ACL2s-SMode$;ACL2s
-#| 
-
 
 #| 
   - These commands are simplifying your interactions with ACL2s
