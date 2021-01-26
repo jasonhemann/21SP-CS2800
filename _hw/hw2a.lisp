@@ -167,7 +167,8 @@ implementation is correct. Consider and bear this in mind.
 
 ;; 8. Define LIST-SET-DIFFERENCE, a function that takes two list-sets
 ;; s1 and s2 and returns a list-set containing all the elements of s1
-;; that are not elements of s2. 
+;; that are not elements of s2. Consider writing explicit
+;; contracts (":ic", ":oc").
 
 
 ;; 9. Define PALINDROME-ME, a function that takes a true-list and
