@@ -1,5 +1,5 @@
 ---
-title: "HW1"
+title: "Homework 1"
 layout: single
 ---
 
