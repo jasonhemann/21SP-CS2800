@@ -27,8 +27,8 @@
 
 |# 
 
-;;; 1. Define the function DROP-LAST that takes a true-list and
-;;; returns a list without the last element of its input.
+;;; 1. Define the function DROP-LAST that takes a non-empty true-list
+;;; and returns a list without the last element of its input.
 
 
 #|
@@ -102,7 +102,7 @@ use REMOVE.
 ;;; its CDR. 
 
 (check= (mirror 'a) 'a)
-(check= (mirror '(1) '(nil . 1)))
+(check= (mirror '(1)) '(nil . 1))
 (check= (mirror '((g h (a . b) . (c . d)) . (e . f)))
 	'((f . e) (((d . c) b . a) . h) . g))
 (check= (mirror (mirror '(on (the (wall))))) '(on (the (wall))))

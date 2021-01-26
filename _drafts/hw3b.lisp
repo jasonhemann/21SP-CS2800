@@ -216,16 +216,20 @@ Section 2.13 of the lecture notes.
 ;; 6. Specify the following properties using (test? ...) and rpneval.
 
 ;; A. A = ((A -) -), in RPNEL, for any rational A.
+(defconst *6a* )
 
 ;; B. (A B -) = (A (B -) +), in RPNEL, for any rationals A and B.
+(defconst *6b* )
 
 ;; C. (A (B C +) *) = ((A B *) (A C *) +), in RPNEL, for any rationals A, B & C.
+(defconst *6c* )
 
 ;; D. (E1 E2 -) = (E1 (E2 -) +), in RPNEL, for any rpnexprs E1 and E2.
+(defconst *6d* )
 
 ;; E. (E1 (E2 E3 +) *) = ((E1 E2 *) (E1 E3 *) +), in RPNEL,
 ;;    for any rpnexpr's E1, E2, E3.
-
+(defconst *6e* )
 
 ;;; RPNPRGM Langauge 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

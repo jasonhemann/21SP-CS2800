@@ -1,5 +1,5 @@
 ---
-title: "HW1a"
+title: "HW1"
 layout: single
 ---
 

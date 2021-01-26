@@ -125,7 +125,7 @@ is a prelude.
 > 
 > 4. the evaluation of `f`'s body on any inputs that satisfy `f`'s input
 >    contract will yield a value that satisfies `f`'s output
->    contract.Therefore, for logic mode definitions, ACL2s only needs to
+>    contract. Therefore, for logic mode definitions, ACL2s only needs to
 >    check input contract for "top-level" forms. 
 
 # `quasiquote` and `unquote`
