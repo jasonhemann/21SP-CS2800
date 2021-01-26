@@ -201,6 +201,14 @@ use REMOVE.
 ;;; solve this without changing the method's signature. Nor should you
 ;;; add an accumulator or auxilliary variable in a help method.
 
+
+(check= (bb-to-n '(t t t t)) 15)
+(check= (bb-to-n '(nil nil nil t)) 8)
+(check= (bb-to-n '(t nil nil t)) 9)
+(check= (bb-to-n '(nil nil t)) 4)
+(check= (bb-to-n '(t nil nil nil t)) 17)
+
+
 #| 
 
  Here are some fascinating properties you might want to *prove* for
@@ -217,8 +225,12 @@ use REMOVE.
 
 ;;; 8. Write a function LIST-INDEX-OF that takes an ACL2 value x, and
 ;;; a true-list l containing at least one x, and returns the 0-based
-;;; index of the first x in l. 
+;;; index of the first x in l. Consider writing explicit
+;; contracts (":ic", ":oc").
 
+
+(check= (list-index-of 'x '(x a b c)) 0)
+(check= (list-index-of 'x '(a x b x c)) 1)
 
 ;;; 9. Write a function ZIP-LISTS that takes two true-lists l1 and
 ;;; l2. ZIP-LISTS returns an alist formed from pairs of elements
