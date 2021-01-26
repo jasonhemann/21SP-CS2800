@@ -63,7 +63,6 @@
 
 ; ******************* END INITIALIZATION FOR ACL2s MODE ******************* ;
 ;$ACL2s-SMode$;ACL2s
-#| 
 
 
 #| 
