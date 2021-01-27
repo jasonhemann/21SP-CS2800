@@ -173,8 +173,8 @@ implementation is correct. Consider and bear this in mind.
 ;; 9. Define PALINDROME-ME, a function that takes a true-list and
 ;; returning the result of appending the input to the reverse of the
 ;; input. That returns a palindromed version of the original input.
-;; You should feel free to use append and reverse functions in your
-;; answer to this problem.
+;; You should feel free to use the existing append and reverse
+;; functions in your answer to this problem. 
 
 (check= (palindrome-me '(a b c d e)) '(a b c d e e d c b a))
 
