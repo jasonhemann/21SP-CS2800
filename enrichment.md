@@ -29,4 +29,4 @@ classes: wide
 - [The Craft of Scientific Writing](https://onesearch.library.northeastern.edu/permalink/f/365rt0/NEU_ALMA51327615270001401) E-Book available via NEU library. 
 - [Advice on Structure and Content](https://www.cl.cam.ac.uk/~lp15/Pages/Scream.html)
 - [How to write a great Research paper](https://www.microsoft.com/en-us/research/academic-program/write-great-research-paper/#!other-resources)
-
+- [Keeping logic in the trivium of computer science: a teaching perspective](https://link.springer.com/article/10.1007/s10703-017-0301-z)
