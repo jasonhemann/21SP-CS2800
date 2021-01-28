@@ -1,6 +1,6 @@
 ---
 title: (Remainder) of the Dirty Dozen
-date: 2021-09-16
+date: 2021-01-27
 ---
 
 ## More bits of syntax
@@ -113,32 +113,3 @@ vs.
 ```
 
 static contract checking! What a win!
-
-## Tests and theorems
-
-I *have* just been writing programs at the REPL. As we know that's a
- *terrible* testing strategy!
-
-### `check=` tests
-
-### property-based testing 
-
-`(test? (equal (app (list x y) (list)) (list x y)))`
-
-`(test? (implies (natp n) (equal (even-integerp n) (even-natp n))))`
-
-
-# `thm`
-
-  E.g. 
-
-  ```lisp
-  (thm (implies 
-         (implies a 
-           (implies b c))
-             (implies (implies a b) 
-                      (implies a c))))
-  ```
-
-  Like, you too could reason through that, but it's not trivial. 
-
