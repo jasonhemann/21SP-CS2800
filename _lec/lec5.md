@@ -20,7 +20,7 @@ I *have* just been writing programs at the REPL. As we know that's a
 ### property-based testing 
 
  - Somewhat of a "middle ground" between unit testing and theorem proving
- - A differnt 
+ - A different style of testing than the kind you know. 
 
 
 `(test? (equal (app (list x y) (list)) (list x y)))`
