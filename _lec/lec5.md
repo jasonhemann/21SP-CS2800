@@ -1,61 +1,89 @@
 ---
-title: Property-based testing, and the utility. 
-date: 2021-01-28
+title: Propositional Logic
+date: 2021-09-21
+---
 
-## Discussion 
+# Reading 
+
+  Pre-reading quiz. 
+
+# Brief History of Logic
+
+  300-400 BC: A fascinating time. 
+
+  Greeks. Wanted ways to know when something _had_ to be
+  true. Sophists and smooth talkers. Persuasive. When it had to be
+  true as a consequence of the things we already take to be
+  true. Forms of argumentation.
+
+  Heraclitus "Everything is in motion", "you cannot step into the same
+  stream twice."
+
+  Parmenides "Everything is constant, unchanging, eternal"
+
+  Plato gives us, in the allegory of the cave, the fusion of these two ideas. 
+
+  The things we see are echos, shadows of the platonic ideal.
+
+
+# Euclid's geometry. 
+
+  From basic principles, we can deduce more complicated facts. 
+  These are the things that follow from others, analytically.
+  
+  whereas synthetics are the things we induce from experience. 
+
+# Aristotle's logic. Part-whole logic. 
+  
+  Lots more, fascinating story. How we get from Aristotle, through the
+  scholastics, through the renaissance and 16th and 17th century
+  mathematics. 
+
+# Boolean logic, algebraization. Propositional. 
+
+  Stop off with Boolean logic. George Boole. American.
+
+  The logic of propositions. Sentences. 
+
+##  Determine the values of complicated expressions based on the values of smaller expressions. 
+  
+##  We can determine the meaning of the whole with the values of the immediately smaller sub-pieces. 
+  
+## Implication.
  
- - Property-based testing: a kind of testing you likely haven't seen before 
- - PBT vs. other kinds of testing
- - How to do it, how to think about them generally
- - A common pitfall 
- - How to do it, how to think about them in acl2s
+   Difficult and frustrating at times, for students. B/c the way we
+   use implication here isn't the way you would normally use it.
 
-### `check=` tests, unit tests. 
+  "Show me a man with a tattoo, and I’ll show you a man with an interesting past." —Jack London
+  
+  Truth tables. 
 
-## Tests and Theorems
+```
+  | A  | B  | B => A | A => (B => A) |
+  | tt | tt | tt     | tt            |
+  | ff | tt | ff     | tt            |
+  | tt | ff | tt     | tt            |
+  | ff | ff | tt     | tt            |
+```
 
-I *have* just been writing programs at the REPL. As we know that's a
- *terrible* testing strategy!
+   ```
+    NOT     !
 
-### property-based testing 
+    AND     &
+    OR      v
 
- - Somewhat of a "middle ground" between unit testing and theorem proving
- - A different style of testing than the kind you know. 
+    IMPLIES =>
 
+    EQUIV   ==
+    XOR     ><
+   ```
 
-`(test? (equal (app (list x y) (list)) (list x y)))`
-
-`(test? (implies (natp n) (equal (even-integerp n) (even-natp n))))`
-
-### Theorem proving
-
-## `thm`
-
-  E.g. 
-
-  ```lisp
-  (thm (implies 
-         (implies a 
-           (implies b c))
-             (implies (implies a b) 
-                      (implies a c))))
-  ```
-
-  Like, you too could reason through that, but it's not trivial. 
-
-## `defthm` 
-
-### `thm` and `test?` -- better together!
-
-
-# Don't just take my word for it! 
-
-[Specifying Properties on Pure Functions](https://www.youtube.com/watch?v=zvRAyq5wj38) 
-
-## Used in Industry 
-
-## You already have access to these tools!!
-
-## Writing some programs
-
-
+  
+  - Validity
+  
+  - Falsifaibility
+  
+  - Satisfiability
+  
+  - Unsatisfiable
+  
