@@ -27,11 +27,11 @@ We allow unlimited submissions, so you have chances to iteratively
 improve things, and always make sure you have a submission in.
 
 Do recall that [our much-touted approach for this has been to allow
-the easy, free, no questions asked drop two assignments]({{
-site.baseurl }}/syllabus/#homework-submissions). I know this isn't the
-way you'd hoped to use one---IMO any time you have to use one, it's
-something sub-optimal going on---but do rest assured a simple mistake
-in and of itself shouldn't affect your grade.
+the easy, free, no questions asked drop one and a half assignments]({{
+site.baseurl }}/syllabus/#homework). I know this isn't the way you'd
+hoped to use one---IMO any time you have to use one, it's something
+sub-optimal going on---but do rest assured a simple mistake in and of
+itself shouldn't affect your grade.
 
 We are also more than happy to go over your solutions with you in
 office hours, and would be happy to give you 1:1 feedback on your
