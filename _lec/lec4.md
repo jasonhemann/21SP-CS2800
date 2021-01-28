@@ -134,10 +134,10 @@ I *have* just been writing programs at the REPL. As we know that's a
 
   ```lisp
   (thm (implies 
-   (implies a 
-      (implies b c))
-   (implies (implies a b) 
-      (implies a c))))
+         (implies a 
+           (implies b c))
+             (implies (implies a b) 
+                      (implies a c))))
   ```
 
   Like, you too could reason through that, but it's not trivial. 
