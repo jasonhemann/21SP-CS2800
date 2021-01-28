@@ -77,14 +77,14 @@ For example,here is another way of defining a list of integers.
 
 ## `definec` vs. `defunc`: when it gets complicated
 
-	``` lisp
-	(defunc lsd (s1 s2)
-	  :ic (and (tlp s1) (tlp s2) (list-set s1) (list-set s2))
-	  :oc (and (tlp (lsd s1 s2)) (list-set (lsd s1 s2)))
-	  (cond
-		((lendp s2) s1)
-		(t (remove (car s2) (lsd s1 (cdr s2)) :test 'equal))))
-    ```
+ ```lisp
+ (defunc lsd (s1 s2)
+   :ic (and (tlp s1) (tlp s2) (list-set s1) (list-set s2))
+   :oc (and (tlp (lsd s1 s2)) (list-set (lsd s1 s2)))
+   (cond
+     ((lendp s2) s1)
+     (t (remove (car s2) (lsd s1 (cdr s2)) :test 'equal))))
+ ```
 
 # Program mode, logic mode, tracing.
 
@@ -134,10 +134,10 @@ I *have* just been writing programs at the REPL. As we know that's a
 
   ```lisp
   (thm (implies 
-		 (implies a 
-				  (implies b c))
-		 (implies (implies a b) 
-				  (implies a c))))
+   (implies a 
+      (implies b c))
+   (implies (implies a b) 
+      (implies a c))))
   ```
 
   Like, you too could reason through that, but it's not trivial. 
