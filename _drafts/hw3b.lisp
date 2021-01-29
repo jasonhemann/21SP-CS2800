@@ -468,6 +468,7 @@ occurs anywhere in the evaluation of the expression).
 
     
     ((n . res) (rpnprgmeval-help res `(,n . ,stk)))))
+
 (definec rpnprgmeval (pgm :rpnprgm) :rat-or-err
   (rpnprgmeval-help pgm '()))
 
