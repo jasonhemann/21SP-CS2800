@@ -2,12 +2,6 @@
 
 Homework 3a.
 
- Make sure you are in ACL2s mode. 
-
- Note that you can only change the mode when the session is not
- running, so set the correct mode before starting the session.
-
- Please try and get started on this before your lab section.
 
 |#
 
@@ -16,15 +10,13 @@ Homework 3a.
 
 ;; Part 1: Reviewing Function Definitions 
 
-; Fill in the blanks below. This mostly involves adding check= and
-; test? forms and a few definitions
+;; Fill in the missing definitions and complete the incomplet check=
+;; forms. Ofc, also provide sufficient check=s and/or test?s of your
+;; own.
 
-; Make sure that the check='s and test?'s below pass. Provide
-; sufficient check='s and test?'s of your own.
-
-; 1. subst-in-list: All x All x TL -> TL
-; (subst-in-list: old new l) replaces every element of l
-; which is equal to old by new. 
+;; 1. subst-in-list: All x All x TL -> TL
+;; (subst-in-list: old new l) replaces every element of l
+;; which is equal to old by new. 
 
 
 (check= (subst-in-list '(2 1) '(1 2) '(1 2 (1 2) (2 1) ((2 1))))
@@ -41,8 +33,8 @@ Homework 3a.
 
 #| 
 
-Returns t if the input is ordered with respect to <=, ie,
-is non-decreasing and is nil otherwise.
+The function orderedp returns t if the input is ordered with respect
+to <=, ie, is non-decreasing and is nil otherwise.
 
 |# 
 
@@ -57,6 +49,7 @@ is non-decreasing and is nil otherwise.
 
 
 ;; 3. Complete the following check= forms. 
+
 (check= (orderedp '())   )
 (check= (orderedp '(44)) )
 (check= (orderedp '(1 1 3/2 8/5)) )
@@ -67,75 +60,89 @@ is non-decreasing and is nil otherwise.
 
 #| 
 
-For each of the following conjectures (hypotheses):
+For each of the problems in this section:
 
-Next to the (defconst ...) for the conjecture you should write "t"
-or "nil" (not, btw, in the double quotation marks, that is to
-distinguish [use from
-mention](https://en.wikipedia.org/wiki/Use-mention). 
+In the first (defconst ...) form, write a quoted acl2 property that is
+your translation of that question's English-language conjecture. Make
+sure and quote this property---that is you are definining a quoted
+list that *looks* like a property, and that absent the quote, we could
+run as a property. Remember to include all necessary
+preconditions. There are often many propositionally-equivalent ways to
+express these properties; any will be accepted. If in doubt, it is
+good practice to hew closer to form of the property expressed by the
+English.
 
-Then, in the definition of the test-or-counterexample form, 
+Then, decide if that property is *valid* in the acl2s universe. 
 
-If you marked "t": you should write a (test? ...)  with a
-formalization of that property in ACL2. There are often many
-propositionally-equivalent ways to express these properties; any will
-be accepted. If in doubt, it is good practice to hew closer to form of
-the property expressed by the English.
+If you think the property is valid, then define the
+t-or-counterexample form to be "t" (not, btw, in the double quotation
+marks, that is to distinguish [use from
+mention](https://en.wikipedia.org/wiki/Use-mention).
 
-If you marked "nil": you should write a let binding giving values to
-each of the variables; the body of that let should be a formalization
-of the property in question, and the let expression should evaluate to
-nil. Hint: ACL2s counterxexamples can be very helpful here.
+If on the other hand you think the property is falsifiable, then write
+a quoted list representing a counter-example. This counter-example
+will look like the bindings of a let form that would give admissible
+values to each of the variables in your property, and for which your
+property will not hold.
+
+
+Example: If a list of rationals is ordered, then consing a rational on
+to that list is also ordered.
+
+(defconst *conjecture-example* 
+  '(implies (and (lorp ls) (rationalp x) (orderedp ls))
+            (orderedp (cons x ls))))
+  
+(defconst *conjecture-example-t-or-counterexample* 
+  ((ls '(5))
+   (x  10)))
 
 |# 
 
-;; First, translate the claim into an acl2 property
-;; then decide its truth: if true, mark t, otherwise, return a subst. 
-
-; 4. Conjecture: If a list is ordered, then deleting from it yields an ordered list
-(defconst *conjecture-4-2* '(implies (consp x) x)) ;; quote their conjecture 
-(defconst *conjecture-4* t or a subst) t if its true  ; a subst elsewise '((x '(a b c)))
-(defconst *conjecture-4-test-or-counterexample*
-  `(let ((x '(a b c)))
-     ,*conjecture-4-2*))
+;; 4. Conjecture: If a list of rationals is ordered, then deleting
+;; from it yields an ordered list of rationals
+(defconst *conjecture-4* ) 
+(defconst *conjecture-4-t-or-counterexample* )
 
 
-; 5. Conjecture: If we delete a rational from an lor, the length decreases.
+;; 5. Conjecture: If we delete a rational from an lor, the length decreases.
 (defconst *conjecture-5* )
-(defconst *conjecture-5-test-or-counterexample* )
+(defconst *conjecture-5-t-or-counterexample* )
 
 
-; 6. Conjecture: The order of deletions does not matter.
+;; 6. Conjecture: The order of deletions from a list does not matter.
 (defconst *conjecture-6* )
-(defconst *conjecture-6-test-or-counterexample* )
+(defconst *conjecture-6-t-or-counterexample* )
 
 
-; 7. Conjecture: my-remove does not increase the length of the input list.
-(defconst *conjecture-7* )
-(defconst *conjecture-7-test-or-counterexample* )
+;; 7. Conjecture: my-remove does not increase the length of the input list.
+(defconst *conjecture-7* '(equal (+ 3 3) 6))
+(defconst *conjecture-7-t-or-counterexample* )
 
 
-; 8. Conjecture: subst-in-list does not change the length of l 
+;; 8. Conjecture: subst-in-list does not change the length of l 
 (defconst *conjecture-8* )
-(defconst *conjecture-8-test-or-counterexample* )
+(defconst *conjecture-8-t-or-counterexample* )
 
 
-; 9. Conjecture: if old=new then subst-in-list returns l
+;; 9. Conjecture: if old=new then subst-in-list returns l
 (defconst *conjecture-9* )
-(defconst *conjecture-9-test-or-counterexample* )
+(defconst *conjecture-9-t-or-counterexample* )
 
 
-; 10. Conjecture: if l is an lor, then (subst-in-list old new l) is an lor. 
+;; 10. Conjecture: if l is an lor, then (subst-in-list old new l) is an lor. 
 (defconst *conjecture-10* )
-(defconst *conjecture-10-test-or-counterexample* )
+(defconst *conjecture-10-t-or-counterexample* )
 
-; 11. Conjecture: if l is an lor and new is a rational, then
-; (subst-in-list old new l) is an lor. 
+
+;; 11. Conjecture: if l is an lor and new is a rational, then
+;; (subst-in-list old new l) is an lor. 
 (defconst *conjecture-11* )
-(defconst *conjecture-11-test-or-counterexample* )
+(defconst *conjecture-11-t-or-counterexample* )
 
 
 ;; Part 3: Reverse Polish Notation
+
 #|
 
 What do you know about [RPN and RPN
@@ -426,34 +433,34 @@ the following:
 
 ;; 17. (x y +) = (x (y -) -), in SRPNEL, for rationals x, y
 (defconst *conjecture-17* )
-(defconst *conjecture-17-test-or-counterexample* )
+(defconst *conjecture-17-t-or-counterexample* )
 
 
 ;; 18. (x y -) = (x (y -) +), in SRPNEL, for srpnexpr's x, y
 (defconst *conjecture-18* )
-(defconst *conjecture-18-test-or-counterexample* )
+(defconst *conjecture-18-t-or-counterexample* )
 
 
 ;; 19. (x (y z *) +) = ((x y +) (x z +) *), in SRPNEL, for srpnexpr's x, y, z
 (defconst *conjecture-19* )
-(defconst *conjecture-19-test-or-counterexample* )
+(defconst *conjecture-19-t-or-counterexample* )
 
            
 
 ;; 20. (x (y z *) +) = ((x y +) (x z +) *), in SRPNEL, for rationals x, y, z
 (defconst *conjecture-20* )
-(defconst *conjecture-20-test-or-counterexample* )
+(defconst *conjecture-20-t-or-counterexample* )
 
 
 ;; 21. (x (y z +) *) = ((x y *) (x z *) +), in SRPNEL, for srpnexpr's x, y, z
 (defconst *conjecture-21* )
-(defconst *conjecture-21-test-or-counterexample* )
+(defconst *conjecture-21-t-or-counterexample* )
 
                    
 
 ;; 22. (x (y z +) *) = ((x y *) (x z *) +), in SRPNEL, for rationals x, y, z
 (defconst *conjecture-22* )
-(defconst *conjecture-22-test-or-counterexample* )
+(defconst *conjecture-22-t-or-counterexample* )
 
 
 #| 
@@ -466,9 +473,8 @@ fancy or arcane vocabulary, and eventually you just have to dive in.)
 
 |# 
 
-;; 23. Express as a theorem that in our language, negation is involutive.
+;; 23. Express (as a quoted list) the property that in our SRPNEL
+;; language, negation is involutive.
 
-(defthm negation-is-involutive
-  (equal (not t) (not (not (not t))))))
+(defconst *negation-is-involutive*  )
 
-  (equal t (not (not t)))
