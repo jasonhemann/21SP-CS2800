@@ -39,38 +39,28 @@ Homework 3a.
 
 (defdata lor (listof rational))
 
-; 2. orderedp: lor -> Boolean
-; Returns t if the input is ordered with respect to <=, ie,
-; is non-decreasing and is nil otherwise.
+#| 
+
+Returns t if the input is ordered with respect to <=, ie,
+is non-decreasing and is nil otherwise.
+
+|# 
 
 (definec orderedp (l :lor) :bool
   (or (endp (cdr l))
       (and (<= (first l) (second l))
            (orderedp (rest l)))))
 
-; Make sure you understand why the above definition works, e.g.,
-; consider what happens when l is empty and when it has 1 element. In
-; this case, why does contract checking work? Complete the following
-; check=s, ofc add your own. 
+;; 2. Why does the above definition work? E.g., consider what happens
+;; when l is empty and when it has 1 element. In this case, why does
+;; contract checking work?
 
+
+;; 3. Complete the following check= forms. 
 (check= (orderedp '())   )
 (check= (orderedp '(44)) )
 (check= (orderedp '(1 1 3/2 8/5)) )
 (check= (orderedp '(1 3/2 26/20)) )
-(test? (implies (and (ne-tlp x) (lorp x))
-        (implies (orderedp x)
-             (orderedp (cons (1- (car x)) x)))))
-(test? (implies (and (ne-tlp x) (lorp x))
-        (implies (orderedp x)
-             (orderedp (cdr x)))))
-
-; 3. my-remove: All x TL  -> TL
-; (my-remove e l) will recur (but not deeply) down l removing every
-; occurrence of e. cf. Lisp's REMOVE
-
-
-
-
 
 
 ;; Part 2: Properties and Conjectures
@@ -95,13 +85,19 @@ the property expressed by the English.
 If you marked "nil": you should write a let binding giving values to
 each of the variables; the body of that let should be a formalization
 of the property in question, and the let expression should evaluate to
-nil. Hint: ACL2s counterxexamples can be very helpful here. 
+nil. Hint: ACL2s counterxexamples can be very helpful here.
 
 |# 
 
+;; First, translate the claim into an acl2 property
+;; then decide its truth: if true, mark t, otherwise, return a subst. 
+
 ; 4. Conjecture: If a list is ordered, then deleting from it yields an ordered list
-(defconst *conjecture-4* )
-(defconst *conjecture-4-test-or-counterexample* )
+(defconst *conjecture-4-2* '(implies (consp x) x)) ;; quote their conjecture 
+(defconst *conjecture-4* t or a subst) t if its true  ; a subst elsewise '((x '(a b c)))
+(defconst *conjecture-4-test-or-counterexample*
+  `(let ((x '(a b c)))
+     ,*conjecture-4-2*))
 
 
 ; 5. Conjecture: If we delete a rational from an lor, the length decreases.
@@ -177,9 +173,9 @@ provide formal, unambiguous, executable definitions of languages. For
 this price, however, we get the assurances that precise formal
 unambiguous definitions offer.
 
-In lab, we will focus on SRPNEL.  You will define RPNEL in HW3.  Make sure
-you fully understand this lab as it is intended to prepare you for
-HW3: RPNEL is an extension of SRPNEL.
+In this part of the hw we will focus on SRPNEL.  You will define RPNEL
+in HW3b. Make sure you fully understand this part first, it is
+intended to prepare you for HW3b: RPNEL is an extension of SRPNEL.
 
 Notice that, because we are formalizing (S)RPNEL in ACL2s and all we
 have access to in ACL2s are the elements of the ACL2s
@@ -266,7 +262,7 @@ the following:
 ;; 15. Provide an example of a SRPNEL expression that is not an ACL2s
 ;; expression.
 
-
+(defconst *SRPNEL-not-ACL2s* )
 
 #|
 
@@ -472,5 +468,7 @@ fancy or arcane vocabulary, and eventually you just have to dive in.)
 
 ;; 23. Express as a theorem that in our language, negation is involutive.
 
-(defthm negation-is-involutive )
+(defthm negation-is-involutive
+  (equal (not t) (not (not (not t))))))
 
+  (equal t (not (not t)))

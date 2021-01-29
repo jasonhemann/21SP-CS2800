@@ -105,6 +105,9 @@ cons, car, and cdr.
 
 
 (check= (my-snoc '(a b c d) 'e) '(a b c d e)) 
+(check= (my-snoc '(a b c) '(a b c)) '(A B C (A B C)))
+;; cf. 
+(check= (cons '(a b c) '(a b c)) '((A B C) A B C))
 
 ;; 3. Define a function RAC that returns the last element of a
 ;; non-empty true-list. (RAC, because it's like CAR, but the other
