@@ -1,3 +1,68 @@
+; ****************** BEGIN INITIALIZATION FOR ACL2s MODE ****************** ;
+; (Nothing to see here!  Your actual file is after this initialization code);
+(make-event
+ (er-progn
+  (set-deferred-ttag-notes t state)
+  (value '(value-triple :invisible))))
+
+#+acl2s-startup (er-progn (assign fmt-error-msg "Problem loading the CCG book.~%Please choose \"Recertify ACL2s system books\" under the ACL2s menu and retry after successful recertification.") (value :invisible))
+(include-book "acl2s/ccg/ccg" :uncertified-okp nil :dir :system :ttags ((:ccg)) :load-compiled-file nil);v4.0 change
+
+;Common base theory for all modes.
+#+acl2s-startup (er-progn (assign fmt-error-msg "Problem loading ACL2s base theory book.~%Please choose \"Recertify ACL2s system books\" under the ACL2s menu and retry after successful recertification.") (value :invisible))
+(include-book "acl2s/base-theory" :dir :system :ttags :all)
+
+
+#+acl2s-startup (er-progn (assign fmt-error-msg "Problem loading ACL2s customizations book.~%Please choose \"Recertify ACL2s system books\" under the ACL2s menu and retry after successful recertification.") (value :invisible))
+(include-book "acl2s/custom" :dir :system :ttags :all)
+
+;; guard-checking-on is in *protected-system-state-globals* so any
+;; changes are reverted back to what they were if you try setting this
+;; with make-event. So, in order to avoid the use of progn! and trust
+;; tags (which would not have been a big deal) in custom.lisp, I
+;; decided to add this here.
+;; 
+;; How to check (f-get-global 'guard-checking-on state)
+;; (acl2::set-guard-checking :nowarn)
+(acl2::set-guard-checking :all)
+
+;Settings common to all ACL2s modes
+(acl2s-common-settings)
+;(acl2::xdoc acl2s::defunc) ;; 3 seconds is too much time to spare -- commenting out [2015-02-01 Sun]
+
+#+acl2s-startup (er-progn (assign fmt-error-msg "Problem loading ACL2s customizations book.~%Please choose \"Recertify ACL2s system books\" under the ACL2s menu and retry after successful recertification.") (value :invisible))
+(include-book "acl2s/acl2s-sigs" :dir :system :ttags :all)
+
+#+acl2s-startup (er-progn (assign fmt-error-msg "Problem setting up ACL2s mode.") (value :invisible))
+
+(acl2::xdoc acl2s::defunc) ; almost 3 seconds
+
+; Non-events:
+;(set-guard-checking :none)
+
+(set-inhibit-warnings! "Invariant-risk" "theory")
+
+(in-package "ACL2")
+(redef+)
+(defun print-ttag-note (val active-book-name include-bookp deferred-p state)
+  (declare (xargs :stobjs state)
+	   (ignore val active-book-name include-bookp deferred-p))
+  state)
+
+(defun print-deferred-ttag-notes-summary (state)
+  (declare (xargs :stobjs state))
+  state)
+
+(defun notify-on-defttag (val active-book-name include-bookp state)
+  (declare (xargs :stobjs state)
+	   (ignore val active-book-name include-bookp))
+  state)
+(redef-)
+
+(acl2::in-package "ACL2S")
+
+; ******************* END INITIALIZATION FOR ACL2s MODE ******************* ;
+;$ACL2s-SMode$;ACL2s
 
 #| 
   - These commands are simplifying your interactions with ACL2s
@@ -12,18 +77,28 @@
 (set-defunc-function-contract-strictp nil)
 (set-defunc-body-contracts-strictp nil)
 
-; This directive forces ACL2s to generate contract theorems that
-; correspond to what we describe in the lecture notes.
+;; This directive forces ACL2s to generate contract theorems that
+;; correspond to what we describe in the lecture notes.
 (set-defunc-generalize-contract-thm nil)
 
 #| 
 
- It would be a great idea to get started early! This homework picks up
- where the lab left off. In hw3a, we used ACL2s to define the syntax
- and semantics of SRPNEL (Simple Reverse Polish Notation Expression
- Language). In this homework, we will use ACL2s to define the syntax
- and semantics of two RPNELs (Reverse Polish Notation Expression
- Languages), so make sure you have done hw3a already.
+This part of your hw picks up where the last part of your hw left
+off. In hw3a, we used ACL2s to define the syntax and semantics of
+SRPNEL (Simple Reverse Polish Notation Expression Language). In this
+homework, we will use ACL2s to define the syntax and semantics of two
+RPNELs (Reverse Polish Notation Expression Languages), so make sure
+you have done hw3a already. 
+
+|# 
+
+#| 
+
+Part I Defining a Syntax
+
+|# 
+
+#| 
 
  A (general) reverse-polish notation expression---an rpnexpr---extends
  srpnexpr with variables. It is one of the following:
@@ -43,12 +118,11 @@
 
 |#
 
-
-; Vars are just a restricted set of the symbols. 
-; The specifics of which symbols are vars is not all that important
-; for our purposes. All we need to know is that vars are symbols and
-; they do not include any of the RPNEL operators. Examples of vars include
-; symbols such as x, y, z, etc.
+;; Vars are just a restricted set of the symbols. 
+;; The specifics of which symbols are vars is not all that important
+;; for our purposes. All we need to know is that vars are symbols and
+;; they do not include any of the RPNEL operators. Examples of vars include
+;; symbols such as x, y, z, etc.
 
 (check= (varp '-) nil)
 (check= (varp '+) nil)
@@ -58,28 +132,27 @@
 (check= (varp 'x1) t)
 (check= (varp 'y) t)
 
-; The defdata-subtype-strict form, below, is used to check that one
-; type is a subtype of another type. This is a proof of the claim that
-; var is a subtype of symbol.
+;; The defdata-subtype-strict form, below, is used to check that one
+;; type is a subtype of another type. This is a proof of the claim that
+;; var is a subtype of symbol.
 
 (defdata-subtype-strict var symbol)
 
-; To see that symbol is not a subtype of var, we can use test? to
-; obtain a counterexample to the claim. The must-fail form succeeds
-; iff the test? form fails, i.e., it finds a counterexample.
+;; To see that symbol is not a subtype of var, we can use test? to
+;; obtain a counterexample to the claim. The must-fail form succeeds
+;; iff the test? form fails, i.e., it finds a counterexample.
 
 (must-fail (test? (implies (symbolp x)
 			   (varp x))))
 
-;;; We use defdata to define boper the binary operators (same as lab):
+;; We use defdata to define boper the binary operators (same as lab):
 
 (defdata boper (enum '(+ - *)))
 
 (check= (boperp '*) t)
 (check= (boperp '^) nil)
 
-;;; 1. Use defdata to define rpnexpr with an inductive data definition:
-
+;; 1. Use defdata to define rpnexpr with an inductive data definition:
 
 (check= (rpnexprp '45/3) t)
 (check= (rpnexprp '((x y +) (z -) -)) t)
@@ -128,6 +201,12 @@
 
 #| 
 
+Part II Semantics
+
+|# 
+
+#| 
+
 Next, we will define the semantics of reverse-polish notation
 expressions. The main complication here is extending the language
 from lab is to deal with vars. The idea is that to evaluate a var,
@@ -154,6 +233,9 @@ x.
 ;; 4. Define lookup, a function that given a variable x and an
 ;; environment ρ, returns the value of x in ρ. Use case-match in your
 ;; definition.
+
+
+
 
 #| 
 
@@ -191,9 +273,46 @@ Section 2.13 of the lecture notes.
  
 |#
 
+
+#| 
+
+Part III Specifying properties of this language w/ (test? ...) and
+rpneval.
+
+|# 
+
+#| 
+For each of the problems in this section:
+
+In the first (defconst ...) form, write a quoted acl2 property that is
+your translation of that question's English-language conjecture. Make
+sure and quote this property---that is you are definining a quoted
+list that *looks* like a property, and that absent the quote, we could
+run as a property. Remember to include all necessary
+preconditions. There are often many propositionally-equivalent ways to
+express these properties; any will be accepted. If in doubt, it is
+good practice to hew closer to form of the property expressed by the
+English.
+
+Then, decide if that property is *valid* in the acl2s universe. 
+
+If you think the property is valid, then define the
+t-or-counterexample form to be "t" (not, btw, in the double quotation
+marks, that is to distinguish [use from
+mention](https://en.wikipedia.org/wiki/Use-mention).
+
+If on the other hand you think the property is falsifiable, then write
+a quoted list representing a counter-example. This counter-example
+will look like the bindings of a let form that would give admissible
+values to each of the variables in your property, and for which your
+property will not hold.
+
+We provide an example below:
+
+|# 
+
 (check= (rpneval '((x y +) (z -) -) '((y . 3/2) (z . 1/2)))
         3)
-
 
 #|
  
@@ -213,26 +332,36 @@ Section 2.13 of the lecture notes.
  
 |#
 
-;; 6. Specify the following properties using (test? ...) and rpneval.
 
-;; A. A = ((A -) -), in RPNEL, for any rational A.
-(defconst *6a* )
+;; 6. A = ((A -) -), in RPNEL, for any rational A.
+(defconst *conjecture-6* )
+(defconst *conjecture-6-t-or-counterexample* )
 
-;; B. (A B -) = (A (B -) +), in RPNEL, for any rationals A and B.
-(defconst *6b* )
+;; 7. (A B -) = (A (B -) +), in RPNEL, for any rationals A and B.
+(defconst *conjecture-7* )
+(defconst *conjecture-7-t-or-counterexample* )
 
-;; C. (A (B C +) *) = ((A B *) (A C *) +), in RPNEL, for any rationals A, B & C.
-(defconst *6c* )
+;; 8. (A (B C +) *) = ((A B *) (A C *) +), in RPNEL, for any rationals A, B & C.
+(defconst *conjecture-8* )
+(defconst *conjecture-8-t-or-counterexample* )
 
-;; D. (E1 E2 -) = (E1 (E2 -) +), in RPNEL, for any rpnexprs E1 and E2.
-(defconst *6d* )
+;; 9. (E1 E2 -) = (E1 (E2 -) +), in RPNEL, for any rpnexprs E1 and E2.
+(defconst *conjecture-9* )
+(defconst *conjecture-9-t-or-counterexample* )
 
-;; E. (E1 (E2 E3 +) *) = ((E1 E2 *) (E1 E3 *) +), in RPNEL,
+;; 10. (E1 (E2 E3 +) *) = ((E1 E2 *) (E1 E3 *) +), in RPNEL,
 ;;    for any rpnexpr's E1, E2, E3.
-(defconst *6e* )
+(defconst *conjecture-10* )
+(defconst *conjecture-10-t-or-counterexample* )
 
 ;;; RPNPRGM Langauge 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+#| 
+
+Part VI : Another Language
+
+|# 
 
 #|
 
@@ -248,7 +377,7 @@ syntactically distinguish good programs from bad.
 
 |# 
 
-;; 7. Why is it now harder to syntactically distinguish good programs
+;; 11. Why is it now harder to syntactically distinguish good programs
 ;; from bad?
 
 #|
@@ -260,7 +389,9 @@ just "data". Unary negation is now written "0-".
 
 (defdata data (oneof (enum '(+ - * 0-)) rational)) ;; var
 
-;; 8. Why is unary "-" (negation) now written "0-"?
+;; 12. Why is unary "-" (negation) now written "0-"?
+
+
 
 ;; We use defdata to define rpnpgm with an inductive data definition:
 (defdata rpnprgm (listof data))
@@ -271,13 +402,13 @@ just "data". Unary negation is now written "0-".
 
 (check= (rpnprgmp '(2 3 4 5 6)) t)
 
-;;; !?
+;; !?
 
-;;; This is believe it or not okay. We can have extra numbers. This is
-;;; just the result of a partially completed calculation. If this were
-;;; a calculator, you could imagine someone adding the next couple of
-;;; characters at the base of the program, so that the full program is
-;;; (2 3 4 5 6 - + - -).
+;; This is believe it or not okay. We can have extra numbers. This is
+;; just the result of a partially completed calculation. If this were
+;; a calculator, you could imagine someone adding the next couple of
+;; characters at the base of the program, so that the full program is
+;; (2 3 4 5 6 - + - -).
 
 ;; The answer in that case is 2.
 
@@ -304,7 +435,7 @@ occurs anywhere in the evaluation of the expression).
 (defdata rat-or-err (oneof rational er))
 
 
-;; 9. See following the check='s to see examples the idea; add a few
+;; 13. See following the check='s to see examples the idea; add a few
 ;; of your own.
 
 (check= (rat-or-errp 5)      t)
@@ -318,7 +449,7 @@ occurs anywhere in the evaluation of the expression).
 
 
 
-;; 10. Complete the impementation of rpnprgmeval-help. You can omit
+;; 14. Complete the impementation of rpnprgmeval-help. You can omit
 ;; variables in your implementation, or not. If you add them, remember
 ;; to reintroduce them into your data definition.
 
@@ -337,7 +468,6 @@ occurs anywhere in the evaluation of the expression).
 
     
     ((n . res) (rpnprgmeval-help res `(,n . ,stk)))))
-
 (definec rpnprgmeval (pgm :rpnprgm) :rat-or-err
   (rpnprgmeval-help pgm '()))
 
@@ -357,7 +487,7 @@ rpnprgmeval.
 
 |#
 
-;; 11. What important difference do you see? Speculate as to why this
+;; 15. What important difference do you see? Speculate as to why this
 ;; is.
 
 
