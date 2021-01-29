@@ -34,9 +34,9 @@ due:
    credit will not be given.
  
  * You may not use built-in procedures that handle the bulk of the
-   work. For example, you may not use the append function from. But
-   once you have defined your own append feel free to use it for later
-   problems.
+   work. For example, you may not use lisp's append function if we ask
+   you to implement a my-append function. But once you have defined
+   your own append feel free to use it for later problems.
  
 ## Further technical and pedantic instructions: 
 
@@ -49,8 +49,9 @@ due:
  - Make sure ACL2s accepts the entire file. 
 
  - If you don't finish all problems, comment the unfinished ones
-   out. You must not leave any uncommented `...` in the code. Files we
-   cannot immediately run we will mark a 0. 
+   out. You must not leave any incomplete expressions or un-commented
+   `...` in the code. We will mark 0 all files we cannot immediately
+   run.
    
  - Use comments for any English text that you add. You will see
    exemplary comments in the starting file.
