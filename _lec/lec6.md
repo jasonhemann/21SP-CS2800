@@ -1,5 +1,5 @@
 ---
-title: Propositional Logic
+title: Propositional Logic: Useful Equalities, Techniques, and Decision Problems
 date: 2021-02-01
 ---
 
@@ -56,7 +56,7 @@ date: 2021-02-01
 
   "Show me a man with a tattoo, and I’ll show you a man with an interesting past." —Jack London
   
-  Truth tables. 
+##  Truth table
 
 ```
   | A  | B  | B => A | A => (B => A) |
@@ -87,3 +87,9 @@ date: 2021-02-01
   
   - Unsatisfiable
   
+
+# Reading 
+
+  Pre-reading quiz. 
+
+# Where we last left off.
