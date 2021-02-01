@@ -32,6 +32,8 @@ date: 2021-02-01
   These are the things that follow from others, analytically.
   
   whereas synthetics are the things we induce from experience. 
+  
+# Logic: To find that which is true
 
 # Aristotle's logic. Part-whole logic. 
   
@@ -59,11 +61,11 @@ date: 2021-02-01
 ##  Truth table
 
 ```
-  | A  | B  | B => A | A => (B => A) |
-  | tt | tt | tt     | tt            |
-  | ff | tt | ff     | tt            |
-  | tt | ff | tt     | tt            |
-  | ff | ff | tt     | tt            |
+  |  A  |  B  |  B => A | A => (B => A) |
+  |   t |   t |   t     | t             |
+  | nil |   t | nil     | t             |
+  |   t | nil |   t     | t             |
+  | nil | nil |   t     | t             |
 ```
 
    ```
@@ -86,10 +88,3 @@ date: 2021-02-01
   - Satisfiability
   
   - Unsatisfiable
-  
-
-# Reading 
-
-  Pre-reading quiz. 
-
-# Where we last left off.
