@@ -1,5 +1,6 @@
 ---
-title: Propositional Logic: Useful Equalities, Techniques, and Decision Problems
+title: Propositional logic - useful equalities, techniques, and decision problems
+liquid: enabled
 date: 2021-02-01
 ---
 
@@ -56,7 +57,7 @@ date: 2021-02-01
    Difficult and frustrating at times, for students. B/c the way we
    use implication here isn't the way you would normally use it.
 
-  "Show me a man with a tattoo, and I’ll show you a man with an interesting past." —Jack London
+  "Show me a man with a tattoo, and I’ll show you a man with an interesting past." -Jack London
   
 ##  Truth table
 
@@ -69,15 +70,15 @@ date: 2021-02-01
 ```
 
    ```
-    NOT     !
+    NOT     ! ¬ 
 
-    AND     &
-    OR      v
+    AND     & ∧
+    OR      v ∨ 
 
-    IMPLIES =>
+    IMPLIES => → 
 
-    EQUIV   ==
-    XOR     ><
+    EQUIV   == ≡ 
+    XOR     >< 
    ```
 
   
