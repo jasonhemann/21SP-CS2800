@@ -113,6 +113,11 @@ to <=, ie, is non-decreasing and is nil otherwise.
 ;; when l is empty and when it has 1 element. In this case, why does
 ;; contract checking work?
 
+#| 
+Answer: 
+
+|#
+
 
 ;; 3. Complete the following check= forms. 
 
