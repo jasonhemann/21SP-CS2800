@@ -1,6 +1,6 @@
 #|
 
-Lab 4
+HW4a
 
 |#
 
@@ -24,8 +24,8 @@ PART I: SETS AND SETUP
 ;; 1. You should implement here COUNT-SUBFORMULAE, a function that
 ;; takes a propexpr p and returns a count of the number of
 ;; sumformulae. In your implementation here you need not take
-;; uniqueness into account. You should use CASE-MATCH in your
-;; definition.
+;; uniqueness into account. You should use CASE-MATCH to match against
+;; the cases of your datatype in your definition.
 
 #| 
 
@@ -59,7 +59,6 @@ sets](https://www.cs.utexas.edu/users/moore/acl2/manuals/current/manual/?topic=A
 |#
 
 
-
 (check= (all-subformulae '((X & X) & X))
 	'(X (X & X) ((X & X) & X)))
 
@@ -83,12 +82,13 @@ PART II: SIGNED IN BLOOD
 
 #|
 
-The following are websites that construct tables for you. You could
-type in the data by hand, or you could import it from a spreadsheet
-tool, or something like that.
+It turns out that we represent truth tables in ACL2s. We represent
+them as lists of lists.
+
+The following are websites that construct tables for you. 
 
 https://www.tablesgenerator.com
-https://tableconvert.com/
+https://tableconvert.com
 
 If you work in Emacs, you must know you have already a built-in
 [spreadsheet
@@ -96,11 +96,15 @@ editor/constructor](https://orgmode.org/manual/Tables.html#Tables). With
 ~orgtbl-mode~ you could use this functionality directly in your
 buffer.
 
+Or you could create such a table in a spreadsheet tool, or something
+like that. You should know how to programmatically translate these
+into our own format. 
+
 |# 
 
-;; 3. In the space below, re-write the following sentence:
-;;    "I will not construct these ascii truth tables by hand."
-;;    You may hold your hand to your heart as you do so.
+;; 3. In the space below, re-write the following sentence: "I will not
+;;    construct these truth tables by hand."  You may hold your hand
+;;    to your heart as you do so.
 
 
 #| 
@@ -120,132 +124,144 @@ obviously exist online. If they did not, we could easily build one in
 ACL2. So let me suggest then that you try to do the below exercises
 yourself, and then use something like this to check your final
 answer. You get all the practice and should lose no points on this
-section.
+section. 
 
 For each of the following Boolean formulas:
 
-A. Construct the truth table. Create a column for each of the
-   forumula's subexpressions. List the formulas' variables in the
-   leftmost columns, and list those variables in alphabetical order.
+A. Construct the truth table as a row-major list of lists. Your first
+   row must be a "header" listing each of the forumula's
+   subexpressions, with the formulas' variables listed first. Notice
+   you must fully parenthesize these expressions. You will have
+   2^{number of distinct variables in the formula}+1 rows in your
+   table.
 
-B. Indicate if the formula is (a) valid, (b) unsatisfiable, or (c)
-   both satisfiable and falsifiable. 
+B. Indicate if the formula is
+   'valid
+   'unsatisfiable
+   
+   or, if it is instead both satisfiable and falsifiable, write n, the
+   number of satisfying assignments.
 
-B2. If you chose (c) also indicate how many assignments satisfy the
-   formula.
+C. Answer t if this is a minimal formula for these assignments.
+   Here "a minimal formula" means that no propositionally equivalent
+   formula has fewer subformulae. If it is not a minimal formula,
+   instead construct a truth table for an equivalent minimal
+   formula. The variable columns of the tables for the old and new
+   formulae should be identical. That is to say, even if you wind up
+   simplifying away a variable, include it in this truth table anyway
+   so that you can compare the new truth table with the previous
+   one. 
 
-C. Answer, with "yes" or "no": "Is this a minimal formula for these
-   assignments?" Here "a minimal formula" means that no
-   propositionally equivalent formula has fewer subformulae. 
+   (If you answered "no" for part C, you could try to write a TEST?
+   expression stating that the original formula and your new formula
+   are equivalent. ACL2s includes a decision procedure for validity,
+   so you can use it as a SAT/validity solver to check your work. (For
+   example, you can use it to check your characterization of formulas
+   in part B, above.) Use the ACL2s logical operators for your
+   expressions.)
 
-C2. If you chose "no", demonstrate this by finding an equivalent
-   minimal formula and constructing a truth table for your new
-   formula. The final columns of the old and new formulae should be
-   identical. If you wind up simplifying away a variable, include it
-   in the truth table anyway so that you can compare the new truth
-   table with the previous one.
+   We quote the data here for you so that your file will run. 
 
-C3. If you chose "no", write a TEST? expression stating that the
-   original formula and your new formula are equivalent. This should
-   *not* be in a comment. ACL2s includes a decision procedure for
-   validity, so you can use it as a SAT/validity solver to check your
-   work. (For example, you can use it to check your characterization
-   of formulas in part B, above.) Use the ACL2s logical operators for
-   your expressions.
+   Here is a worked-out example for you.
 
- (If you want to also automate the checks for the number of
-  subformulae, you would operate over *our* expression language, and
-  use `valof` from lec5.lisp, or implement a translator between our
-  language and acl2s logic expressions, and show a theorem about how
-  they behave wrt one another. We will not do this.)
-
-Here is a worked-out example for you.
-
-((q v (! q)) & p)
-
-A: 
-
-| p  | q  | (! q)  | (q v (! q))  | ((q v (! q)) & p)  |
-|----+----+--------+--------------+--------------------|
-| tt | tt |     ff |           tt |                 tt |
-| tt | ff |     tt |           tt |                 tt |
-| ff | tt |     ff |           tt |                 ff |
-| ff | ff |     tt |           tt |                 ff |
-
-B: (c) both satisfiable and falsifiable
-
-B2: 2
-
-C: no
-
-C2: 
-
-|  p |  q |  p | 
-|----+----+-----
-| tt | tt | tt |
-| tt | ff | tt |
-| ff | tt | ff |
-| ff | ff | ff |
-
-C3:
 |#
 
-(test? (implies (and (booleanp p)          
-                     (booleanp q))
-		(equal (and (or q (not q)) p)
-		       p)))  
+(defdata partb (oneof (enum '(valid unsatisfiable)) nat))
+
+(defconst *example*
+  '((q v (! q)) & p))
+
+;; A: 
+
+(defconst *example-a* 
+  '((p   q   (! q) (q v (! q)) ((q v (! q)) & p))
+    (T   T   NIL   T           T)
+    (T   NIL T     T           T)
+    (NIL T   NIL   T           NIL)
+    (NIL NIL T     T           NIL)))
+
+;; B:
+
+(defconst *example-b* 2)
+
+;; C: 
+
+(defconst *example-c*
+  '((p   q   p)
+    (T   T   T)
+    (T   NIL T)
+    (NIL T   NIL)
+    (NIL NIL NIL)))
                              
-;; 4. ((p => ff) == (! p))
+;; 4.
 
-#|
-A: ...
-B: ...
-C: ...
-|#
+(defconst *problem-4*
+  '((p => nil) == (! p)))
 
 
-;; 5. (((r => (r => q)) => (r => q)))
+;; A:
+(defconst *problem-4a* )
 
-#|
-A: ...
-B: ...
-C: ...
-|#
+;; B: ...
+(defconst *problem-4b* )
+
+;; C: ...
+(defconst *problem-4c* )
+
+
+;; 5.
+(defconst *problem-5*
+  '(((r => (r => q)) => (r => q))))
+
+
+;; A: ...					
+(defconst *problem-5a*  )
+
+;; B: ...					
+(defconst *problem-5b*  )
+(partbp *problem-5b)
+
+;; C: ...
+(defconst *problem-5c*  )
+
 
 ;; 6. ((! (! p)) => p)
 
+
+;; A: ...					
+(defconst *problem-6a*  )
+
+;; B: ...		
+(defconst *problem-6b*  )			
+(partbp *problem-6b)
+
+;; C: ...		
+(defconst *problem-6c*  )			
+
 #|
-A: ...
-B: ...
-C: ...
-|#
-
-
-#|
-
-PART IV: Read and React
-===============================================================================
-
-Read [the following article/blog
+					
+PART IV: Read and React			
+=============================================================================== 
+					
+Read [the following article/blog	
 post](https://research.swtch.com/boolean) on Minimal Boolean Formulas
-and write a reaction via answers to the following questions. You may
-not understand everything, but that's okay! If you are on reading on
-Desktop, and the fonting produces odd artifacts, consider opening the
-Inspector in your browser (i.e. "Inspect Element") and disable the
-'Minion Pro' font family styling.
-
-You may not need to put all of these information and techniques into
-practice; this is a blog post. But consider reading about [How to read
-a research paper](https://dl.acm.org/doi/10.1145/1273445.1273458).
-
-BTW, although the related website is longer active, you can find the
-author's code archived
-[here](https://code.google.com/archive/p/boolean-oracle/).
-
+and write a reaction via answers to the following questions. You may 
+not understand everything, but that's okay! If you are on reading on 
+Desktop, and the fonting produces odd artifacts, consider opening the 
+Inspector in your browser (i.e. "Inspect Element") and disable the 
+'Minion Pro' font family styling.      
+					
+You may not need to put all of these information and techniques into 
+practice; this is a blog post. But consider reading about [How to read 
+a research paper](https://dl.acm.org/doi/10.1145/1273445.1273458). 
+					
+BTW, although the related website is longer active, you can find the 
+author's code archived			
+[here](https://code.google.com/archive/p/boolean-oracle/). 
+					
 Your answers to each should be one to a couple of paragraphs. 
-
+					
 |#
-
 
 ;; 7. 
 
