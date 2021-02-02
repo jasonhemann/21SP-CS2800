@@ -26,7 +26,8 @@ system](https://khouryofficehours.com/), helping students on a
 first-come, first-serve basis. Jason has linked his calendar so you
 can [book a 20 minute
 appointment](https://calendar.google.com/calendar/selfsched?sstoken=UUVKdFI5MHpUQ1FlfGRlZmF1bHR8ZTIwOGYzMTQ1NjFjNTRlNDU4NDZmODc5MmFiMjIxNGI)
-during his office hours. Otherwise [email me]({{ site.baseurl }}/syllabus/#contact) for an appointment.
+for a Teams call during his office hours. Otherwise [email me]({{
+site.baseurl }}/syllabus/#contact) for an appointment.
 
 
 {% raw %} 
