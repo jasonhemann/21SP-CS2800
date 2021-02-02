@@ -474,7 +474,7 @@ occurs anywhere in the evaluation of the expression).
 
 (check= (rpnprgmeval '(*)) 'error)
 (check= (rpnprgmeval '(3 5 * * 2 3 + - *)) 'error)
-(check= (rpnprgmeval '(2 3 4 5 6 - + - -) 2))
+(check= (rpnprgmeval '(2 3 4 5 6 - + - -)) 2)
 (check= (rpnprgmeval '(3 5 2 3 + - *)) 0)
 
 #| 
