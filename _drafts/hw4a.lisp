@@ -152,13 +152,12 @@ C. Answer t if this is a minimal formula for these assignments.
    so that you can compare the new truth table with the previous
    one. 
 
-   (If you answered "no" for part C, you could try to write a TEST?
-   expression stating that the original formula and your new formula
-   are equivalent. ACL2s includes a decision procedure for validity,
-   so you can use it as a SAT/validity solver to check your work. (For
-   example, you can use it to check your characterization of formulas
-   in part B, above.) Use the ACL2s logical operators for your
-   expressions.)
+   (If you answered "no" for part C, you *could* try to use the ACL2s
+   logical operators and write a TEST? expression stating that the
+   original formula and your new formula are equivalent. ACL2s
+   includes a decision procedure for validity, so you can use it as a
+   SAT/validity solver to check your work. For example, you can use
+   it to check your characterization of formulas in part B, above.)
 
    We quote the data here for you so that your file will run. 
 
@@ -225,7 +224,9 @@ C. Answer t if this is a minimal formula for these assignments.
 (defconst *problem-5c*  )
 
 
-;; 6. ((! (! p)) => p)
+;; 6. 
+(defconst *problem-6*
+  '((! (! p)) => p))
 
 
 ;; A: ...					
