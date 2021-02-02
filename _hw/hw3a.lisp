@@ -76,9 +76,9 @@ Homework 3a.
 
 ;; Part 1: Reviewing Function Definitions 
 
-;; Fill in the missing definitions and complete the incomplet check=
-;; forms. Ofc, also provide sufficient check=s and/or test?s of your
-;; own.
+;; Fill in the missing definitions and complete the incomplete check=
+;; forms. Of course, also provide sufficient check=s and/or test?s of
+;; your own.
 
 ;; 1. subst-in-list: All x All x TL -> TL
 ;; (subst-in-list: old new l) replaces every element of l
@@ -90,10 +90,10 @@ Homework 3a.
 
 (check= (subst-in-list 'x 'd '(c o d e x)) '(c o d e d))
 (check= (subst-in-list 'a 'b '()) '())
-(test?  (equal (subst-in-list b c (subst-in-list a b x))
-           (subst-in-list b c (subst-in-list (a c x)))))
+(test? (equal (subst-in-list b c (subst-in-list a b x))
+              (subst-in-list b c (subst-in-list a c x))))
 (test? (equal (subst-in-list b a (subst-in-list a b x))
-          (subst-in-list b a x)))
+              (subst-in-list b a x)))
 
 (defdata lor (listof rational))
 
@@ -215,7 +215,7 @@ What do you know about [RPN and RPN
 calculators](https://hansklav.home.xs4all.nl/rpn/)? Soon you will know
 lots!
 
-Back in the day, because computers' had such limited memory HP and
+Back in the day, because computers had such limited memory, HP and
 other companies produced calculators in which you would input the
 operators not infix, not [prefix like god
 intended](https://imgs.xkcd.com/comics/lisp.jpg), but postfix. This
@@ -263,8 +263,8 @@ A binary operation, boper, is one of +, -, or *
 
 |#
 
-;; 12. Use defdata to define boper the binary operators. This really
-;; means that you should define the symbol names of the SEAL binary
+;; 12. Use defdata to define boper, the binary operators. This really
+;; means that you should define the symbol names of the SRPNEL binary
 ;; operators, which are shown above.
 
 
