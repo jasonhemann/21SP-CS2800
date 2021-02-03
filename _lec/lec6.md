@@ -1,5 +1,5 @@
 ---
-title: Propositional logic - useful equalities, techniques, and decision problems
+title: Propositional logic, Truth tables, computing values, notions valuation
 liquid: enabled
 date: 2021-02-01
 ---

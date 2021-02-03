@@ -1,5 +1,6 @@
 ---
 title: Property-based testing, and the utility. 
+liquid: enabled
 date: 2021-01-28
 ---
 

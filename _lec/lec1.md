@@ -1,6 +1,5 @@
 ---
 title: About the course
-layout: single
 liquid: enabled
 date: 2021-01-20
 ---
