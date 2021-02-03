@@ -1,6 +1,6 @@
 ---
 title: Substitutions, `case-match`, decision problems, reductions
-date: 2021-09-23
+date: 2021-02-03
 ---
 
 # Valid formulae

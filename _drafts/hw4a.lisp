@@ -172,6 +172,10 @@ into our own format.
 ;;    construct these truth tables by hand."  You may hold your hand
 ;;    to your heart as you do so.
 
+#| 
+Answer: 
+
+|# 
 
 #| 
 
@@ -330,28 +334,46 @@ Your answers to each should be one to a couple of paragraphs.
 					
 |#
 
-;; 7. 
+;; 7. What is the author's primary result in this work?
+#| 
+Answer: 
 
-;; a. What is the author's primary result in this work?
+|# 
 
-;; b. What background problems or related work does the author mention
+;; 8. What background problems or related work does the author mention
 ;;    to motivate/inspire/contextualize his work?
+#| 
+Answer: 
 
-;; c. List three technical terms/results/"computer sciencey things"
+|# 
+
+;; 9. List three technical terms/results/"computer sciencey things"
 ;;    that are mentioned in the piece with which you were previously
 ;;    unfamiliar and explain them as you now understand them (as a
 ;;    result of reading about them in this context, and from looking
 ;;    them up to find out more for background.)
 ;;    
+#| 
+Answer: 
 
-;; d. What data does the author present, and what do they mean? (By
+|# 
+
+;; 10. What data does the author present, and what do they mean? (By
 ;;    "what do they mean?" we want an answer of sufficient depth and
 ;;    explanation that someone who had only read titles/descriptions
 ;;    of those same data would not be able to give the same answer.)
+#| 
+Answer: 
+
+|# 
 
 
-;; e. What problems/questions does the author mention remain
-;;    open/unsolved? If this inspires you to any questions of your
-;;    own, list some of those here as well.
+;; 11. What problems/questions does the author mention remain
+;;     open/unsolved? If this inspires you to any questions of your
+;;     own, list some of those here as well.
+#| 
+Answer: 
+
+|# 
 
 
