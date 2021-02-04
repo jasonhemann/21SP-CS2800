@@ -60,7 +60,6 @@ date: 2021-02-04
      general solution to the decision problem PR2. For if there were,
      that would smuggle in a solution to PR1. 
 	 
-	 
 ## `f : X -> Bool iff { x ∈ X s.t. f(x) } ⊆ X`
 
   That is all to say that we can use the function from `X` into `Bool`
@@ -131,8 +130,6 @@ each disjunct is a big sequence of conjunctions of literals.
   
   Here, our process resulted every expression in a "normal form". 
 
-## P vs NP
-
 ### Detour example: cf. numbers
 
   As an example, we already know about bringing numbers to at least
@@ -157,6 +154,9 @@ each disjunct is a big sequence of conjunctions of literals.
   the number of cases over which you have to prove, or give yourself a
   better structured data to compute or prove over, then you'd likely
   want to do so.
+
+
+#### BTW: P vs NP
 
 ### Can we do better? 
 
