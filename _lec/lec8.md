@@ -1,6 +1,6 @@
 ---
 title: Decision problems, Complexity; P ?= NP; Reductions, Boolean logic in ACL2s; normal forms; set theory; 
-date: 2021-02-08
+date: 2021-02-04
 ---
 
 ## Decision Problems 
