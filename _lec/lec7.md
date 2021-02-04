@@ -41,6 +41,29 @@ You might want to restrict a function's domain for any number of
 reasons. One common example is trying to construct an inverse function
 `f(x)^{-1}`. Often the inverse is not a function.
 
+## `f : X -> Bool iff { x ∈ X s.t. f(x) } ⊆ X`
+
+  That is all to say that we can use the function from `X` into `Bool`
+  to pick out a particular subset of `X`. That's what a Boolean
+  function is: it's a way to pick out a subset of all the inputs.
+
+## So finally: instantiation.
+
+We can see a formula `(ϕ -> (ψ -> ϕ))` as a general form describing
+all the particular instances of formulae of that shape.
+
+  - `(a -> (b -> a))` 
+  - `((d ≡ b) -> (g -> (d ≡ b)))` 
+  - `((p -> q) -> ((p -> q) -> (p -> q)))` 
+  - `(d -> (d -> d))` 
+  
+  In fact we can see this formula schema `(ϕ -> (ψ -> ϕ))` as
+  describing the _set_ of all its instances. And partially
+  instantiating `(ϕ -> ((d ≡ b) -> ϕ))` means that a whole bunch of
+  formulae no longer fit this scheme. We've shrunk the set of
+  instances that it represents. Instantiation is a kind of
+  restriction. 
+
 ### Q: Why is the inverse not a function? 
 
 So, after we appropriately restrict the domain of the function `f` to
