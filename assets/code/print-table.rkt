@@ -8,6 +8,24 @@
 ;; regular Racket language, and that you have installed the left-pad
 ;; package via the package manager.
 
+#| 
+
+Usage: 
+
+> (pprint-table   
+   '((p q (! q) (q v (! q)) ((q v (! q)) & p))
+     (T T NIL T T)
+     (T NIL T T T)
+     (NIL T NIL T NIL)
+     (NIL NIL T T NIL)))
+'((  p   q (! q) (q v (! q)) ((q v (! q)) & p))
+  (  T   T   NIL           T                 T)
+  (  T NIL     T           T                 T)
+  (NIL   T   NIL           T               NIL)
+  (NIL NIL     T           T               NIL))
+
+|# 
+
 (define (build-header ls)
   (map (lambda (e)
          (max bool-size (string-length (format "~a" e))))
