@@ -138,8 +138,6 @@ BTW, you may find the built-in ALIST and ALISTP of use to you.
 ;;; 3. Write MY-ASSOC, your own implementation of the lisp ASSOC
 ;;; function. You should not use ASSOC anywhere in your definition. 
 
-(defdata maybe-pair (oneof nil cons))
-
 
 
 #| 

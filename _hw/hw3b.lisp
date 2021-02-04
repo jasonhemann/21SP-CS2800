@@ -64,431 +64,283 @@
 ; ******************* END INITIALIZATION FOR ACL2s MODE ******************* ;
 ;$ACL2s-SMode$;ACL2s
 
-#| 
-  - These commands are simplifying your interactions with ACL2s
-
-  - Do not remove them.
-
-  - To learn more about what they do, see Ch2 found on the course
-	readings page
-|#
-
 (set-defunc-termination-strictp nil)
 (set-defunc-function-contract-strictp nil)
 (set-defunc-body-contracts-strictp nil)
 
-;; This directive forces ACL2s to generate contract theorems that
-;; correspond to what we describe in the lecture notes.
-(set-defunc-generalize-contract-thm nil)
-
 #| 
 
-This part of your hw picks up where the last part of your hw left
-off. In hw3a, we used ACL2s to define the syntax and semantics of
-SRPNEL (Simple Reverse Polish Notation Expression Language). In this
-homework, we will use ACL2s to define the syntax and semantics of two
-RPNELs (Reverse Polish Notation Expression Languages), so make sure
-you have done hw3a already. 
+4b is continuates of what you studied in 4a earlier this
+week. Therefore, you may find it of considerable interest to complete
+4a first, and then return to this afterward. Don't sleep on this one,
+though.
 
 |# 
 
 #| 
 
-Part I Defining a Syntax
+PART I: PROPOSITIONAL LOGIC BASICS
+===============================================================================
+
+For each of the following Boolean formulas:
+
+A. Construct the truth table as a row-major list of lists. Your first
+   row must be a "header" listing each of the forumula's
+   subexpressions, with the formulas' variables listed first. Notice
+   you must fully parenthesize these expressions. You will have
+   2^{number of distinct variables in the formula}+1 rows in your
+   table.
+
+B. Indicate if the formula is
+   'valid
+   'unsatisfiable
+   
+   or, if it is instead both satisfiable and falsifiable, write n, the
+   number of satisfying assignments.
+
+C. Answer t if this is a minimal formula for these assignments.
+   Here "a minimal formula" means that no propositionally equivalent
+   formula has fewer subformulae. If it is not a minimal formula,
+   instead construct a truth table for an equivalent minimal
+   formula. The variable columns of the tables for the old and new
+   formulae should be identical. That is to say, even if you wind up
+   simplifying away a variable, include it in this truth table anyway
+   so that you can compare the new truth table with the previous
+   one. 
+
+   (If you answered "no" for part C, you *could* try to use the ACL2s
+   logical operators and write a TEST? expression stating that the
+   original formula and your new formula are equivalent. ACL2s
+   includes a decision procedure for validity, so you can use it as a
+   SAT/validity solver to check your work. For example, you can use
+   it to check your characterization of formulas in part B, above.)
+
+   We quote the data here for you so that your file will run. 
+
+   Please refer to your 4a for a worked-out example.
 
 |# 
+(defdata partb (oneof (enum '(valid unsatisfiable)) nat))
+
+;; 1.
+(defconst *problem-1*
+  '((p => q) => (! (p => (! q)))))
+
+;; A: ...
+(defconst *problem-1a* )
+
+;; B: ...
+(defconst *problem-1b* )
+(partbp *problem-1b*)
+
+;; C: ...
+(defconst *problem-1c* )
+
+
+;; 2.
+(defconst *problem-2*
+  '(((r => q) => r) => r))
+
+;; A: ...
+(defconst *problem-2a* )
+
+;; B: ...
+(defconst *problem-2b* )
+(partbp *problem-2b*)
+
+;; C: ...
+(defconst *problem-2c* )
+
+
+;; 3. 
+(defconst *problem-3*
+  '((r => (! q)) => (q => (! q))))
+
+;; A: ...
+(defconst *problem-3a*)
+
+;; B: ...
+(defconst *problem-3b*)
+(partbp *problem-3b*)
+
+;; C: ...
+(defconst *problem-3c*)
+
 
 #| 
+PART II: IN WE RECOGNIZE THE LION BY HIS CLAUSE
+===============================================================================
 
- A (general) reverse-polish notation expression---an rpnexpr---extends
- srpnexpr with variables. It is one of the following:
+We know that it can be quite complicated to find satisfying
+assignments for boolean formulae, or even to know if one exists. In
+fact, the boolean satisfiability problem is NP-Complete. This places
+it with the hardest of the hard problems in NP. So, we will set our
+sights a little lower. We will restrict ourselves to a particular form
+of boolean formulae and study if that helps.
 
-- a rational number (we use the builtin type rational)
+We will study here propositional formulae in a form called HSF. HSF
+formulae are a special instance of formulae in CNF. The HSF formulae
+are, like CNF formulae, a conjunction of disjunctions of literals. In
+HSF, each sequence of disjunctions (a sequence of disjunctions is
+called a "clause") has at *most* one positive literal (i.e. at *most*
+one non-negated propositional variable.) Notice this simplification
+removes the boolean constants for truth and falsity themselves.
 
-- a variable (we use the builtin type var)
-
-- a list of the form 
-    (<rpnexpr> -)
-  where <rpnexpr> is an arithmetic expression
-
-- a list of the form
-    (<rpnexpr> <rpnexpr> <boper>)
-  where <boper> is one of +, -, or * (the same as SRPNEL)
-  and both <rpnexpr>'s are arithmetic expressions.
-
+;; The following are clauses:
 |#
 
-;; Vars are just a restricted set of the symbols. 
-;; The specifics of which symbols are vars is not all that important
-;; for our purposes. All we need to know is that vars are symbols and
-;; they do not include any of the RPNEL operators. Examples of vars include
-;; symbols such as x, y, z, etc.
-
-(check= (varp '-) nil)
-(check= (varp '+) nil)
-(check= (varp '*) nil)
-(check= (varp '/) nil)
-(check= (varp 'x) t)
-(check= (varp 'x1) t)
-(check= (varp 'y) t)
-
-;; The defdata-subtype-strict form, below, is used to check that one
-;; type is a subtype of another type. This is a proof of the claim that
-;; var is a subtype of symbol.
-
-(defdata-subtype-strict var symbol)
-
-;; To see that symbol is not a subtype of var, we can use test? to
-;; obtain a counterexample to the claim. The must-fail form succeeds
-;; iff the test? form fails, i.e., it finds a counterexample.
-
-(must-fail (test? (implies (symbolp x)
-			   (varp x))))
-
-;; We use defdata to define boper the binary operators (same as lab):
-
-(defdata boper (enum '(+ - *)))
-
-(check= (boperp '*) t)
-(check= (boperp '^) nil)
-
-;; 1. Use defdata to define rpnexpr with an inductive data definition:
-
-(check= (rpnexprp '45/3) t)
-(check= (rpnexprp '((x y +) (z -) -)) t)
-(check= (rpnexprp '(x y z +)) nil)
-(check= (rpnexprp '(x + y + z)) nil)
-
-;; 2. What should the following check= forms evaluate to? Make sure
-;; you understand each argument that rpnexprp gets for input.
-
-(check= (rpnexprp  12) )
-(check= (rpnexprp '12) )
-(check= (rpnexprp ''12) )
-
-(check= (rpnexprp  (- 45))  )
-(check= (rpnexprp '(45 -))  )
-(check= (rpnexprp ''(45 -)) )
-
-(check= (rpnexprp  (+ 1/2 45)) )
-(check= (rpnexprp '(+ 1/2 45)) )
-(check= (rpnexprp ''(1/2 45 +)) )
-
-(check= (rpnexprp  (expt 2 3)) )
-(check= (rpnexprp '(expt 2 3)) )
-(check= (rpnexprp '(2 3 expt)) )
-(check= (rpnexprp '(2 expt 3)) )
-(check= (rpnexprp ''(expt 2 3)) )
-
-(check= (rpnexprp (car (cons 1 "hi there"))) )
-(check= (rpnexprp `(,(car (cons 1 "hi there")) 12 +)) )
-(check= (rpnexprp '(+ (car (cons 1 "hi there")) 12)) )
-(check= (rpnexprp '((car (cons 1 "hi there")) + 12)) )
-(check= (rpnexprp `(,(car (cons 1 "hi there")) + 12)) )
+'((! C) v A v (! B) v (! D))
+'((! C) v (! B) v (! D))
+'((! B) v (! D) v (! C))
+'((! D) v C)
+'(C)
 
 #|
 
- We have now defined RPNEL expressions in ACL2s. In fact, the use of
- defdata made this pretty easy and gave us a recognizer, rpnexprp, for
- RPNEL expressions. The RPNEL expressions are /still/ not a subset of
- ACL2s expressions. I am not going to ask you to provide an example of
- an RPNEL expression that is not a legal ACL2s expression.
+We can simplify the format even more. Since it's logically equivalent,
+we will arrange the clause so we list the positive literal at the end,
+if the clause contains a positive literal. In fact, for those with a
+positive literal, we will write them as implications. A conjunction of
+atoms imply one more. E.g., the implication B ^ C ^ D -> A for the
+first clause above. 
 
 |#
 
-;; 3. Why am I not going to bother asking you to provide an example?
- 
+;; 4. (Offer an explanation, in terms of our propositional
+;; equivalences, why or how this transformation is logically sound.)
 
 #| 
 
-Part II Semantics
+We will, in fact, go a step or two farther. We will instead write our
+implications, (and our arrows) backwards! In this syntax, Accessing
+the positive literal is simply taking the CAR. 
 
-|# 
+Since the "antecedents" of these implications are always a sequence of
+conjunctions, we shall elide writing out the '&'s and the
+parentheses. We will just hold the antecedents in a list. But you and
+I will know that the '&'s are there. 
 
-#| 
+This merely syntactic simplification doesn't make the problem easier,
+it just makes our lives easier.
 
-Next, we will define the semantics of reverse-polish notation
-expressions. The main complication here is extending the language
-from lab is to deal with vars. The idea is that to evaluate a var,
-we have to know what value it has. We will use an /environment/ to
-track and hold the values of variables.
-
-We will represent an environment as an alist from vars to
-rationals. When looking up a variable in an alist, we take the
-first binding we find with x as the car, as we scan the list from
-left to right. For a variable x and an environment ρ (for
-"enviρnment"), we say that the value of x in ρ is v (otherwise
-written ρ(x) = v) if (x . v) is the first binding that begins with
-x.
+Here is the result of the transformation for 3 of the clauses above.
 
 |#
 
-(defdata env (alistof var rational))
-
-(check= (envp '((x . 1) (y . 1/2))) t)
-
-;; This is nil because (1) and (1/2) are lists, not rationals.
-(check= (envp '((x 1) (y 1/2))) nil)
-
-;; 4. Define lookup, a function that given a variable x and an
-;; environment ρ, returns the value of x in ρ. Use case-match in your
-;; definition.
-
-
+'(A <= (B C D))
+'(C <= (D))
+'(C <= ())
 
 
 #| 
 
-If we look up a var that is not the left-hand side of a binding in
-the environment, then we will, by default right now, say that
-variable has the value 1. This is a bit like saying that all
-variables are pre-initialized to 1.
-
-Remember to use the "template" that defdatas give rise to as per
-Section 2.13 of the lecture notes. 
+We will simplify further still! Since all clauses *without* a positive
+literal are all disjunctions of negations, we don't need to write out
+the disjunctions. And in fact, we don't *need* to write out the
+negations. As long as we promise to keep track of which kind of clause
+is which.
 
 |# 
 
+'(C B D)
+'(B D C)
 
+#| 
 
-(check= (lookup 'x '((x . 0) (y . 2))) 0)
-(check= (lookup 'y '((x . 0) (y . 2))) 2)
-(check= (lookup 'z '((x . 0) (y . 2))) 1)
+Further, since all formulae in HSF are conjunctions of HCs, we will
+likewise omit writing the '&'s between the clauses. And we will list
+separately the clauses with a positive literal and those without. Once
+again, this bit of notational housekeeping is just for our piece of
+mind.
 
-;; 5. Define rpneval, a function that given an rpnexpr and an
-;; environment evaluates the expression, using the environment to
-;; determine the values of vars appearing in the expression. Use a
-;; case-match in your definition. This should be similar enough to
-;; what you did in lab that you /could/ consider copying some of that
-;; in and editing it. Remember to use the "template" that defdatas
-;; give rise to as per Section 2.13 of the Manolios textbook.
+|# 
 
+'((A <= (B C D))
+  (C <= ())
+  (C <= (D)))
 
-                    
-#|
+'((C B D)
+  (B D C))
 
- Congratulations! You have formally defined the syntax and semantics
- of RPNEL. The data definition for rpnexpr defines the syntax: it tells
- us what objects in the ACL2s universe are legal rpnexps.
- 
+#| 
+
+One final bit of housekeeping to simplify our lives, that you may or
+may not have already noticed. We will require that our lists of
+clauses, and the lists of negative literals in each clause, are listed
+in sorted order, and unique. That is to say, we represent them as
+ordered sets.
+
 |#
 
+'((B C D))
 
-#| 
+;; 5. Your task: implement an efficient (polynomial time) algorithm
+;; SATP for deciding the satisfiability of an HSF sentence in our
+;; format.
 
-Part III Specifying properties of this language w/ (test? ...) and
-rpneval.
-
-|# 
-
-#| 
-For each of the problems in this section:
-
-In the first (defconst ...) form, write a quoted acl2 property that is
-your translation of that question's English-language conjecture. Make
-sure and quote this property---that is you are definining a quoted
-list that *looks* like a property, and that absent the quote, we could
-run as a property. Remember to include all necessary
-preconditions. There are often many propositionally-equivalent ways to
-express these properties; any will be accepted. If in doubt, it is
-good practice to hew closer to form of the property expressed by the
-English.
-
-Then, decide if that property is *valid* in the acl2s universe. 
-
-If you think the property is valid, then define the
-t-or-counterexample form to be "t" (not, btw, in the double quotation
-marks, that is to distinguish [use from
-mention](https://en.wikipedia.org/wiki/Use-mention).
-
-If on the other hand you think the property is falsifiable, then write
-a quoted list representing a counter-example. This counter-example
-will look like the bindings of a let form that would give admissible
-values to each of the variables in your property, and for which your
-property will not hold.
-
-We provide an example below:
-
-|# 
-
-(check= (rpneval '((x y +) (z -) -) '((y . 3/2) (z . 1/2)))
-        3)
-
-#|
- 
- Let us unpack the above check= form.
-
- A: The first argument to rpneval is '((x y +) (z -) -), which is an
- ACL2s expression.
-
- B: That evaluates to ((x y +) (z -) -), which is not an ACL2s
- expression, but *is* an RPNEL expression; this is what rpneval gets
- as input.
-
- The function rpneval given us the meaning of this latter
- expression. In fact, the meaning of this latter expression depends on
- the meanings of x, y and z, which are provided by the environment. In
- this instance, the meanings are: 1, 3/2 and 1/2, respectively.
- 
-|#
-
-
-;; 6. A = ((A -) -), in RPNEL, for any rational A.
-(defconst *conjecture-6* )
-(defconst *conjecture-6-t-or-counterexample* )
-
-;; 7. (A B -) = (A (B -) +), in RPNEL, for any rationals A and B.
-(defconst *conjecture-7* )
-(defconst *conjecture-7-t-or-counterexample* )
-
-;; 8. (A (B C +) *) = ((A B *) (A C *) +), in RPNEL, for any rationals A, B & C.
-(defconst *conjecture-8* )
-(defconst *conjecture-8-t-or-counterexample* )
-
-;; 9. (E1 E2 -) = (E1 (E2 -) +), in RPNEL, for any rpnexprs E1 and E2.
-(defconst *conjecture-9* )
-(defconst *conjecture-9-t-or-counterexample* )
-
-;; 10. (E1 (E2 E3 +) *) = ((E1 E2 *) (E1 E3 *) +), in RPNEL,
-;;    for any rpnexpr's E1, E2, E3.
-(defconst *conjecture-10* )
-(defconst *conjecture-10-t-or-counterexample* )
-
-;;; RPNPRGM Langauge 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-#| 
-
-Part VI : Another Language
-
-|# 
 
 #|
 
-I believe I heard someone mutter ".. I'm tired of all these
-parentheses!" Rejoice! We can fix that! Unlike prefix notation or
-infix notation, this post-fix notation behaves in a stack-like
-discipline. This means that by using an ancillary stack sort
-of "under-the-hood", we can process programs in these languages
-without (m)any parentheses. Because for well-formed programs you can
-sort of "squint at" the program and put the parentheses back where
-they should be. But with our less rigorous syntax, it's now harder to
-syntactically distinguish good programs from bad.
+First, let us heavily suggest making use of [the SET library,
+implemented with ordered
+sets](https://www.cs.utexas.edu/users/moore/acl2/manuals/current/manual/?topic=ACL2____STD_F2OSETS).
+
+Secondly, although we do not intend to spoil your fun and excitement
+from learning, let us heavily suggest that you digest and entertain
+one or both of the algorithms described in [this
+paper](https://www.sciencedirect.com/science/article/pii/0743106684900141).
+
+Third, a hint: Sometimes you might need to write a predicate in order
+to describe the desired input as an input contract.
 
 |# 
 
-;; 11. Why is it now harder to syntactically distinguish good programs
-;; from bad?
-
-#|
-
-We have grouped the operators variables and rationals together as
-just "data". Unary negation is now written "0-".
-
-|# 
-
-(defdata data (oneof (enum '(+ - * 0-)) rational)) ;; var
-
-;; 12. Why is unary "-" (negation) now written "0-"?
+(defdata gc (listof var))
+(defdata gcs (listof gc))
+(defdata dc `(,var <= ,gc))
+(defdata hsf (listof dc))
 
 
+#| Given some starter code |# 
 
-;; We use defdata to define rpnpgm with an inductive data definition:
-(defdata rpnprgm (listof data))
+(definec satp (prg :hsf goal :gcs) :bool
+  ...) 
 
-(check= (rpnprgmp '(2 3 +)) t)
-(check= (rpnprgmp '(2 3 2 + -)) t)
-(check= (rpnprgmp '(2 3 2 + -)) t)
+(check= (satp '((r <= ()))
+	      '((r)))
+	'nil)
 
-(check= (rpnprgmp '(2 3 4 5 6)) t)
+(check= (satp '((r <= (s)))
+	      '((r)))
+	't)
 
-;; !?
+(check= (satp '((r <= (s))
+		(s <= (r)))
+	      '((s)))
+	t)
 
-;; This is believe it or not okay. We can have extra numbers. This is
-;; just the result of a partially completed calculation. If this were
-;; a calculator, you could imagine someone adding the next couple of
-;; characters at the base of the program, so that the full program is
-;; (2 3 4 5 6 - + - -).
+(check= (satp '((p <= (a b c d e))
+		(p <= (q r s v))
+		(r <= ())
+		(r <= (v x))
+		(s <= ())
+		(s <= (p q)))
+	      '((r s)))
+        nil)
 
-;; The answer in that case is 2.
+(check= (satp '((p <= (a b c))
+                (q <= (a b c))
+                (r <= (p q)))
+              '((r)))
+        t)
 
-
-;; But! A new issue has arisen!
-
-(check= (rpnprgmp '(+ + + + +)) t)
-
-#|
-
-It was okay when we had values left over on the stack. But we now also
-permit programs for which there aren't *enough* values.
-
-We handle this by introducing a special error value.
-
-We'll now say that an RPNPRGM expression can evaluate to a rational
-(if everything goes well), or to the error value (if an error
-occurs anywhere in the evaluation of the expression).
-
-|#
-
-
-(defdata er 'error)
-(defdata rat-or-err (oneof rational er))
-
-
-;; 13. See following the check='s to see examples the idea; add a few
-;; of your own.
-
-(check= (rat-or-errp 5)      t)
-(check= (rat-or-errp 'error) t)
-(check= (rat-or-errp "five") nil)
-
-(check= (rat-or-errp  (+ 2 3))   t)
-(check= (rat-or-errp '(+ 2 3)) nil)
-(check= (rat-or-errp '(2 + 3)) nil)
-(check= (rat-or-errp '(2 3 +)) nil)
-
-
-
-;; 14. Complete the impementation of rpnprgmeval-help. You can omit
-;; variables in your implementation, or not. If you add them, remember
-;; to reintroduce them into your data definition.
-
-
-
-(definec rpnprgmeval-help (pgm :rpnprgm stk :???) :rat-or-err
-  (case-match pgm
-    ('()
-     (case-match stk
-       ((s1 . &) s1) ;; & serves as a ["wildcard" value](https://en.wikipedia.org/wiki/Wildcard_character).
-       (& 'error)))
-
-
-
-    
-
-    
-    ((n . res) (rpnprgmeval-help res `(,n . ,stk)))))
-
-(definec rpnprgmeval (pgm :rpnprgm) :rat-or-err
-  (rpnprgmeval-help pgm '()))
-
-(check= (rpnprgmeval '(*)) 'error)
-(check= (rpnprgmeval '(3 5 * * 2 3 + - *)) 'error)
-(check= (rpnprgmeval '(2 3 4 5 6 - + - -)) 2)
-(check= (rpnprgmeval '(3 5 2 3 + - *)) 0)
-
-#| 
-
-Now, you should trace the execution of a reasonably large program
-in the language of your interpreter from hw3a.
-
-Then, for that same program, convert any unary "-"s, remove the
-inner parentheses, and then trace the run of that program in
-rpnprgmeval. 
-
-|#
-
-;; 15. What important difference do you see? Speculate as to why this
-;; is.
+(check= (satp '((a <= ())
+                (b <= ())
+                (c <= ())
+                (p <= (a b c))
+                (q <= (a b c))
+                (r <= (p q)))
+              '((q) (r)))
+        nil)
 
 
