@@ -84,11 +84,11 @@
 #| 
 
 This part of your hw picks up where the last part of your hw left
-off. In hw3a, we used ACL2s to define the syntax and semantics of
+off. In hw4a, we used ACL2s to define the syntax and semantics of
 SRPNEL (Simple Reverse Polish Notation Expression Language). In this
 homework, we will use ACL2s to define the syntax and semantics of two
 RPNELs (Reverse Polish Notation Expression Languages), so make sure
-you have done hw3a already. 
+you have done hw4a already. 
 
 |# 
 
@@ -480,7 +480,7 @@ occurs anywhere in the evaluation of the expression).
 #| 
 
 Now, you should trace the execution of a reasonably large program
-in the language of your interpreter from hw3a.
+in the language of your interpreter from hw4a.
 
 Then, for that same program, convert any unary "-"s, remove the
 inner parentheses, and then trace the run of that program in

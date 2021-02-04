@@ -66,7 +66,7 @@
 
 #|
 
-Homework 3a.
+Homework 4a.
 
 
 |#
@@ -187,7 +187,7 @@ to that list is also ordered.
 
 
 ;; 7. Conjecture: my-remove does not increase the length of the input list.
-(defconst *conjecture-7* '(equal (+ 3 3) 6))
+(defconst *conjecture-7* )
 (defconst *conjecture-7-t-or-counterexample* )
 
 
@@ -252,8 +252,8 @@ this price, however, we get the assurances that precise formal
 unambiguous definitions offer.
 
 In this part of the hw we will focus on SRPNEL.  You will define RPNEL
-in HW3b. Make sure you fully understand this part first, it is
-intended to prepare you for HW3b: RPNEL is an extension of SRPNEL.
+in HW4b. Make sure you fully understand this part first, it is
+intended to prepare you for HW4b: RPNEL is an extension of SRPNEL.
 
 Notice that, because we are formalizing (S)RPNEL in ACL2s and all we
 have access to in ACL2s are the elements of the ACL2s
