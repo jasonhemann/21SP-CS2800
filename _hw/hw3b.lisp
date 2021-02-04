@@ -70,9 +70,9 @@
 
 #| 
 
-4b is continuates of what you studied in 4a earlier this
+3b is continuates of what you studied in 3a earlier this
 week. Therefore, you may find it of considerable interest to complete
-4a first, and then return to this afterward. Don't sleep on this one,
+3a first, and then return to this afterward. Don't sleep on this one,
 though.
 
 |# 
@@ -117,7 +117,7 @@ C. Answer t if this is a minimal formula for these assignments.
 
    We quote the data here for you so that your file will run. 
 
-   Please refer to your 4a for a worked-out example.
+   Please refer to your 3a for a worked-out example.
 
 |# 
 (defdata partb (oneof (enum '(valid unsatisfiable)) nat))
