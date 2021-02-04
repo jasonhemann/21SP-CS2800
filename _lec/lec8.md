@@ -75,7 +75,7 @@ reduction.) We know for every boolean function there exists a truth
 table that computes it. That truth table might be unreasonably big,
 but it exists. That truth table describes, for boolean function `f(x₁
 ... xₙ)`, the subset of `<x₁, ... ,xₙ>` that satisfy f. And we can
-list out those rows of the truth table, one after another
+list out the satisfying rows of the truth table, one after another
 
      ```
        (x₁ & x₂ & !x₃ & x₄ & !x₅) v 
