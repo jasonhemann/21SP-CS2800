@@ -1,9 +1,8 @@
 ---
-title: `case-match`
+title: 'case-match` Documentation
 layout: single
 toc: true
 classes: wide
-date: 2021-02-04
 ---
 
 # `case-match`
