@@ -1,5 +1,8 @@
 ---
 title: `case-match`
+layout: single
+toc: true
+classes: wide
 date: 2021-02-04
 ---
 
