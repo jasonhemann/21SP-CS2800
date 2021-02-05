@@ -47,13 +47,13 @@ pattern       matches          non-matches
 (a . rst)     (A . B)          nil          ; NIL is not in the form (a . rst)
 (‘a (G x) 3)  (A (H 4) 3)      (B (G X) 3)  ; ‘a matches only itself. 
 (& t & !x)    ((A) T (B) (C))               ; provided x is '(C)
-(list a b c)  (list 1 2 1)     (list 1 2)   ; (list 1 2) is not isomorphic to (list a b c)
+(a b c)       '(1 2 1)         '(list 1 2)  ; '(1 2) is not isomorphic to (a b c)
 ```
 
 ## `case-match` example
 Consider a math comparison expressions (compexpr) that can take the form of a rational number or a list with two rational numbers and a comparison operator (one of ‘>, ‘<, or ‘=). To put this in acl2 language, we have 
 ```lisp
-(defdata compop (enum ‘(> < =)))
+(defdata compop (enum '(> < =)))
 (defdata compexpr (oneof rational
                         (list rational rational compop)))
 ```
@@ -61,14 +61,12 @@ Suppose we want to recognize a math comparison expression x and evaluate it. The
 ```lisp
 (definec evalcomp (x :compexpr) :bool
   (case-match x
-     (a t)                  
-     ((list a b ‘<) (< a b)) 
-     ((list a b ‘=) (== a b))
-     ((list a b ‘>) (> a b))
-     (& nil)))               ;; fall-through case (it is actually not neccessary here 
-                             ;; since the 4 patterns above fully cover all the possible patterns)
-                             ;; but it may come in handy if you want to collect all the cases
-                             ;; you did not cover and handle them together.
+     ((a b '<) (< a b))
+     ((a b '=) (== a b))
+     ((a b '>) (> a b))
+     (& nil)))               ;; this covers the "not a list" case of the data definition.
+                             ;; If we needed to distinguish between different kinds of
+                             ;; non-list values, we could use a cond here
 ```
 
 _Note: If you are not going to use a variable in your body term, do not give it a name. Otherwise ACL2S will complain about it. For example, if I only care about the first in the pattern (cons first rest), I can structure my pattern as (cons first &)._
@@ -82,12 +80,12 @@ Bad example:
 Another bad example:
 ```lisp
 (case-match tl
-    ((list a b c d) (+ a b)) ;; ACL2S will complain because c and d are not used in the body term
+    ((a b c d) (+ a b)) ;; ACL2S will complain because c and d are not used in the body term
     (& 0))
 ```
 Use `&` to stop ACL2S from complaining about unused variables:
 ```lisp
 (case-match tl
-    ((list a b & &) (+ a b)) ;; The pattern still matches list with 4 elements, but only the first 2 elements are named and used
+    ((a b & &) (+ a b)) ;; The pattern still matches list with 4 elements, but only the first 2 elements are named and used
     (& 0))
 ```
