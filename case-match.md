@@ -85,7 +85,7 @@ Another bad example:
     ((list a b c d) (+ a b)) ;; ACL2S will complain because c and d are not used in the body term
     (& 0))
 ```
-Use & to stop ACL2S from complaining about unused variables:
+Use `&` to stop ACL2S from complaining about unused variables:
 ```lisp
 (case-match tl
     ((list a b & &) (+ a b)) ;; The pattern still matches list with 4 elements, but only the first 2 elements are named and used
