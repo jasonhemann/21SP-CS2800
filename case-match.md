@@ -47,7 +47,7 @@ pattern       matches          non-matches
 (a . rst)     (A . B)          nil          ; NIL is not in the form (a . rst)
 (‘a (G x) 3)  (A (H 4) 3)      (B (G X) 3)  ; ‘a matches only itself. 
 (& t & !x)    ((A) T (B) (C))               ; provided x is '(C)
-(a b c)       '(1 2 1)         '(1 2)  ; '(1 2) is not isomorphic to (a b c)
+(a b c)       '(1 2 1)         '(1 2)       ; '(1 2) is not isomorphic to (a b c)
 ```
 
 ## `case-match` example
