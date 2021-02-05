@@ -1,5 +1,5 @@
 ---
-title: 'case-match` Documentation
+title: Case-match Documentation
 layout: single
 toc: true
 classes: wide
