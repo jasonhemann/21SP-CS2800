@@ -21,7 +21,7 @@ date: 2021-01-10
 
  `(= (len (cons x y)) (len (cons z y)))`
 
-## How do we get there. 
+## How do we get there?
 
 ## Do the LHS
 
@@ -61,56 +61,30 @@ date: 2021-01-10
 (len (cons y z))
 ```
 
-## Equality, equivalence relatinos
+# Equality, equivalence relations
 
-# Equality
+## Equality
 
-## Equality is a (trivial kind of) equivalence relation.
+### Equality is a (trivial kind of) equivalence relation.
 
 ### An important, special kind of relationship.
 
-Give me another equivalence relation. Tell me a set, and an
-equivalence relation on that set. Go. 
+Q: Give me another equivalence relation. Tell me a set, and an equivalence relation on that set. Go. 
 
 E.g. NBA players and "teammate."
 
-What's neat, and what you notice, is that you partition the set into blocks. 
+What's neat, and what you notice, is that you /partition/ the set into /blocks/. 
 
 ## Equivalence relation:
    Reflexive, symmetric, and transitive. 
    These are axioms of equality (really any equivalence relation, by defn of one)
 
-   We can use these whenever we want, instantiated.
+We can use these whenever we want, instantiated.
 
 ## Equality axiom scheme for functions: 
 
 For all x_1 ... x_n and y_1 ... y_n, if x_1 = y_1 and ... x_n = y_n, then
 f(x_1 ... x_n) =  f(y_1 ... y_n)
-
-## Built-in functions, built-in axioms.
-
-Axioms for if:
-x = nil => (if x y z) = z
-x ≠ nil => (if x y z) = y
-
-Axioms for car, cdr:
-(car (cons x y)) = x
-(cdr (cons x y)) = y
-
-Axiom for consp:
-(consp (cons x y)) = t
-## Axioms
- - Equality axioms
- - Equality axiom scheme for functions
-
-## built-in axioms for built-in functions
- - Axioms for if:
- - Axioms for car, cdr:
- - Axiom for consp:
-
-## Definitional axioms.
-   IC   =>  ( (f x1 x2 …) = body )
-   IC   =>   OC
 
 ## Definitional axioms.
 
@@ -133,6 +107,28 @@ With every function /you/ define, you get some axioms.
 					(not (equal y 0)))
 	:output-contract (rationalp (mydiv x y))
 	(/ x y))
+
+## Built-in functions, built-in axioms.
+
+Axioms for if:
+x = nil => (if x y z) = z
+x ≠ nil => (if x y z) = y
+
+Axioms for car, cdr:
+(car (cons x y)) = x
+(cdr (cons x y)) = y
+
+Axiom for consp:
+(consp (cons x y)) = t
+
+## Axioms
+ - Equality axioms
+ - Equality axiom scheme for functions
+
+## built-in axioms for built-in functions
+ - Axioms for if:
+ - Axioms for car, cdr:
+ - Axiom for consp:
 
 ### Substitution. 
 
@@ -161,7 +157,6 @@ There are other parts to a proof that we will see later
 Not all parts are mandatory, e.g., derived context is optional, and even context may be sometimes empty
 We will see all these rules in detail as we go along
 
-
 ## Set-up a context. 
 
 This is where if you see an implication, how you get there. Write down
@@ -169,7 +164,6 @@ all the things that we get to assume, and then show some equality
 holds in that context. Here, using it both technical and non-technical.
 
 "In this context." "In this situation" "When the state of the world is like this, then ..."
-
 
 ### Example Context:
 
