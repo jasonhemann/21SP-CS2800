@@ -293,6 +293,11 @@ paper](https://www.sciencedirect.com/science/article/pii/0743106684900141).
 Third, a hint: Sometimes you might need to write a predicate in order
 to describe the desired input as an input contract.
 
+Here were two more satp hints that some folk found useful.
+
+1. You might consider writing another function that does the bulk of the work, and calling that from within the body of satp. 
+
+2. You might consider at first presuming all variables are false until you determine otherwise, and keep those variables that you now know to be true, as a set, in an accumulator.
 |# 
 
 (defdata gc (listof var))
