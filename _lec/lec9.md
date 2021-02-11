@@ -59,7 +59,6 @@ That maneuver always holds. How would we show it?
    
 ### We can handle w/a truth table
 
-
 ## Aside: notice these two things do not mean the same:
 
  We distinguish based on the usage whether we are writing a universal
@@ -104,8 +103,15 @@ the worst).
      - implications & dealing with propositional structure, 
      - After that: Definitions, Termination, Induction, 
 
-### How we will check your hw : `http://checker.atwalter.com/`
+## Substitution. 
 
+ Important operation. Critical to what we have done and will do
+
+### Definition of substitution wrong, for about ~20yrs
+
+Hilbert, Ackermann... etc.  (cf. Hilbert-Ackermann "... Logic ..." book)
+
+### How we will check your hw : `http://checker.atwalter.com/`
 
 ```
 
