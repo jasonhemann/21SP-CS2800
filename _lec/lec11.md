@@ -1,5 +1,5 @@
 ---
-title: 
+title: Equivalences of programs, extra axioms, (derived) context viz. theorems
 date: 2021-02-11
 ---
 
