@@ -165,8 +165,8 @@ to that list is also ordered.
             (orderedp (cons x ls))))
   
 (defconst *conjecture-example-t-or-counterexample* 
-  ((ls '(5))
-   (x  10)))
+  '((ls '(5))
+    (x  10)))
 
 |# 
 
@@ -485,10 +485,10 @@ the following:
 |#
 
 ;; Formalize the claims of this section. For each claim, answer
-;; whether the claim is true. For the true claims, write a (test?
+;; whether the claim is true. For the true claims, write a (quoted) (test?
 ;; ...) expression that will test the property. For the false claims,
-;; write a (let ...) binding that demonstrates the claim to be false.
-;; Like the above similar exercise.
+;; write a quoted (let ...) binding that demonstrates the claim to be false.
+;; This latter part is like what you had to do in some cases for the above exercises.
 
 
 ;; Hint: the quasiquote/unquote combo, while not necessary, will make
@@ -544,7 +544,7 @@ fancy or arcane vocabulary, and eventually you just have to dive in.)
 
 |# 
 
-;; 23. Express (as a quoted list) the property that in our SRPNEL
+;; 23. Express (as a quoted list) the conjecture that in our SRPNEL
 ;; language, negation is involutive.
 
 (defconst *negation-is-involutive*  )
