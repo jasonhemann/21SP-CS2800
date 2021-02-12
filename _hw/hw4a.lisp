@@ -526,6 +526,21 @@ the following:
 ;; and SRPNEL language in ACL2s, and that's how ACL2s
 ;; works. Technically speaking, ACL2s is a [strict programming
 ;; language](https://en.wikipedia.org/wiki/Strict_programming_language).
+ﬁ
+;;-----------
+;; Example: (x x +) = ((x -) -), in SRPNEL, for rational x
+(defconst *example-conjecture* '(implies (rationalp x)
+				  (equal (srpneval `(,x ,x +)) 
+					 (srpneval `((,x -) -))))
+
+(defconst *example-conjecture-t-or-counterexample* '((x 2)))
+
+;; Since in this case the conjecture is false, we put in a
+;; counterexample. So the expression below generates you a piece of
+;; ACL2 code you run to *watch* your counterexample.
+
+`(let ,*example-conjecture-t-or-counterexample* ,example-conjecture*)
+;;-----------
 
 ;; 17. (x y +) = (x (y -) -), in SRPNEL, for rationals x, y
 (defconst *conjecture-17* )
