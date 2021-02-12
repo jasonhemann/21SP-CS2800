@@ -540,6 +540,22 @@ the following:
 ;; ACL2 code you run to *watch* your counterexample.
 
 `(let ,*example-conjecture-t-or-counterexample* ,example-conjecture*)
+
+;; Example: (x x +) = (x 2 *), in SRPNEL, for rational x
+(defconst *second-example-conjecture* '(implies (rationalp x)
+					 (equal (srpneval `(,x ,x +))
+						(srpneval `(,x 2 *)))))
+
+(defconst *second-example-conjecture-t-or-counterexample* 't)
+
+;; Since in this case the conjecture is true, we simply assigned that
+;; constant the value true. Which means the expression below generates
+;; you a piece of ACL2 code. Notice that if you actually wrote a
+;; quoted test? expression as your answer, you can pick that up and
+;; run it. If you simply wrote 't, then that will also run.
+
+*second-example-conjecture-t-or-counterexample* 
+
 ;;-----------
 
 ;; 17. (x y +) = (x (y -) -), in SRPNEL, for rationals x, y
