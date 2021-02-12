@@ -61,21 +61,18 @@ due:
    interaction with the theorem prover, it is not part of your
    solution.
 
- - At least for right now, appropriately testing means writing
-   example-based tests that cover at least all the possible scenarios
-   according to the data definitions of the involved types. For
-   example, a function taking two lists should have at least 4 tests:
-   all combinations of each list being empty and non-empty.
+ - Appropriately testing means writing sufficient example-based and/or
+   property-based tests to properly check all the possible scenarios
+   according to the data definitions of the involved types. 
 
- - Beyond that, the number of tests should reflect the difficulty of
-   the function. For very simple ones, the above coverage of the data
-   definition cases may be sufficient. For complex functions with
-   numerical output, you want to test whether it produces the correct
-   output on a reasonable number of inputs.
+ - The number of tests should reflect the difficulty of the
+   function. For complex functions with numerical output, you want to
+   test whether it behaves according to spec in different ways on a
+   sufficient number of inputs.
 
- - Use good judgment. For what we deem unreasonably few test cases we
-   will deduct points. Write a clearly sufficient variety of tests,
-   so you aren't even close to the line. 
+ - Beyond that, use good judgment and write a clearly sufficient
+   variety of tests, so you aren't even close to the line. For what we
+   deem insufficient test case coverage we will deduct points.
 
  - You can use any types, functions and macros listed on the [ACL2s
    Language
