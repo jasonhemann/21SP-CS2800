@@ -510,7 +510,7 @@ the following:
 |#
 
 ;; Formalize the claims of this section. For each claim, answer
-;; whether the claim is true. For the true claims, write a (quoted) (test?
+;; whether the claim is true. For the true claims, write t or a (quoted) (test?
 ;; ...) expression that will test the property. For the false claims,
 ;; write a quoted (let ...) binding that demonstrates the claim to be false.
 ;; This latter part is like what you had to do in some cases for the above exercises.
