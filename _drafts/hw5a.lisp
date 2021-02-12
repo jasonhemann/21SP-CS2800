@@ -48,7 +48,7 @@ apply to free variable occurrences. For a refresher see Ch 4. pp
 
 In this half of the homework, we will practice equational reasoning
 proofs. So that we can focus on the reasoning part, we are using
-familiar functions.
+these same familiar functions.
 
 |#
 
