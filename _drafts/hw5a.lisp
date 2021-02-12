@@ -1,6 +1,6 @@
 #|
 
-Homework 5a. Substitution and Equational Reasoning
+Homework 5a. Substitution, Normalization, and Equational Reasoning
 
 |#
 
