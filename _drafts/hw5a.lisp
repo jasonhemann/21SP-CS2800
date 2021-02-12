@@ -1,40 +1,128 @@
 #|
 
-Lab 5. Substitution and Equational Reasoning
-
-Do as much of the lab as you can beforehand. Get really stuck! That
-way, when you go over some of it in lab, you're ready for it to really
-stick!
+Homework 5a. Substitution and Equational Reasoning
 
 |#
 
-#|
-
-NB. We have now deliberately removed our earlier allowances that let
-us elide checking function and body contracts. We now know what these
-are and understand them, so let's use this lab and HW to get more
-comfortable.
-
-|# 
-
-(defdata
-  (expr (oneof var
-           rational
-           (list 'quote expr)
-           (list '* expr expr)
-           (list 'let (list (list var expr)) expr))))
 
 #| 
 
-Because we substitute now into *programs*, and programs have more
-complex structure than expressions in propositional logic, our
-substitution operations have gotten more complex. Substitution needs
-to respect variable bindings. We shall here investigate what that
-means by writing predicates. Our substitution into programs will only
-apply to free variable occurrences. For a refresher see Ch 4. pp
-76-77.
+To refresh yourself on substitutions, see [Ch 4. pp
+76-77](https://pages.github.ccs.neu.edu/jhemann/21SP-CS2800/readings/).
+
+You all will recall we have expressed our substitutions as `let`
+bindings. And you know `test?` presents substitutions in this same
+style. 
+
+But as you might have (briefly) seen, acl2 has a built-in substitution
+operation `acl2::subst`.
 
 |# 
+
+;; We can use a `let` expression, with a substitution and a property,
+;; to test an example of that property.
+
+(let ((x 5) (y 10))
+  (equal (* (+ x y) (+ x y)) 
+         (+ (* x x) (* 2 x y) (* y y))))
+
+;; We could also try, however, to use ACL2's `subst` operation a couple
+;; of times, and then pick up the result and run it.
+
+(acl2::subst '10 'y
+  (acl2::subst '5 'x 
+    '(equal (* (+ x y) (+ x y)) (+ (* x x) (* 2 x y) (* y y)))))
+
+;; > (acl2::subst '10 'y
+;;     (acl2::subst '5 'x
+;;       '(equal (* (+ x y) (+ x y))
+;;               (+ (* x x) (* 2 x y) (* y y)))))
+;; (EQUAL (* (+ 5 10) (+ 5 10))
+;;        (+ (* 5 5) (* 2 5 10) (* 10 10)))
+;; > (EQUAL (* (+ 5 10) (+ 5 10))
+;;          (+ (* 5 5) (* 2 5 10) (* 10 10)))
+;; T
+
+;; ACL2's `subst` is, however, a little naive in its behavior. Whereas
+;; we can let-bind those values in this modified expression and get
+;; the same answer, subst doesn't work.
+
+(let ((x 5) (y 10))
+  (equal (let ((x (+ x y)))
+	   (* x x))
+	 (+ (* x x) (* 2 x y) (* y y))))
+
+(acl2::subst '10 'y
+  (acl2::subst '5 'x 
+    '(equal (let ((x (+ x y)))
+              (* x x))
+            (+ (* x x) (* 2 x y) (* y y)))))
+
+;; > (acl2::subst '10 'y
+;;     (acl2::subst '5 'x 
+;;       '(equal (let ((x (+ x y)))
+;; 		(* x x))
+;; 	      (+ (* x x) (* 2 x y) (* y y)))))
+;; (EQUAL (LET ((5 (+ 5 10))) (* 5 5))
+;;        (+ (* 5 5) (* 2 5 10) (* 10 10)))
+;;
+;; ACL2 Error in TOP-LEVEL:  The form (LET ((5 (+ 5 10))) (* 5 5)) is
+;; an improper let expression because it attempts to bind 5, which is
+;; not a symbol.
+
+;; Furthermore, even if we now remove this let binding, we get the
+;; wrong answer:
+
+;; > (EQUAL (* 5 5)
+;;          (+ (* 5 5) (* 2 5 10) (* 10 10)))
+;; NIL
+
+;; 1. What is ACL2s `subst` operation not doing correct? (You should
+;; answer in a sentence or two)
+
+#| 
+
+Answer: 
+
+|# 
+
+;; We might instead try and construct let expressions we can pick up
+;; and run:
+
+(defconst *example-subst* '((x 5) (y 10)))
+
+(defconst *example-prop* 
+  '(implies (consp (cons x y)) (consp (cons y x))))
+
+`(let ,*example-subst* ',*example-prop)
+
+;; > `(let ,*example-subst* ,*example-prop*)
+;; (LET ((X 5) (Y 10))
+;;      (IMPLIES (CONSP (CONS X Y))
+;;               (CONSP (CONS Y X))))
+;; > (LET ((X 5) (Y 10))
+;;      (IMPLIES (CONSP (CONS X Y))
+;;               (CONSP (CONS Y X))))
+;; T
+
+;; 2. Does this approach to working with substitutions have the same
+;; problem we faced with our `subst` approach? 
+
+(defconst *has-same-problem* )
+
+(boolp *has-same-problem*)
+
+;; 3. Why, or why not? (You should answer in a sentence or two)
+
+#| 
+
+Answer: 
+
+|# 
+
+
+
+
 
 ;; Apply the following substitution to the following expressions:
 
