@@ -288,7 +288,7 @@ In the first (defconst ...) form, write a quoted acl2 property that is
 your translation of that question's English-language conjecture. Make
 sure and quote this property---that is you are definining a quoted
 list that *looks* like a property, and that absent the quote, we could
-run as a property. Remember to include all necessary
+run it in (test? ...) as a property. Remember to include all necessary
 preconditions. There are often many propositionally-equivalent ways to
 express these properties; any will be accepted. If in doubt, it is
 good practice to hew closer to form of the property expressed by the
