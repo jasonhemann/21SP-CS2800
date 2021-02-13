@@ -194,9 +194,11 @@ ACL2 can recognize them.
 
 |#
 
-;; 4. Define a datatype for ACL2 literals. Notice here we use the ACL2
-;; format, rather than the format than we used for SATP on 3b.
-
+;; 4. Define a datatype for ACL2 literals, that is either acl2
+;; variables or the negation of an acl2 variable. Notice here we use
+;; the ACL2 format, rather than the format than we used for SATP on
+;; 3b.
+(defdata-subtype-strict var symbol)
 (defdata literal )
 
 (check= (literalp '(not a)) t)
