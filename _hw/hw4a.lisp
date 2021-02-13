@@ -530,8 +530,8 @@ the following:
 ;;-----------
 ;; Example: (x x +) = ((x -) -), in SRPNEL, for rational x
 (defconst *example-conjecture* '(implies (rationalp x)
-				  (equal (srpneval `(,x ,x +)) 
-					 (srpneval `((,x -) -))))
+				  (equal (srpneval `(,x ,x +))
+					 (srpneval `((,x -) -)))))
 
 (defconst *example-conjecture-t-or-counterexample* '((x 2)))
 
