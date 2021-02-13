@@ -256,11 +256,11 @@ contract, and would like to prove a theorem about it.
   (not p))
 
 ;; Conjecture: Double negation.
-'(equal (bnot (bnot x)) x)))
+'(equal (bnot (bnot x)) x)
 
 ;; 7. Write, as a quoted list, the result of performing contract
 ;; completion on the above conjecture.
 
 (defconst *contract-completion* )
 
-(thm *contract-completion)
+(make-event `(thm ,*contract-completion*))
