@@ -57,6 +57,80 @@ For example,here is another way of defining a list of integers.
 
 # `quasiquote` and `unquote`
 
+I'll see if I can do this one. 
+
+
+
+
+`'(a b c)`
+
+
+
+
+makes a list of data. This is convenient when you want to make a list of a bunch of data. You can tell this is a list of data, and the quote makes the difference.
+
+
+
+```lisp
+> '(+ 3 4)
+(+ 3 4)
+> (+ 3 4)
+7
+```
+
+
+
+This is a rather nice way of making a list of data, if you already know all of the pieces you want to put in that list. But what if I want a list of data where I still need to compute one of the elements? Or if one of the things I want to put in that list is the value of a variable? Well,
+
+
+
+
+`(list 'a 'b 'c 'd '(e f g))`
+
+
+
+
+
+makes a list of data. So we could write 
+
+
+
+
+`(list 'a 'b (+ 3 4) 'c 'd '(e f g))`
+
+
+and that works. This is inconvenient, though! As soon as we wanted to put the value of *one* computation into a data structure---even if that was just looking up the value of a variable---we had to suddenly go and quote all the other pieces. So that ACL2 knows we aren't trying to use 'a' as a variable. This was cruddy. Furthermore, now it's more difficult to visually _see_ the structure of the data we are building. 
+
+
+So quasiquote comes to the rescue.
+
+This lets us write out the data we *wish* we'd been able to write to start with, and the only one part we have to change is the part that's now different.
+
+```
+
+`(a b ,(+ 3 4) c d (e f g))
+
+```
+
+With quasiquote, much like a reporter's interstitial remarks in the middle of a quotation in a newspaper, lets us do some non-literal, non-quote pieces in the middle of a quote. 
+
+So these two are the same
+
+```
+`(a b c)
+'(a b c)
+```
+
+Well, if quasiquote is so powerful and all-fired awesome, then why do we still have `quote`?
+
+Well, suppose you *wanted* to put a comma in a list, for instance?
+
+```
+'(my favorite piece of punctuation , an awesome little thing)
+```
+
+This lets us do that. There is more and it goes much deeper, but this is all the information you need to know. 
+
 ## Just the facts ma'am.
 
 ## 3D code examples.
