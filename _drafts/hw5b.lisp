@@ -223,7 +223,7 @@ structure. See your notes from lab for more explicit instructions.
 
 |#
 
-#| 
+
 Conjecture 0:
 (implies (tlp x)
          (implies (and (consp x)
@@ -281,11 +281,14 @@ Proof:
 t
 
 QED
-|# 
+
 
 #| 
+
 ;; IMHO this first one is a comparatively easy revv'er-upper, so if
 ;; you are stuck here then please reach out!
+
+|# 
 
 Conjecture 1:
 (implies (boolp (boolp (boolp x))) (boolp (boolp x)))
@@ -326,4 +329,4 @@ QED
 
 QED
 
-|# 
+
