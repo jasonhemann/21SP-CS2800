@@ -425,6 +425,33 @@ negation is now written "0-".
 
 ;; The answer in that case is 2.
 
+;; Why?
+
+;; put 2 on the stack
+;; put 3 on the stack
+;; put 4 on the stack
+;; put 5 on the stack
+;; put 6 on the stack
+;; - ... subtraction!
+;; pop the most recent number from the stack, and start filling in operations
+;; (- ... 6)
+;; pop the most recent number from the stack, and fill the next one (you'd keep going in principle, until you had all n arguments for an n-ary operator.)
+;; (- 5 6)
+;; When the operation is "saturated", you can evaluate it, and place the value on the stack. 
+;; look at the next operator, +, and do the same kind of thing
+;; (+ 4 -1)
+;; (- 3 3)
+;; (- 2 0)
+;; 2
+
+;; Et voila!
+
+
+;; For the same reason, (2 3 + 2 + 9 *) gets you 63
+
+;; You can try [the following
+;; tool](https://abakbot.com/en/net-en/rpn-en) for more examples
+
 
 ;; But! A new issue has arisen!
 
@@ -461,12 +488,9 @@ occurs anywhere in the evaluation of the expression).
 (check= (rat-or-errp '(2 3 +)) nil)
 
 
-
 ;; 14. Complete the impementation of rpnprgmeval-help. You can omit
 ;; variables in your implementation, or not. If you add them, remember
 ;; to reintroduce them into your data definition.
-
-
 
 (definec rpnprgmeval-help (pgm :rpnprgm stk :???) :rat-or-err
   (case-match pgm
@@ -474,7 +498,7 @@ occurs anywhere in the evaluation of the expression).
      (case-match stk
        ((s1 . &) s1) ;; & serves as a ["wildcard" value](https://en.wikipedia.org/wiki/Wildcard_character).
        (& 'error)))
-
+      
 
 
     
