@@ -145,7 +145,8 @@ Part I Defining a Syntax
 (must-fail (test? (implies (symbolp x)
 			   (varp x))))
 
-;; We use defdata to define boper the binary operators (same as lab):
+;; We use defdata to define boper the binary operators (same as
+;; earlier in your hw):
 
 (defdata boper (enum '(+ - *)))
 
@@ -160,7 +161,7 @@ Part I Defining a Syntax
 (check= (rpnexprp '(x + y + z)) nil)
 
 ;; 2. What should the following check= forms evaluate to? Make sure
-;; you understand each argument that rpnexprp gets for input.
+;; you understand each argument that rpnexprp gets for input. 
 
 (check= (rpnexprp  12) )
 (check= (rpnexprp '12) )
@@ -208,10 +209,10 @@ Part II Semantics
 #| 
 
 Next, we will define the semantics of reverse-polish notation
-expressions. The main complication here is extending the language
-from lab is to deal with vars. The idea is that to evaluate a var,
-we have to know what value it has. We will use an /environment/ to
-track and hold the values of variables.
+expressions. The main complication here is extending the earlier
+language to deal with vars. The idea is that to evaluate a var, we
+have to know what value it has. We will use an /environment/ to track
+and hold the values of variables.
 
 We will represent an environment as an alist from vars to
 rationals. When looking up a variable in an alist, we take the
@@ -259,9 +260,38 @@ Section 2.13 of the lecture notes.
 ;; environment evaluates the expression, using the environment to
 ;; determine the values of vars appearing in the expression. Use a
 ;; case-match in your definition. This should be similar enough to
-;; what you did in lab that you /could/ consider copying some of that
-;; in and editing it. Remember to use the "template" that defdatas
-;; give rise to as per Section 2.13 of the Manolios textbook.
+;; what you did earlier in your hw that you /could/ consider copying
+;; some of that in and editing it. Remember to use the "template" that
+;; defdatas give rise to as per Section 2.13 of the Manolios
+;; textbook. We provide an example usage below.
+
+
+
+
+
+
+
+
+(check= (rpneval '((x y +) (z -) -) '((y . 3/2) (z . 1/2)))
+        3)
+
+#|
+ 
+ Let us unpack the above check= form.
+
+ A: The first argument to rpneval is '((x y +) (z -) -), which is an
+ ACL2s expression.
+
+ B: That evaluates to ((x y +) (z -) -), which is not an ACL2s
+ expression, but *is* an RPNEL expression; this is what rpneval gets
+ as input.
+
+ The function rpneval given us the meaning of this latter
+ expression. In fact, the meaning of this latter expression depends on
+ the meanings of x, y and z, which are provided by the environment. In
+ this instance, the meanings are: 1, 3/2 and 1/2, respectively.
+ 
+|#
 
 
                     
@@ -276,8 +306,7 @@ Section 2.13 of the lecture notes.
 
 #| 
 
-Part III Specifying properties of this language w/ (test? ...) and
-rpneval.
+Part III Specifying properties of this language w/ rpneval.
 
 |# 
 
@@ -307,31 +336,7 @@ will look like the bindings of a let form that would give admissible
 values to each of the variables in your property, and for which your
 property will not hold.
 
-We provide an example below:
-
 |# 
-
-(check= (rpneval '((x y +) (z -) -) '((y . 3/2) (z . 1/2)))
-        3)
-
-#|
- 
- Let us unpack the above check= form.
-
- A: The first argument to rpneval is '((x y +) (z -) -), which is an
- ACL2s expression.
-
- B: That evaluates to ((x y +) (z -) -), which is not an ACL2s
- expression, but *is* an RPNEL expression; this is what rpneval gets
- as input.
-
- The function rpneval given us the meaning of this latter
- expression. In fact, the meaning of this latter expression depends on
- the meanings of x, y and z, which are provided by the environment. In
- this instance, the meanings are: 1, 3/2 and 1/2, respectively.
- 
-|#
-
 
 ;; 6. A = ((A -) -), in RPNEL, for any rational A.
 (defconst *conjecture-6* )
