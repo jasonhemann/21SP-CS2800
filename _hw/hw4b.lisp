@@ -153,7 +153,14 @@ Part I Defining a Syntax
 (check= (boperp '*) t)
 (check= (boperp '^) nil)
 
-;; 1. Use defdata to define rpnexpr with an inductive data definition:
+;; 1. Use defdata to define rpnexpr with an inductive data
+;; definition. That is, rpnexpr should appear inside of its own data
+;; definition.
+
+;; As an example, the following true-list data definition is
+;; inductive. The data structure should be self-referential.
+
+(defdata true-list (oneof (cons all true-list) nil)))
 
 (check= (rpnexprp '45/3) t)
 (check= (rpnexprp '((x y +) (z -) -)) t)
@@ -388,7 +395,8 @@ syntactically distinguish good programs from bad.
 #|
 
 We have grouped the operators variables and rationals together as
-just "data". Unary negation is now written "0-".
+just "data". [Unary](https://en.wikipedia.org/wiki/Unary_function)
+negation is now written "0-".
 
 |# 
 
@@ -484,12 +492,16 @@ occurs anywhere in the evaluation of the expression).
 
 #| 
 
-Now, you should trace the execution of a reasonably large program
-in the language of your interpreter from hw4a.
+Now, you should trace the execution of a reasonably large program in
+the language of your interpreter (i.e. the `srpneval` evaluator) from
+hw4a. (Your program is "reasonably large" if it's sufficient for you
+to notice the important diffenece we are looking to point out to
+you. (If you want, you can probably think of a way to generate such
+programs.))
 
-Then, for that same program, convert any unary "-"s, remove the
-inner parentheses, and then trace the run of that program in
-rpnprgmeval. 
+Then, for that same program, convert any unary "-"s into the
+corresponding form for this language, remove the inner parentheses,
+and then trace the run of that program in rpnprgmeval.
 
 |#
 
