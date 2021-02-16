@@ -306,7 +306,7 @@ Conjecture 2:
 QED
 
 
-Conjecture 2:
+Conjecture 3:
 (implies (endp x)
 	 (== (len2 (rev2 x)) (len2 x)))
 
@@ -317,7 +317,7 @@ QED
 
 ;; Note this and the preceding conjecture are related.
 
-Conjecture 3:
+Conjecture 4:
 (implies (tlp x)
          (implies (and (not (endp x))
 	      	       (implies (tlp (rest x))
@@ -328,5 +328,4 @@ Conjecture 3:
 ...
 
 QED
-
 
