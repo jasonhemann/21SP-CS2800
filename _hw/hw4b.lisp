@@ -517,7 +517,8 @@ occurs anywhere in the evaluation of the expression).
 
 #| 
 
-Now, you should trace the execution of a reasonably large program in
+Now, you should trace (i.e. use the `$trace` and `$untrace` commands
+of Manolios Ch. 2.17) the execution of a reasonably large program in
 the language of your interpreter (i.e. the `srpneval` evaluator) from
 hw4a. (Your program is "reasonably large" if it's sufficient for you
 to notice the important diffenece we are looking to point out to
