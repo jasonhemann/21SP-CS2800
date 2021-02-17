@@ -490,7 +490,8 @@ occurs anywhere in the evaluation of the expression).
 
 ;; 14. Complete the impementation of rpnprgmeval-help. You can omit
 ;; variables in your implementation, or not. If you add them, remember
-;; to reintroduce them into your data definition.
+;; to reintroduce them into your data definition. You will need to
+;; develop the data definition for your stack. 
 
 (definec rpnprgmeval-help (pgm :rpnprgm stk :???) :rat-or-err
   (case-match pgm
