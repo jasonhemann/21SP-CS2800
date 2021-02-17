@@ -212,11 +212,14 @@ ACL2 can recognize them.
 (defdata disjunctive-clause )
 
 (check= (disjunctive-clausep '(or)) t)
+(check= (disjunctive-clausep '(or z)) t)
 (check= (disjunctive-clausep '(or (not z))) t)
 (check= (disjunctive-clausep '(or (not a) b (not c))) t)
 (check= (disjunctive-clausep '(or (not a) b (not c) d)) t)
 (check= (disjunctive-clausep '(or (not a) b (not (not a)) d)) nil)
 (check= (disjunctive-clausep '(and (not a) b (not (not a)) d)) nil)
+(check= (disjunctive-clausep 'z) nil)
+(check= (disjunctive-clausep '(not z)) nil)
 (check= (disjunctive-clausep '(not (and (not a) b (not (not a)) d))) nil)
 
 #| 
