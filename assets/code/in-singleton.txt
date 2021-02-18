@@ -1,0 +1,75 @@
+
+(definec len2 (x :tl) :nat
+  (if (endp x)
+      0
+    (+ 1 (len2 (rest x)))))
+
+(definec app2 (a :tl b :tl) :tl
+  (if (endp a)
+      b
+    (cons (first a) (app2 (rest a) b))))
+
+(definec rev2 (x :tl) :tl
+  (if (endp x)
+      nil
+    (app2 (rev2 (rest x)) (list (first x)))))
+
+(definec in2 (a :all X :tl) :bool
+  (and (consp X)
+       (or (== a (first X))
+           (in2 a (rest X)))))
+
+(definec del (a :all X :tl) :tl
+  (cond ((endp X) nil)
+        ((== a (car X)) (del a (cdr X)))
+        (t (cons (car X) (del a (cdr X))))))
+
+Conjecture 2:
+(implies (in2 x ls)
+  (implies (equal ls (cons y nil))
+    (equal x y)))
+
+Exportation:
+(implies (and (in2 x ls)
+              (equal ls (cons y nil)))
+  (equal x y))
+  
+Contract Completion: 
+(implies (and (tlp ls)
+              (in2 x ls) 
+              (equal ls (cons y nil)))
+  (equal x y))
+  
+Context:
+C1. (tlp ls)
+C2. (in2 x ls)
+C3. (equal ls (cons y nil))
+
+
+Derived Context:
+D1. (in2 x (cons y nil)) { C2, C3 }
+D2.   (and (consp (cons y nil))
+       (or (== x (first (cons y nil)))
+           (in2 x (rest (cons y nil))))) { D1, Def in2 }
+D3. (and t            
+      (or (== x (first (cons y nil)))
+           (in2 x (rest (cons y nil))))) { D2, Obvious } 
+D4. (or (== x (first (cons y nil)))
+        (in2 x nil)) { D3, car-cdr Axioms }
+D5. (or (== x (first (cons y nil)))
+        (and (consp nil)
+             (or (== x (first nil))
+                 (in2 x (rest nil))))) { D4 , Def in2 }
+D6. (or (== x (first (cons y nil)))
+        nil) { D5, Obvious } 
+D7. (== x (first (cons y nil))) { D6, Obvious }
+D8. (== x y) { D7, car-cdr Axioms }
+
+
+Goal: 
+(equal x y)
+
+Proof: 
+t             
+
+QED 
