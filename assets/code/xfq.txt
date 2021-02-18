@@ -1,0 +1,53 @@
+(definec len2 (x :tl) :nat
+  (if (endp x)
+      0
+    (+ 1 (len2 (rest x)))))
+
+(definec app2 (a :tl b :tl) :tl
+  (if (endp a)
+      b
+    (cons (first a) (app2 (rest a) b))))
+
+(definec rev2 (x :tl) :tl
+  (if (endp x)
+      nil
+    (app2 (rev2 (rest x)) (list (first x)))))
+
+(definec in2 (a :all X :tl) :bool
+  (and (consp X)
+       (or (== a (first X))
+           (in2 a (rest X)))))
+
+(definec del (a :all X :tl) :tl
+  (cond ((endp X) nil)
+        ((== a (car X)) (del a (cdr X)))
+        (t (cons (car X) (del a (cdr X))))))
+
+Conjecture 3:
+(implies (equal x (cons y z))
+  (implies (endp x) 
+    (equal (cons y z) (cons z y))))
+    
+Exportation:
+(implies (and (equal x (cons y z))
+              (endp x))
+  (equal (cons y z) (cons z y)))
+  
+Contract Completion:
+(implies (and (listp x)
+              (equal x (cons y z))
+              (endp x))
+  (equal (cons y z) (cons z y)))
+  
+Context:
+C1. (listp x)
+C2. (equal x (cons y z))
+C3. (endp x)
+
+Derived Context:
+D1. (endp (cons y z)) { C2, C3 }
+D2. nil { D1, Obvious } 
+
+QED
+;; Ex falo quodlibet 
+

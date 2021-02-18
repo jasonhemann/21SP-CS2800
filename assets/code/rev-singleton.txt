@@ -1,0 +1,73 @@
+
+(definec len2 (x :tl) :nat
+  (if (endp x)
+      0
+    (+ 1 (len2 (rest x)))))
+
+(definec app2 (a :tl b :tl) :tl
+  (if (endp a)
+      b
+    (cons (first a) (app2 (rest a) b))))
+
+(definec rev2 (x :tl) :tl
+  (if (endp x)
+      nil
+    (app2 (rev2 (rest x)) (list (first x)))))
+
+(definec in2 (a :all X :tl) :bool
+  (and (consp X)
+       (or (== a (first X))
+           (in2 a (rest X)))))
+
+(definec del (a :all X :tl) :tl
+  (cond ((endp X) nil)
+        ((== a (car X)) (del a (cdr X)))
+        (t (cons (car X) (del a (cdr X))))))
+
+Conjecture 2:
+(equal (cons x nil) (rev2 (cons x nil)))
+
+;; No need for exportation 
+
+Contract Completion:
+(implies (tlp (cons x nil))
+  (equal (cons x nil) (rev2 (cons x nil))))
+  
+Context:   
+C1. (tlp (cons x nil))
+
+;; No need to derive context
+
+Goal:
+(equal (cons x nil) (rev2 (cons x nil)))
+
+Proof:
+(rev2 (cons x nil))
+= { Def rev2 } 
+  (if (endp (cons x nil))
+      nil
+    (app2 (rev2 (rest (cons x nil))) (list (first (cons x nil)))))
+= { Obvious } 
+    (app2 (rev2 (rest (cons x nil))) (list (first (cons x nil))))
+= { car-cdr Axioms }
+(app2 (rev2 nil) (list x))
+= { Def rev2 } 
+(app2 
+    (if (endp nil)
+      nil
+    (app2 (rev2 (rest nil)) (list (first nil))))
+  (list x))
+= { Obvious } 
+(app2 nil (list x))
+= { Def app2 } 
+  (if (endp nil)
+      (list x)
+    (cons (first nil) (app2 (rest nil) (list x))))
+= { Obvious } 
+(list x)
+= { Obvious } 
+(cons x nil)
+
+QED
+
+

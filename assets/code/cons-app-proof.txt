@@ -1,0 +1,126 @@
+
+(definec len2 (x :tl) :nat
+  (if (endp x)
+      0
+    (+ 1 (len2 (rest x)))))
+
+(definec app2 (a :tl b :tl) :tl
+  (if (endp a)
+      b
+    (cons (first a) (app2 (rest a) b))))
+
+(definec rev2 (x :tl) :tl
+  (if (endp x)
+      nil
+    (app2 (rev2 (rest x)) (list (first x)))))
+
+(definec in2 (a :all X :tl) :bool
+  (and (consp X)
+       (or (== a (first X))
+           (in2 a (rest X)))))
+
+(definec del (a :all X :tl) :tl
+  (cond ((endp X) nil)
+        ((== a (car X)) (del a (cdr X)))
+        (t (cons (car X) (del a (cdr X))))))
+
+
+Conjecture 1:
+(equal (cons a (app2 x y)) (app2 (cons a x) y))
+
+;; Nothing to do for Exportation
+
+Contract Completion:
+(implies (and (tlp x)
+              (tlp y)
+              (tlp (cons a x)))
+  (equal (cons a (app2 x y)) (app2 (cons a x) y)))
+ 
+Context:
+C1. (tlp x)
+C2. (tlp y)
+C3. (tlp (cons a x))
+
+;; Nothing to do for Derived Context
+
+Goal:
+(equal (cons a (app2 x y)) (app2 (cons a x) y))
+
+Proof:
+(app2 (cons a x) y)
+= { Def app2 } 
+(if (endp (cons a x))
+      y
+    (cons (first (cons a x)) (app2 (rest (cons a x)) y))) 
+= { Def endp } 
+(if nil
+      y
+    (cons (first (cons a x)) (app2 (rest (cons a x)) y))) 
+= { PL } 
+(cons (first (cons a x)) (app2 (rest (cons a x)) y))
+= {car-cdr Axioms } 
+(cons a (app2 (rest (cons a x)) y))
+= { car-cdr axioms } 
+(cons a (app2 x y))
+
+QED
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
