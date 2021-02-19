@@ -231,12 +231,12 @@ we naively translate them into ACL2 propositions.
 |#
 
 ;; p ∨ true ≡ true (No 1)
-;; p ⇒ true ≡ p    (No 3)
+;; (true ⇒ p) ≡ p  (No 4)
 ;; ¬¬p ≡ p         (No 22)
 ;; p ∨ ¬p ≡ true   (No 31)
 
 (must-fail (thm (equal (or p t) t)))
-(must-fail (thm (equal (implies p t) p)))
+(must-fail (thm (equal (implies t p) p)))
 (must-fail (thm (equal (not (not x)) x)))
 (must-fail (thm (equal (or p (not p)) t)))
 
