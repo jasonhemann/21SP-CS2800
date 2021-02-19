@@ -31,3 +31,7 @@ classes: wide
 - [How to write a great Research paper](https://www.microsoft.com/en-us/research/academic-program/write-great-research-paper/#!other-resources)
 - [Keeping logic in the trivium of computer science: a teaching perspective](https://link.springer.com/article/10.1007/s10703-017-0301-z)
 - [Automatically generating /conjectures/](https://www.nature.com/articles/s41586-021-03229-4)
+
+- Chiang's short story ["Seventy-two Letters"](https://ia802706.us.archive.org/33/items/TedChiangSeventyTwoLetters/Ted_Chiang_72_Letters.pdf) ([Audio version](https://archive.org/details/TedChiangSeventyTwoLetters))
+
+- Chiang's ["Division by Zero"]({{ site.baseurl }}/assets/docs/Chiang-Division-by-Zero.pdf) (a story about ex-falso quodlibet)
