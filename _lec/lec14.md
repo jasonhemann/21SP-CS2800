@@ -21,7 +21,6 @@ date: 2021-02-22
 
 ### Individual v. Group
 
-
 >  You should feel free to ask your homework groups for
 >  clarification on how to understand the questions, or the techniques
 >  through which to work them. Of course, you aren't limited to
@@ -53,6 +52,18 @@ more "mission accomplished" than "nefarious activity".
 If you have concerns or questions about this wording, general overall
 principles, etc, please do reach out. We have time and ability to
 correct/improve/clarify wording. 
+
+## How does this fit in w/upcoming HW?
+
+  - The class and learning is going forward
+  - I /do/ understand that you all are doing exam prep/practice
+  - I have set aside lab on Friday for exam practice/prep
+  - Many of you will not have used gradescope for exam submission before
+  - I want you to also practice uploading exam
+  - I have made successfully uploading your practice exam *the* 6a hw.
+  - We still have something about the following material as a 6b, b/c I don't want to stand still.
+  - We will grade this upload based on completion, not on your answers/correctness.
+  - 6b still due at the usual place and time. 
 
 # Definition Principle
 
