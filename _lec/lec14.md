@@ -1,0 +1,234 @@
+---
+title: Definition and Termination
+date: 2021-02-22
+---
+
+# Let's check on our reading! How's this going?
+
+`PollEverywhere`
+
+# Exam Prep / Practice Exam / HW6a. 
+
+## Discussion of test taking strategy, format, and co.
+
+### Time: From Sat @ 1pm to Sun @ 10pm.
+    - Enough time so that I can close the 6a Dropbox @ the usual time
+    - A usual-enough time for people to be submitting things
+    - B/c close 6a before opening Exam Dropbox, no one will upload to the wrong place.
+    - People will have 33 hours to complete and upload
+      -- (24 < 33 < 36) hours
+      -- Enough to give all time zones a fair shake.
+
+### Individual v. Group
+
+
+>  You should feel free to ask your homework groups for
+>  clarification on how to understand the questions, or the techniques
+>  through which to work them. Of course, you aren't limited to
+>  learning from your homework group, but its good to have these
+>  established relationships. You should not receive the solutions from
+>  your homework group, or others. But if this is a forcing function
+>  through which to teach each other this material, then that's
+>  great. I suggest that you don't work /these/ problems with one
+>  another, but that instead you work analogous problems together.
+
+    - Came down to splitting the difference a bit
+    - Based on desired learning outcomes
+      - Do your own solutions, solve each problem yourself
+      - Don't compare/correct each others' solutions
+      - Don't collaborate on answering the questions on the exam
+      - Do explain background concepts to one another
+      - Do teach someone else the general principle behind solving such questions
+      - Do work through example problems together (either existing or ones you come up w/)
+
+#### "... if this is a forcing function for learning ..." ¯\_(ツ)_/¯
+
+Basically, the goal is to induce learning and assess how it's
+going. This is useful not just for metrics, but these are also
+learning opportunities themselves. If it ends up being that during the
+exam itself student A /teaches/ student B the material to know how to
+solve a problem so that student B can then solve it, then that feels
+more "mission accomplished" than "nefarious activity".
+
+If you have concerns or questions about this wording, general overall
+principles, etc, please do reach out. We have time and ability to
+correct/improve/clarify wording. 
+
+# Definition Principle
+
+We already understood this. Right? We had for every accepted
+definition the axioms that `ic => oc` and `ic => (equal (f x) = body)`
+
+But we know and we've seen that `definec` is a shallow wrapper over
+`defunc`, and since not every predicate has a corresponding datatype,
+we could go great with that. 
+
+## There are many complications 
+
+## We must not derive `nil`
+
+### Function bodies that return `nil` allow `nil`.
+
+`(definec foo (x :all) :all (equal 0 1))`
+
+### (Some) non-terminating functions let us derive `nil`
+
+`(definec foo (x :all) :all (1- (f x)))`
+
+(cf. `(definec foo (x :all) :all (f (1- x)))`)
+
+### Non-terminating functions let us derive `nil`.
+
+`(definec foo (x :all) :all y)`
+
+### Functions with free variable occurrences let us derive `nil`. 
+
+`(definec foo (x :all) :all y)`	
+
+## Admissible definitions
+
+So we need a bouncer at the door. ACL2 doesn't let us introduce
+functions willy-nilly. ACL2 saves us from accidentally allowing
+non-termination.
+
+### No decision procedures for termination!
+
+  - Almost all programs you write, you *want* to terminate
+  - Non-terminating programs are almost always a bug
+  
+  So we would expect something to check that for us. 
+  
+  But you can't write an algorithm for this. 
+  
+  (I'll show you that later. Really exciting result) 
+  
+### A definition is /admissible/ when
+
+   1. `f` is a new function symbol (so that we aren't possibly adding
+      an axiom about something that already exists) 
+	  You can't add a new, 2nd meaning to `cdr`.
+   2. The variables `x_i` in the definition of the body are unique (else, what happens when we subst in?)
+   3. `body` is a term, possibly using `f` recursively as a function symbol, with no free variable occurrences other than the `x_i` 
+      The word "term", here means that it is a legal expression in the current history.
+   4. This means that if you evaluate the function on any inputs that
+   satisfy the input contract, the function will terminate. A *total*,
+   computable function. Terminates on (acceptable) input.
+  
+  5. `ic ⇒ oc` is a theorem. (note this is just describing the *contracts*.
+  
+  6. If the `ic` holds, all the body contracts hold too.
+
+### We have seen what we get as a result
+
+   - /Contract Theorem/ for `f`: `ic => oc`
+   - /Definitional Axiom/ for `f`: `ic => (f x1 .. xn) = body`
+
+## But! How to prove termination?
+
+  We *can't* prove termination with a general decision procedure. So
+  it sounds like we are in trouble, and we cannot define
+  functions. Yet, we have done so. What shall we do? 
+  
+## Our way: Measure functions 101
+
+   A /measure/ function is a function we write to *show*
+   termination. Because if we can put our function's behavior in a 1:1
+   correspondence with a strictly decreasing sequence of natural
+   numbers, then we'll know that our function terminates.
+   
+### The fine print: "measure" function `m`
+ 
+   - an admissible function
+   - defined over the parameters of the function `f` (the one we're really interested in)
+   - with the same input contract as `f` (so, the same domain)
+   - but outputs a natural number, and 
+   - on every recursive call of `f` in `f`'s body, `m` applied to the
+     arguments to that recursive call in the body returns a smaller
+     number than m applied to the initial arguments to x, under the
+     conditions that led to the recursive call. 
+	 
+   ```lisp
+   (definec app2 (x :tl y :tl) :tl
+	 (if (endp x)
+		 y
+	   (cons (first x) (app2 (rest x) y))))
+   ```
+
+#### Caveats 1: additional arguments? 
+
+	```lisp
+	(definec m (x :tl y :tl) :nat
+	  (declare (ignorable y))
+	  (len x))
+	```
+
+    BTW, you could use `(declare (ignorable y))` in your `case-match` clauses, too. 
+	I prefer `&` as the better solution!
+
+   We will improve on this later! 
+
+### The proof! 
+
+	```lisp 
+	(implies (and (tlp x)
+			 (tlp y)
+			 (not (endp x)))
+	  (< (len (rest x)) (len x)))
+	```
+	
+###	Wait, what about `len`? 
+	
+#### We have an axiom that `cons-size` (cons-cell-count) is admissible, so terminating.
+
+   ```(definec cons-size (x :all) :nat
+        (if (consp x)
+		    (+ 1 (cons-size (car x)) (cons-size (cdr x)))
+		  0))
+   ```
+
+   ```lisp	
+   (definec f (x :tl) :tl
+     (cons 'cat (f x)))
+   ```
+   
+   What would happen if we try to use a measure function like `len`
+   for this?
+   
+   
+### How does it work when we try it out
+
+```lisp
+(set-termination-method :measure)
+(set-well-founded-relation n<)
+(set-defunc-typed-undef nil)
+(set-defunc-generalize-contract-thm nil)
+(set-gag-mode nil)
+```
+
+ACL2s will complain about the definition of your measure function
+unless you tell it to ignore arguments you don't use. (It is simpler
+to tell it all arguments can be ignored via `(set-ignore-ok t)`.
+
+
+   ````lisp 
+   (definec m (x :tl y :tl) :nat
+	 (declare (ignorable y)
+	 (len x))
+   ```
+  
+  Notice that the measure has to be of the form `(if IC (m ...) 0)`, not
+  `implies`, and `0` for the case the contracts don't hold.
+
+  ```lisp
+  (definec app2 (x :tl y :tl) :tl
+	  (declare (xargs :measure (if (and (tlp y) (tlp x)) (m x y) 0)))
+	(if (endp x)
+		y
+	  (cons (first x) (app2 (rest x) y))))
+  ```
+
+   
+   
+
+  
+  
