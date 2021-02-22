@@ -21,15 +21,15 @@ date: 2021-02-22
 
 ### Individual v. Group
 
->  You should feel free to ask your homework groups for
->  clarification on how to understand the questions, or the techniques
->  through which to work them. Of course, you aren't limited to
->  learning from your homework group, but its good to have these
->  established relationships. You should not receive the solutions from
->  your homework group, or others. But if this is a forcing function
+>  You should feel free to ask your homework groups for clarification
+>  on how to understand the questions, or the techniques through which
+>  to work them. Of course, you aren't limited to learning from your
+>  homework group, but its good to have these established
+>  relationships. You should not receive the solutions from your
+>  homework group, or others. But if this is a forcing function
 >  through which to teach each other this material, then that's
->  great. I suggest that you don't work /these/ problems with one
->  another, but that instead you work analogous problems together.
+>  great. Don't work /these/ problems with one another, but you may
+>  instead work analogous problems together.
 
     - Came down to splitting the difference a bit
     - Based on desired learning outcomes
@@ -70,9 +70,74 @@ correct/improve/clarify wording.
 We already understood this. Right? We had for every accepted
 definition the axioms that `ic => oc` and `ic => (equal (f x) = body)`
 
+```lisp
+(definec f (a :dt1) :dt2
+  :ic exp1
+  :oc exp2
+  (cons a a))
+```lisp
+
+## BTW: order matters in contracts b/c and, etc are "short-circuiting"
+
+```lisp
+(defunc f (a)
+  :ic (and (dt1p a) exp1)
+  :oc (and exp2 (dt2p (f a)))
+
+  ...)
+```
+
+## The general defunc
+ `< .. >` are metavariable names
+
 But we know and we've seen that `definec` is a shallow wrapper over
 `defunc`, and since not every predicate has a corresponding datatype,
 we could go great with that. 
+
+```lisp
+(defunc <name (<args ...>)
+  :ic <in-contract-expr>
+  :oc <out-contract-exrp>
+  <body>)
+```  
+
+###  Contract Theorem
+`(implies <in-contract-expr> <out-contract-expr)`
+
+### Definition Theorem
+`(implies <in-contract-expr> (equal (f <inputs>) body[<inputs>/<args>]))`
+
+### BTW: One more additional piece of syntax to introduce.
+
+`[<inputs>/<args>]` is syntax that people use to discuss substitution.
+  
+  1. This is substitution for free variables (the complicated substitution notion)
+  2. This is a simultaneous substitution
+
+We're substituting the inputs to the function (AKA actual parameters)
+for the formal parameters (the variable names in the function definition)
+in the body.
+
+```lisp
+;; actual parameters
+(f 12) 
+(f 'cat)
+(f 17)
+```
+
+```lisp
+<body>[17/a]
+(cons a a)[17/a] ;; stick in 17 for every (free) a in that expression
+```
+
+## Because ...
+
+Computer scientists and mathematicians are nerds; thus multiply by
+fractions "substitution" analogy.
+
+`5*[3/5] = 3`
+
+Our substitutions are by analogy w/let bindings. `((a 17))`
 
 ## There are many complications 
 
