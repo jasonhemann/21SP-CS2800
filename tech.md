@@ -127,7 +127,7 @@ comparison [here](https://support.zoom.us/hc/en-us/articles/360027397692#query:~
 
 ## NEU VPN 
 
-Go to [http://vpn.northeastern.edu](http://vpn.northeastern.edu), and follow the instructions to
+Go to [https://vpn.northeastern.edu](https://vpn.northeastern.edu), and follow the instructions to
 install the GlobalProctect VPN client on your machine. You will need
 this to use the VDI linux machines. If you have difficulty please
 consult the [relevant ITS KB articles](http://northeastern.service-now.com/tech?id=kb_category&kb_category=07d42f714f02cf0099c2fd511310c7b2), and if necessary [reach out to

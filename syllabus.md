@@ -62,7 +62,7 @@ The best way to get in contact for personal, private (FERPA, etc)
 messages is via my email address
 [jhemann@northeastern.edu](mailto:jhemann@northeastern.edu). You
 should expect a response within 48 hours. You will find that I am
-faster with [Piazza](Piazza) or our public forums. If I deem it even
+faster with [Piazza]({{ site.baseurl }}/tech/) or our public forums. If I deem it even
 potentially useful to others, I will likely anonymize your letter,
 re-post it on Piazza, answer it there, and forward you the link.
 
@@ -221,7 +221,7 @@ either modality. Unless the student obtains permission from the
 instructor electronic video and/or audio recording of class is
 prohibited. If permission is granted, any distribution of the
 recording is prohibited. Students with specific electronic recording
-accommodations authorized by the [DRC](Academic_Accommodations) do not
+accommodations authorized by the [DRC](academic-accommodations) do not
 require instructor permission; however, the instructor must be
 notified of any such accommodation prior to recording. Any
 distribution of such recordings is prohibited. Obviously I cannot
