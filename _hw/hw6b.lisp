@@ -16,6 +16,10 @@ these!
 
 #| 
 
+Recall that Section 5.1 of the Manolios text describes the
+Definitional Principle for ACL2s. This includes 6 conditions that an
+ACL2s function definition must satisfy to be admissible.
+
 The "functions" in this section are inadmissible. I've commented them
 out, so that they don't interfere with running your file---ACL2
 wouldn't put up with these inadmissible functions!
@@ -37,10 +41,14 @@ For each, identify *a* condition that's violated. (If multiple
 
 (defdata failure (oneof (cons 2 string)
 			(cons 3 string)
-			(cons 4 all) ;; these should be quoted data
-			(cons 5 all) ;; these should be quoted data
-			(cons 6 all) ;; these should be quoted data
- 
+			(cons 4 all)   ;; these should be quoted data
+			(cons 5 all)   ;; these should be quoted data
+			(cons 6 all))) ;; these should be quoted data
+
+;; Here are a few examples:
+(check (failurep '(2 . "x is provided as an argument twice")))
+(check (failurep '(5 . ((x 3) (y '(1 2 3))))))
+
 ;; (definec f1 (x :nat) :int 
 ;;   (if (zp x)
 ;;       3
@@ -68,18 +76,22 @@ For each, identify *a* condition that's violated. (If multiple
 
 ;; PART II ADMISSIBLE FUNCTIONS 
 
+;; You can ignore these; they adjust some ACL2s settings so that
+;; definec only uses the provide measure function to prove
+;; termination, and so that definec doesn't do as much magic as it
+;; would otherwise.
+(set-termination-method :measure)
+(set-well-founded-relation n<)
+(set-defunc-typed-undef nil)
+(set-defunc-generalize-contract-thm nil)
+(set-gag-mode nil)
+
 #| 
 
 The functions in this section are admissible. We will prove this. In
 this section, I have broken each question down into smaller steps.
 
 |#
-
-(set-termination-method :measure)
-(set-well-founded-relation n<)
-(set-defunc-typed-undef nil)
-(set-defunc-generalize-contract-thm nil)
-(set-gag-mode nil)
 
 (definec len2 (x :tl) :nat
   (if (endp x)
@@ -91,32 +103,32 @@ this section, I have broken each question down into smaller steps.
 ;; A
 (definec app2-measure (x :tl y :tl) :nat
   (declare (ignorable y))
-  (len x))
+  (len2 x))
 
 ;; B
-(defconst *app2-contract-theorem*
-  '(implies (and (tlp x) (tlp y)) (app2 x y)))
-
-(make-event `(thm ,*app2-contract-theorem*))
-
-;; C 
 
 ;; Notice that the measure has to be of the form (if IC (m ...) 0), 
 ;; not implies, and 0 for the case the contracts don't hold.
 (definec app2 (x :tl y :tl) :tl
-  (declare (xargs :measure (if (and (tlp y) (tlp x)) (m x y) 0)))
+  (declare (xargs :measure (if (and (tlp y) (tlp x)) (app2-measure x y) 0)))
   (if (endp x)
       y
     (cons (first x) (app2 (rest x) y))))
+
+;; C
+(defconst *app2-contract-theorem*
+  '(implies (and (tlp x) (tlp y)) (tlp (app2 x y))))
+
+(make-event `(thm ,*app2-contract-theorem*))
 
 ;; D
 
 Conjecture app2-terminates:
 (implies (and (tlp x)
-  	          (tlp y)
-	          (not (endp x)))
-  (< (app2-measure (rest x) y)
-     (app2-measure x y)))
+              (tlp y)
+              (not (endp x)))
+         (< (app2-measure (rest x) y)
+            (app2-measure x y)))
 
 Context:
 C1. (tlp x)
@@ -162,6 +174,9 @@ my (set-ignore-ok t) form.
 
 ;; A. Provide a measure function to prove termination.
 
+;; The function definitions for e/o?, f4, f5, f6, and f7 can be found
+;; in Part B below.
+
 (definec e/o?-measure
 
   )
@@ -182,39 +197,7 @@ my (set-ignore-ok t) form.
 
   )
 
-;; B. State, as a quoted list, the contract theorem (condition 5).
-
-(defconst *e/o?-contract-theorem*
-
-  )
-
-(make-event `(thm ,*e/o?-contract-theorem*))
-
-(defconst *f4-contract-theorem*
-
-  )
-
-(make-event `(thm ,*f4-contract-theorem*))
-
-(defconst *f5-contract-theorem*
-
-  )
-
-(make-event `(thm ,*f5-contract-theorem*))
-
-(defconst *f6-contract-theorem*
-
-  )
-
-(make-event `(thm ,*f6-contract-theorem*))
-
-(defconst *f7-contract-theorem*
-
-  ))
-
-(make-event `(thm ,*f7-contract-theorem*))
-
-;; C. Finish adding your measure to the function definition, to help
+;; B. Finish adding your measure to the function definition, to help
 ;; ACL2 show termination. You can modify the function definition if
 ;; you need, but make sure it's equivalent
 
@@ -242,10 +225,9 @@ my (set-ignore-ok t) form.
   (declare (xargs :measure ))
   (cond
     ((endp l) 1)
-    ((> 0 x)  (1+ (f5 (len l) l)))
+    ((> 0 x)  (1+ (f5 (len2 l) l)))
     (t (1+ (f5 (1- x) (rest l))))))
 
-...
 
 (definec f6 (x :nat y :nat) :nat
   (declare (xargs :measure ))
@@ -255,7 +237,6 @@ my (set-ignore-ok t) form.
     ((<= y 1) (f6 (1+ x) (1+ y)))
     (t        (f6 (1- x) (1+ y)))))
 
-...
 
 (definec f7 (x :tl y :nat) :tl
   (declare (xargs :measure ))
@@ -265,7 +246,39 @@ my (set-ignore-ok t) form.
     ((= y 1)  (f7 (rest x) y))
     (t        (f7 (cons y x) (- y 1)))))
 
-...
+
+;; C. State, as a quoted list, the contract theorem (condition 5).
+
+(defconst *e/o?-contract-theorem*
+
+  )
+
+(make-event `(thm ,*e/o?-contract-theorem*))
+
+(defconst *f4-contract-theorem*
+
+  )
+
+(make-event `(thm ,*f4-contract-theorem*))
+
+(defconst *f5-contract-theorem*
+
+  )
+
+(make-event `(thm ,*f5-contract-theorem*))
+
+(defconst *f6-contract-theorem*
+
+  )
+
+(make-event `(thm ,*f6-contract-theorem*))
+
+(defconst *f7-contract-theorem*
+
+  )
+
+(make-event `(thm ,*f7-contract-theorem*))
+
 
 ;; D. Prove that the function is terminating using your measure
 ;; function and equational reasoning
