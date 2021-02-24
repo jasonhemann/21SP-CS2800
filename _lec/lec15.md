@@ -204,8 +204,106 @@ submit the defun form, which should be this.
 Now, you can see that the proof failed and you can fix the measure, by
 using `(len2 x)` not `(len2 y)` and try again.
   
-   
+## TBD: Clean up and integrate
 
-  
-  
-  
+```
+(definec len2 (x :tl) :nat
+  (if (endp x)
+      0
+    (+ 1 (len2 (rest x)))))
+
+;; Measure set-up
+(set-termination-method :measure)
+(set-well-founded-relation n<)
+(set-defunc-typed-undef nil)
+(set-defunc-generalize-contract-thm nil)
+(set-gag-mode nil)
+
+;; "well-founded"
+;; Transport over to the world of math
+
+;; b/c we can't solve this problem uniformly
+(implies (not (zp n))   ;; the logic I had to step through to get to the recursion
+	 (the-data-are-smallerp (take-n (1- n) (cdr ls)) ;; the recursive call
+				(take-n n ls))) ;; the original call to the function
+
+;; instead we need to solve
+
+(implies (not (zp n))   ;; the logic I had to step through to get to the recursion
+  (< (meas (1- n) (cdr ls)) ;; the recursive call
+     (meas n ls))) ;; the original call to the function
+
+;; thus our task is to construct a measure function
+
+
+(defunc meas (n ls)
+  :ic (and (natp n) (tlp ls) (<= n (len2 ls)))
+  :oc (natp (meas n ls))
+  (declare (ignorable ls))
+  n)
+
+#| 
+
+(definec take-n (n :nat ls :tl) :tl
+  :ic (<= n (len2 ls))
+  (cond
+    ((zp n) '())
+    (t (cons (car ls) (take-n (1- n) (cdr ls))))))
+
+|#
+
+(defunc take-n (n ls)
+  :ic (and (natp n) (tlp ls) (<= n (len2 ls)))
+  :oc (tlp (take-n n ls))
+  (declare (xargs :measure (if (and (natp n) (tlp ls)) (meas n ls) 0)
+                  :hints (("goal" :do-not-induct t))))
+  (cond
+    ((zp n) '())
+    (t (cons (car ls) (take-n (1- n) (cdr ls))))))
+
+
+(check= (take-n 5 '(a b c d e f g h))
+	'(a b c d e))  
+
+Conjecture 1:
+(implies (not (zp n))
+  (< (meas (1- n) (cdr ls))
+     (meas n ls)))
+
+Contract Completion:
+(implies (and (tlp ls)
+	      (tlp (cdr ls))
+	      (<= n (len2 ls)) ;; Don't forget explicit contracts!!
+	      (natp (1- n))
+	      (natp n)
+	      (not (zp n)))
+ (< (meas (1- n) (cdr ls))
+    (meas n ls)))	  
+
+Context:
+C1. (tlp ls)
+C2. (tlp (cdr ls))
+C3. (<= n (len2 ls)) 
+C4. (natp (1- n))
+C5. (natp n)
+C6. (not (zp n))
+
+Goal:
+(< (meas (1- n) (cdr ls))
+   (meas n ls)))	  
+
+;; Definitional axiom
+;; ic ⇒ (f x) = body
+
+;; So when can we substitute for the body of our measure function?
+;; Ans: when the input contracts are satisfied.
+;; Which they are!
+
+Proof:
+(< (meas (1- n) (cdr ls))
+   (meas n ls)))	  
+= {Def. meas}
+(< (1- n) n)
+= { Arith } 
+t 
+```
