@@ -237,11 +237,11 @@ my (set-ignore-ok t) form.
 
 (set-ignore-ok t)
 
+;; A. Provide a measure function that you will use to prove
+;; termination of functions e/o?, f4, and f5.
 
-;; A. Provide a measure function to prove termination.
-
-;; The function definitions for e/o?, f4, f5, f6, and f7 can be found
-;; in Part B below.
+;; You will find the definitions of functions e/o?, f4, and f5 in Part
+;; B below.
 
 (definec e/o?-measure
 
@@ -252,14 +252,6 @@ my (set-ignore-ok t) form.
   )
 
 (definec f5-measure
-
-  )
-
-(definec f6-measure
-
-  )
-
-(definec f7-measure
 
   )
 
@@ -279,38 +271,19 @@ my (set-ignore-ok t) form.
      ((zp n) t)
      (t (e/o? (not flag) (1- n)))))))
 
-
 (definec f4 (x :tl y :int) :tl
   (declare (xargs :measure ))
   (if (< y 0)
       x
     (f4 (rest x) (- y 1))))
 
-
-(definec f5 (x :int l :tl) :pos
-  (declare (xargs :measure ))
-  (cond
-    ((endp l) 1)
-    ((> 0 x)  (1+ (f5 (len2 l) l)))
-    (t (1+ (f5 (1- x) (rest l))))))
-
-
-(definec f6 (x :nat y :nat) :nat
+(definec f5 (x :nat y :nat) :nat
   (declare (xargs :measure ))
   (cond 
     ((zp x)   y)
     ((<= y x) x)
-    ((<= y 1) (f6 (1+ x) (1+ y)))
-    (t        (f6 (1- x) (1+ y)))))
-
-
-(definec f7 (x :tl y :nat) :tl
-  (declare (xargs :measure ))
-  (cond 
-    ((zp y)   nil)
-    ((endp x) (list y))
-    ((= y 1)  (f7 (rest x) y))
-    (t        (f7 (cons y x) (- y 1)))))
+    ((<= y 1) (f5 (1+ x) (1+ y)))
+    (t        (f5 (1- x) (1+ y)))))
 
 
 ;; C. State, as a quoted list, the contract theorem (condition 5).
@@ -327,35 +300,18 @@ my (set-ignore-ok t) form.
 
 (make-event `(thm ,*f4-contract-theorem*))
 
+
 (defconst *f5-contract-theorem*
 
   )
 
 (make-event `(thm ,*f5-contract-theorem*))
 
-(defconst *f6-contract-theorem*
-
-  )
-
-(make-event `(thm ,*f6-contract-theorem*))
-
-(defconst *f7-contract-theorem*
-
-  )
-
-(make-event `(thm ,*f7-contract-theorem*))
-
 
 ;; D. Prove that the function is terminating using your measure
 ;; function and equational reasoning
 
 Conjecture e/o?-terminates: 
-
-...
-
-QED
-
-Conjecture f5-terminates:
 
 ...
 
@@ -369,15 +325,9 @@ Conjecture f4-terminates:
 QED
 
 
-Conjecture f6-terminates:
+Conjecture f5-terminates:
 
 ...
 
 QED
 
-
-Conjecture f7-terminates:
-
-...
-
-QED
