@@ -3,6 +3,8 @@ title: Undecidability Halting Problem Results
 date: 2021-03-01
 ---
 
+# Exam: How'd you all go? 
+
 # Termination Results, Problems
 
   I have asserted at you that ACL2 cannot prove termination, and that
@@ -182,17 +184,6 @@ date: 2021-03-01
 14 groups. Each one have a representative, who's going to explain
 their stanza to us. 
 
-## It gets worse! 
-
-   Rice's theorem:
-   
-   Decision problem for any non-trivial extensional property of Turing
-   machines is undecidable.
-   
-   It states that for any non-trivial property, there is no general
-    decision procedure that, for all programs, decides whether the
-    partial function implemented by the input program has that
-    property.
 
 ## History 
 
