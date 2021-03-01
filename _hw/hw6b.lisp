@@ -136,8 +136,8 @@ For each, identify *a* condition that's violated. (If multiple
 ;;       (* a (1+ a))
 ;;     (f3 (rest x) (1+ a))))
 
-(defconst *f3-failure* )
-(failurep *f3-failure*)
+;; (defconst *f3-failure* )
+;; (failurep *f3-failure*)
 
 
 ;; PART II ADMISSIBLE FUNCTIONS 
