@@ -5,6 +5,8 @@ date: 2021-03-01
 
 # Exam: How'd you all go? 
 
+`PollE` 
+
 # Termination Results, Problems
 
   I have asserted at you that ACL2 cannot prove termination, and that
@@ -175,15 +177,8 @@ date: 2021-03-01
   What does it mean to say that D accepts itself as input?
   
   D is one of the machines that *doesn't* accept itself as input.
-  
-  
-   The theorem that the halting problem is unsolvable.
-
-### In class exercise. `http://www.lel.ed.ac.uk/~gpullum/loopsnoop.html`
-
-14 groups. Each one have a representative, who's going to explain
-their stanza to us. 
-
+    
+  The theorem: that the halting problem is unsolvable.
 
 ## History 
 
