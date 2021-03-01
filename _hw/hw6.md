@@ -11,4 +11,4 @@ For this first portion of this assignment you just need to upload your
 practice exam. You can *work* on it together, ofc, but I need each of
 you to upload this individually, to practice your uploading.
 
-The 2nd portion of this assignment is up at [the usual]({{ site.baseurl }}/_hw/hw6b.lisp) place.
+The 2nd portion of this assignment is up at [the usual]({{ site.baseurl }}/assets/code/hw6b.lisp) place.
