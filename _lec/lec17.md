@@ -11,57 +11,83 @@ date: 2021-03-01
 
   I have asserted at you that ACL2 cannot prove termination, and that
   it's not just ACL2. 
-  
+
 # Today, the Proof
 
-## Turing Machines 
+  - BTW: If you want to see this recapitulated, Harry Porter @ PSU has
+    a nice [video](https://www.youtube.com/watch?v=o7I-N6KlkTg)
 
-  Based upon results, I don't need to explain to you all what a Turing
-  machine is.
-  
-## It's a most-general model of computation (C-T thesis).
+## Poll: Turing Machines 
 
+  Do you know what a Turing machine is?
+
+## Turing Machines---Why do they matter? 
+
+  A TM is a most-general model of computation (according to the
+  /Church-Turing thesis/). 
+	
   If we want to understand 'algorithm,' we do it with respect to
-  *some*, _particular_ model of computation. Analogy: play
-  "poker". You can play the game under pretty much any "good enough"
-  set of rules. You need to decide on *a* set of rules. Kind of like
-  that for descriptions of Turing machines, or for models of
-  computation generally.
+  *some*, _particular_ model of computation. Here's an analogy: what
+  do you mean when you say "play poker"? You can play the game under
+  pretty much any "good enough" set of rules. You need to decide on
+  *a* set of rules. It's kind of like that for (descriptions of)
+  Turing machines. Which particular one we choose matters in the
+  details.
   
-  There are any number of good common choices. Which particular one we
-  choose doesn't matter.
+  The purpose is kind of like that. It's /an/ adequate, general model
+  of computation. However you formally describe them (there's lots of
+  different ways)---or for choosing your models of computation more
+  generally---more important than the particulars of any one model is
+  that we have *an* adequate model; the details matter less.
   
-  It's not even my favorite. Point is that we have one.
+  By the way, there are any number of good common choices. Turing
+  Machines are not even my favorite. Point is that we have such a
+  model, and a description of it.    
   
 ## Why are they *useful* models. 
+  
+### Put yourself in this historical time and place. 
 
-  Everyone else is doing applied mathematics and working on questions
-  in recursive function theory. DYK: "computer" used to be a job
-  they'd hire you for? Or advertise for in the newspaper? I want to
-  find one, so that I have one, a picture of some newspaper article
-  with an ad for a computer. Looking to hire one.
-  
+  DYK: "computer" used to be a job they'd hire you for? If you were
+  looking for a computer, you'd put an ad up in the "help wanted"
+  section of a newspaper: ["Looking to
+  hire.."](https://chroniclingamerica.loc.gov/lccn/sn82015387/1907-08-03/ed-1/seq-1/print/image_681x648_from_3510%2C2255_to_4747%2C3433/)
+
+  This is coming out of work in applied mathematics and areas of
+  philosophy, really. There was no computer science, there was no
+  computer. Everyone else is doing applied mathematics and working on
+  questions in recursive function theory.
+
   Turing lies out in a field for a month or so, and thinks about,
-  "What is it that mathematicians /do/?"
+  "What is it that mathematicians /do/?" 
   
-  1. Self-evidently the task of computation. 
+  -- They make marks on paper. If you were going to mechanize a
+  mathematician, what would the least job of it be? 
   
-  They are programmable. Early computers weren't utilizing some of the
-  important capacities. 
+  1. This is self-evidently the task of computation.
   
-  "Universal" Turing machine. 
+  2. Minimalist models of computation. Importantly, they are also
+     /programmable/. Shown though that they are powerful enough to
+     /simulate/ other computers.
+    
+## "Universal" Turing machine. 
   
+## /Stored-program/ concept
+  
+  Early computers weren't utilizing some of the important
+  capacities. John Von Neumann gets credit for this at the time,
+  IIRC. These early computers were missing the concept of "stored
+  program". Data as code. Running data. Turing had that idea, with the
+  "Universal" Turing machine.
+
+### Code-as-data, data-as-code. 
+
   Without the stored program concept, you'd have one wired up to do
   the work of a toaster, and then re-wire it to do the logic of a
-  washing machine. That kind of stuff. These early computers were
-  missing the concept of "stored program". Data as code. Running
-  data. Turing had that idea.
+  washing machine. That kind of stuff. 
   
-  It was essential to his work. 
-  
-  Minimalist models of computation. Shown though that they can, and
-  are powerful enough to, /simulate/ other computers.  
-  
+  This was essential to Turing's work. 
+    
 ###  Computers that can simulate other computers. 
 
   This was exciting and novel at the time! You all have it now, on
@@ -70,21 +96,25 @@ date: 2021-03-01
   nearly so foreign as it was. But would you have thought about
   virtual machines before you ever saw a computer? Before anyone had
   seen one?
-  	
 	
 ## "Codes for". There is a program on your hard drive.
    
    It's data. When you run it, it looks and acts just like a computer. 
    
    Your VM boots up to an OS. You could imagine it was a dedicated
-   computer, though, that did just one thing. 
+   computer, though, that did just one thing. Imagine if you lived in
+   a world where you could run one program at a time, and that program
+   was loaded on boot.
 
 ## "Codes for" 
 
    Things "code for." We know all about encoding systems. ASCII,
    etc. Programs as data are not foreign concepts. But you want to
    know that we aren't cheating or getting by with anything with these
-   "string" things. We can encode strings as numbers. 
+   "string" things. We can encode strings as numbers. This is, by the
+   way, an inessential detail, but it is also very cool and neat and
+   fun to think about how /mathematicians/ would think of "encoding"
+   data. 
    
    ```
    54
@@ -103,10 +133,12 @@ date: 2021-03-01
   _short_. But it _works_ and that's all we need. Point being, we can
   discuss sets of strings, and you'll know I'm not cheating. 
 
-## Decision Problem. How do you even phrase this as a decision problem? 
+## The Decision Problem
+
+### How do you even phrase halting on input as a decision problem? 
 
    A set. A set of strings. Which sets of strings? What we want is the
-   set of strings, that /codes/ for, 
+   set of strings, that /codes/ for,
    
    H = {<M,w> | where M codes for a pair of a TM M and M-input w, and
    halts on input w.}
@@ -129,7 +161,8 @@ date: 2021-03-01
   Steps. Assume (towards contradiction) that the set *is* decidable. 
 
   - We have shown that TM can run any program, including an encoding
-    of some other TM, on it. We could install VirtualBox on our VirtualBox image, right?  
+    of some other TM, on it. We could install VirtualBox on our
+    VirtualBox image, right?
 
   - Therefore, then (toward contradiction), there must be a TM that
     computes that function (1,0) that recognizes the set.
