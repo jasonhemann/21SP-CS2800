@@ -128,11 +128,7 @@ provide your own measure arguments.
 (set-ignore-ok t)
 
 
-(definec f1-measure
-
-  )
-
-(definec f2-measure
+(definec f-measure
 
   )
 
@@ -142,24 +138,14 @@ provide your own measure arguments.
 
 ;; B. Finish adding your measure to the function definition, to help
 ;; ACL2 show termination. You can modify the function definition if
-;; you need, but make sure it's equivalent.
+;; you like, but make sure it's equivalent.
 
-(definec f1 (x :tl y :tl acc :tl) :tl
+(definec f (x :tl y :tl acc :tl) :tl
   (declare (xargs :measure ))  
   (cond
     ((and (endp x) (endp y)) acc)
-    ((endp x) (f1 x (rest y) (cons (first y) acc))) ;; a
-    ((endp y) (f1 (rest x) y (cons (first x) acc))) ;; b
-    (t (f1 x nil (f1 nil y acc)))))                 ;; c 
-
-(definec f2 (x :tl y :tl acc :tl) :tl
-  (declare (xargs :measure ))
-   (if (endp x)
-       (if (endp y)
-	   acc
-	 (f2 x (rest y) (cons (first y) acc))) ;; a
-     (f2 (rest x) y (cons (first x) acc))))    ;; b
-
+    ((endp x) (f x (rest y) (cons (first y) acc))) ;; a
+    (t (f (rest x) y (cons (first x) acc)))))      ;; b
 
 ;; Oh no! ACL2s is in trouble! It needs *YOUR* help!
 :program
@@ -178,6 +164,7 @@ NB: You might need to understand how magnitude works. One way to do
 that is to "trace" it and try running it on examples.
 
 |# 
+
 (trace$ magnitude)
 
 (magnitude 20)
@@ -194,18 +181,11 @@ that is to "trace" it and try running it on examples.
 ;; C. State, as a quoted list, the contract theorem (condition 5).
 
 
-(defconst *f1-contract-theorem*
+(defconst *f-contract-theorem*
 
   )
 
-(make-event `(thm ,*f1-contract-theorem*))
-
-
-(defconst *f2-contract-theorem*
-
-  )
-
-(make-event `(thm ,*f2-contract-theorem*))
+(make-event `(thm ,*f-contract-theorem*))
 
 
 (defconst *magnitude-contract-theorem*
@@ -218,41 +198,19 @@ that is to "trace" it and try running it on examples.
 ;; function and equational reasoning for the recursive calls.
 
 
-Conjecture f1a-terminates:
+Conjecture fa-terminates:
 
 ...
 
 QED
 
 
-Conjecture f1b-terminates:
+Conjecture fb-terminates:
 
 ...
 
 QED
 
-
-Conjecture f1c-terminates:
-
-...
-
-QED
-
-
-
-Conjecture f2a-terminates:
-
-...
-
-QED
-
-
-
-Conjecture f2b-terminates:
-
-...
-
-QED
 
 
 Conjecture magnitudea-terminates:
