@@ -88,18 +88,6 @@ provide your own measure arguments.
 
 |# 
 
-;; You can ignore these; they adjust some ACL2s settings so that
-;; definec only uses the provide measure function to prove
-;; termination, and so that definec doesn't do as much magic as it
-;; would otherwise.
-
-(set-termination-method :measure)
-(set-well-founded-relation n<)
-(set-defunc-typed-undef nil)
-(set-defunc-generalize-contract-thm nil)
-(set-gag-mode nil)
-
-
 #| 
 
  Here is a function that you may find useful when constructing a
@@ -117,6 +105,23 @@ provide your own measure arguments.
 (check= (ceil 11) 11)
 (check= (ceil 10/3) 4)
 (check= (ceil 10/101) 1)
+
+(definec len2 (x :tl) :nat
+  (if (endp x)
+      0
+    (+ 1 (len2 (rest x)))))
+
+;; You can ignore these; they adjust some ACL2s settings so that
+;; definec only uses the provide measure function to prove
+;; termination, and so that definec doesn't do as much magic as it
+;; would otherwise.
+
+(set-termination-method :measure)
+(set-well-founded-relation n<)
+(set-defunc-typed-undef nil)
+(set-defunc-generalize-contract-thm nil)
+(set-gag-mode nil)
+
 
 ;; 1. Come up with an acceptable measure function for each of the
 ;; functions below. We once again use the (set-ignore-ok t) form.
