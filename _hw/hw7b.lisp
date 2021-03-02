@@ -125,6 +125,7 @@ provide your own measure arguments.
 
 ;; 1. Come up with an acceptable measure function for each of the
 ;; functions below. We once again use the (set-ignore-ok t) form.
+
 (set-ignore-ok t)
 
 
@@ -138,7 +139,7 @@ provide your own measure arguments.
 
 ;; B. Finish adding your measure to the function definition, to help
 ;; ACL2 show termination. You can modify the function definition if
-;; you like, but make sure it's equivalent.
+;; you like (e.g. to use defunc), but make sure it's equivalent.
 
 (definec f (x :tl y :tl acc :tl) :tl
   (declare (xargs :measure
@@ -147,9 +148,6 @@ provide your own measure arguments.
     ((and (endp x) (endp y)) acc)
     ((endp x) (f x (rest y) (cons (first y) acc))) ;; a
     (t (f (rest x) y (cons (first x) acc)))))      ;; b
-
-;; Oh no! ACL2s is in trouble! It needs *YOUR* help!
-:program
 
 (definec magnitude (x :non-neg-rational) :integer
   (declare (xargs :measure
@@ -178,10 +176,8 @@ that is to "trace" it and try running it on examples.
 
 (untrace$ magnitude)
 
-:logic
-
-;; C. State, as a quoted list, the contract theorem (condition 5).
-
+;; C. State, as a quoted list, the contract theorem (condition 5 from
+;; last time this came up).
 
 (defconst *f-contract-theorem*
 
