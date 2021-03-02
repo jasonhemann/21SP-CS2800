@@ -141,7 +141,8 @@ provide your own measure arguments.
 ;; you like, but make sure it's equivalent.
 
 (definec f (x :tl y :tl acc :tl) :tl
-  (declare (xargs :measure ))  
+  (declare (xargs :measure
+		  :hints (("goal" :do-not-induct t))))
   (cond
     ((and (endp x) (endp y)) acc)
     ((endp x) (f x (rest y) (cons (first y) acc))) ;; a
@@ -151,7 +152,8 @@ provide your own measure arguments.
 :program
 
 (definec magnitude (x :non-neg-rational) :integer
-  (declare (xargs :measure ))
+  (declare (xargs :measure
+		  :hints (("goal" :do-not-induct t))))
   (cond 
     ((equal x 0) 0)
     ((>= x 10) (+ 1 (magnitude (/ x 10)))) ;; a
