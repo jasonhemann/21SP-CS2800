@@ -36,6 +36,13 @@ date: 2021-02-01
   
 # Logic: To find that which is true
 
+> A deduction is speech in which, certain things haing been supposed,
+> something different from the things supposed results, of necessity,
+> because of their being so.
+>
+> -- Aristotle, "Prior Analytics", 4th century BC
+
+
 # Aristotle's logic. Part-whole logic. 
   
   Lots more, fascinating story. How we get from Aristotle, through the
