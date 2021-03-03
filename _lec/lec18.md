@@ -25,12 +25,14 @@ date: 2021-03-03
     accepts w, Right before it would reject, we go into an infinite
     loop. "Reject" if M rejects w.
 
-  (Q1. Under what conditions will M accept w? 
-   - When the set M computes includes w. 
-   Q2. Under what conditions will M reject w? 
-   - When the set M computes does not include w. 
-   Q3. How does that manifest on the machine?
-   - Either the machine would have rejected w or it go into an
+####  Q1. Under what conditions will M accept w? 
+When the set M computes includes w. 
+
+####  Q2. Under what conditions will M reject w? 
+When the set M computes does not include w. 
+
+####  Q3. How does that manifest on the machine?
+	Either the machine would have rejected w or it go into an
      infinite loop. We ensured that it does.)
   
   (Again, it doesn't exist. Assume it does.)
