@@ -11,19 +11,74 @@ date: 2021-03-04
   - More kinds of data. 
   - More concerned with ensuring termination. 
 
-## What is an induction /scheme/? 
-
- The proof obligations to prove a universal formula by reference to a given function definition 
-
- Q: Where do induction schemes come from? 
- 
- A: Every terminating function gives rise to an induction scheme
-
 ### There's a lot of vocabulary! 
 
+   - "terminals" 
    - "maximal terminals"
+   - "schemata"
+
+## What is a /scheme/ generally? 
+
+   The words "scheme" "schema" "schematization" in this context mean
+   "a template for." It's the name for an abstraction in a different 
+   context.
+   
+## What is an /induction scheme/? 
+
+   It's a way of abstracting over a particular set of proof
+   obligations. What we've abstracted out here is the precise
+   conjecture ϕ. 
+
+   Q: Where do induction schemata come from? 
+
+   A: Every terminating function gives rise to an induction scheme.
+
+   For a given function f, the induction scheme f generates is what
+   gives us the (generic, parameterized) proof obligations it would
+   take to prove some universal formula ϕ.
+
+
+### Example: natrec 
+
+   We might want to prove the formula `(equal (rec-sum n) (/ (* n (+ n
+   1)) 2))`. We could imagine using induction on the function
+   `rec-sum`.
+
+  ```lisp 
+  (defunc rec-sum (n)
+	:ic (natp n)
+	:oc (natp (rec-sum n))
+	(if (zerop n)
+	 0
+	 (+ n (rec-sum (1- n)))))
+  ```
+
+  ```
+  1. (implies (not (natp n)) φ)
+  2. (implies (and (natp n) (zp n)) φ)
+  3. (implies (and (natp n) (not (zp n)) φ|((n n-1))) φ)
+  ```
+
+
+  BTW: List induction is way more interesting. This is probably to
+  what you are used, though: 
+  
+  
+## Many functions give rise to the same induction scheme
+
+  ```lisp
+  (defunc nat-ind (n)
+    :ic (natp n)
+	:oc (natp (nat-ind n))
+    (if (zp n)
+	  0
+	  (nat-ind (1- n))))
+  ```
 
 ### Example: `ccc` induction scheme
+  
+  `ccc` is a recursive implementation of the `cons-size` function
+  we've seen before.
   
   ```lisp
   (definec ccc (a :all) :nat
@@ -32,33 +87,45 @@ date: 2021-03-04
 	  (t (+ 1 (ccc (car a)) (ccc (cdr a))))))
   ```
 
+  I've unrolled it here to a `defunc`, so that I have the input
+  contract here in front of me all in one place. I've also [expanded
+  out macros](#to-expand-out) in the body. 
+  
   ```lisp
   (defunc ccc (a)
-	:ic t ;; the contract case 
+	:ic t                                     ;; the contract case 
 	:oc (natp (ccc a))
 	(if (atom a) 
-		0 ;; the base case
+		0                                     ;; the base case
 		(+ 1 (+ (ccc (car a)) (ccc (cdr a)))) ;; the one inductive case
 		))
   ```
 
-## Scheme 
-  1. (not t) => ϕ  ;; the contract case
-  2. (and t (atom a)) => ϕ  ;; the one base case
-  3. (and t (not (atom a))  ϕ|((a (car a))) ϕ|((a (cdr a)))) => ϕ    ;; One inductive case
+### The `ccc` induction scheme 
+
+  1. (not t) => ϕ                                                    ;; the contract case
+  2. (and t (atom a)) => ϕ                                           ;; the one base case
+  3. (and t (not (atom a))  ϕ|((a (car a))) ϕ|((a (cdr a)))) => ϕ    ;; the one inductive case
   
-  (∀P1) ^ (∀P2) ^ (∀P3) => (∀ϕ)
+  This is the induction scheme /because/ 
 
+  `(∀P1) ^ (∀P2) ^ (∀P3) => (∀ϕ)`
 
-## How 
+## How do we find a function's induction scheme? 
 
 ### Step-by-step 
  
   1. Expand out all the macros 
-  2. Find the terminals (doesn't have `if` s, not (subexpr of) the test), no casing. Unconditional code execution. 
-  3. Maximal non-terminals are the biggest ones. the return calls.
-  4. Every terminal has the conditions required to reach it. (how you get down to it)
-  5. Set of recursive calls are the ones that have to be executed to execute the terminal. 
+
+  2. Find the /maximal terminals/ 
+ 
+  4. For each maximal terminal, collect the conditions required to
+     reach it. (How you get down to that one? What must be true in the
+     control logic?)
+
+  5. For each maximal terminal, collect the set of recursive calls
+     that have to be executed to execute the terminal.
+
   6. Let `t₁ ... tₖ` be the maximal terminals with corresponding conditions
 	 each with its corresponding sequence of recursive calls to `f` under a subst.
 	 
@@ -72,44 +139,12 @@ date: 2021-03-04
 
     For all recursive terminals `tᵢ`: `(ic ∧ cᵢ ∧ /\ 1≤j≤|rᵢ| φ|_ {σᵢʲ}) ⇒ φ`
 
-### Natrec Example
-
-BTW: List induction is way more interesting. This is probably to what
-you are used, though
-  
-  ```lisp
-  (definec nat-ind (n :nat) :nat
-    (if (zp n)
-	  0
-	  (nat-ind (1- n))))
-  ```
-
-  ```
-  1. (not (natp n)) ⇒ φ
-  2. (natp n) ∧ (zp n) ⇒ φ
-  3. (natp n) ∧ (not (zp n)) ∧ φ|((n n-1)) ⇒ φ
-  ```
-
-
-### Example: `flatten` and `remove-all` lists:
+### Example: `remove-all` and `flatten`:
 
 ```lisp
 (defdata nested-tls (oneof nil
 			   (cons atom nested-tls)
 			   (cons nested-tls nested-tls)))
-
-
-;; Yes
-(check (nested-tlsp '(1 (2 3 4) ((b c)) d)))
-(check (nested-tlsp '(() 2 3 ((5)))))
-(check (nested-tlsp '()))
-(check (nested-tlsp '(a)))
-
-;; Out
-(check= (nested-tlsp '(a . d)) nil)
-(check= (nested-tlsp 'cat) nil)
-(check= (nested-tlsp '((a b . d) e)) nil)
-(check= (nested-tlsp '(((a . d)))) nil)
 
 (defunc remove-all (x my-nested-list)
   :ic (and (atom x) (nested-tlsp my-nested-list))
@@ -125,27 +160,18 @@ you are used, though
 	 (remove-all x (cdr my-nested-list))
        (cons (car my-nested-list) (remove-all x (cdr my-nested-list)))))))
 
-
-(defunc remove-all (x my-nested-list)
-  :ic (and (atom x) (nested-tlsp my-nested-list))
-  :oc (nested-tlsp (remove-all x my-nested-list))
-  (case-match my-nested-list
-    (() ())
-    (((aa . ad) . d) `(,(remove-all x `(,aa . ,ad)) . ,(remove-all x d)))
-    ((!x . d) (remove-all x d))
-    ((a . d)  (cons a (remove-all x d))))))
-    
-
-(implies (nested-tlp ls) (tlp ls))
-
-
 (defunc flatten (ls*)
   :ic (nested-tlsp ls*)
   :oc list-of-atomp (flatten ls*)
-
+  (cond
+    ((endp ls*) '())
+	((nested-tlsp (car my-nested-list))
+	 (append (flatten (car ls*)) (flatten (cdr ls*))))
+    ((atom (car my-nested-list))
+	 (cons (car ls*) (flatten (cdr ls*))))))
 ```
 
-### Inductive proof 
+### Inductive proofs, next time
 
 ```
 Lemma del-ordered:
@@ -465,5 +491,24 @@ Arabic numerals aren't structurally recursive in the same way!
 
 	 
      
-  
-  
+### To expand out
+ 
+ BTW: If you want to expand out, use `trans1`:
+
+  ```lisp 
+  > (trans1
+	 '(cond
+		((atom a) 0)
+		(t (+ 1 (ccc (car a)) (ccc (cdr a))))))
+  (IF (ATOM A)
+	  0 (+ 1 (CCC (CAR A)) (CCC (CDR A))))
+  ```
+
+### Terminals
+
+A maximal terminals are (the biggest) expressions of straight-line
+code that you'd execute, after working your way down all the
+conditional logic. A /terminal/ (doesn't have `if` s, not (subexpr of)
+the test), no casing: unconditionally executed, "stright-line" code.
+The maximal terminals are the biggest ones.
+
