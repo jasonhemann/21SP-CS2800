@@ -5,43 +5,54 @@ date: 2021-03-04
 
 ## Induction: more complicated in ACL2
 
-  More complicated than you've seen before. More kinds of data. 
-  More concerned with ensuring termination. 
+- You have seen induction, proofs by induction before. 
 
-## What is an induction scheme? 
+-  Induction is more complicated in ACL2 than what you've seen before. Why? 
+  - More kinds of data. 
+  - More concerned with ensuring termination. 
 
-## Q: Where do induction schemes come from? 
+## What is an induction /scheme/? 
 
-## Every terminating function gives rise to an induction scheme
+ The proof obligations to prove a universal formula by reference to a given function definition 
 
+ Q: Where do induction schemes come from? 
+ 
+ A: Every terminating function gives rise to an induction scheme
 
-  EDIT: Do `ccc` induction example.
+### There's a lot of vocabulary! 
+
+   - "maximal terminals"
+
+### Example: `ccc` induction scheme
   
   ```lisp
   (definec ccc (a :all) :nat
     (cond
 	  ((atom a) 0)
 	  (t (+ 1 (ccc (car a)) (ccc (cdr a))))))
-	  
+  ```
+
+  ```lisp
   (defunc ccc (a)
-	:ic t
+	:ic t ;; the contract case 
 	:oc (natp (ccc a))
 	(if (atom a) 
-		0
-		(+ 1 (+ (ccc (car a)) (ccc (cdr a))))))
+		0 ;; the base case
+		(+ 1 (+ (ccc (car a)) (ccc (cdr a)))) ;; the one inductive case
+		))
+  ```
 
-  ;; Two base cases
+## Scheme 
   1. (not t) => ϕ  ;; the contract case
-  2. (and t (atom a)) => ϕ 
-  ;; One inductive case
-  3. (and t (not (atom a)) ϕ|((a (car a))) ϕ|((a (cdr a)))) => ϕ 
+  2. (and t (atom a)) => ϕ  ;; the one base case
+  3. (and t (not (atom a))  ϕ|((a (car a))) ϕ|((a (cdr a)))) => ϕ    ;; One inductive case
   
   (∀P1) ^ (∀P2) ^ (∀P3) => (∀ϕ)
 
-  ;;!!!! Does not equal the below, not the same.
-  (∀P1 ^ P2 ^ P3 => ϕ)
-  ```
-## Separate /induction/ cases from /base cases/. 
+
+## How 
+
+### Step-by-step 
  
   1. Expand out all the macros 
   2. Find the terminals (doesn't have `if` s, not (subexpr of) the test), no casing. Unconditional code execution. 
@@ -51,12 +62,20 @@ date: 2021-03-04
   6. Let `t₁ ... tₖ` be the maximal terminals with corresponding conditions
 	 each with its corresponding sequence of recursive calls to `f` under a subst.
 	 
+## Separate /induction/ cases from /base cases/. 	 
+
+### Base 
 	 `¬ic ⇒ φ`
 	 For all basic terminals `tᵢ`: `ic ∧ cᵢ ⇒ φ`
-	 For all recursive terminals `tᵢ`: `(ic ∧ cᵢ ∧ /\ 1≤j≤|rᵢ| φ|_ {σᵢʲ}) ⇒ φ`
+	 
+### Recursive 	 
 
+    For all recursive terminals `tᵢ`: `(ic ∧ cᵢ ∧ /\ 1≤j≤|rᵢ| φ|_ {σᵢʲ}) ⇒ φ`
 
-  BTW: List induction is way more interesting. 
+### Natrec Example
+
+BTW: List induction is way more interesting. This is probably to what
+you are used, though
   
   ```lisp
   (definec nat-ind (n :nat) :nat
@@ -71,26 +90,132 @@ date: 2021-03-04
   3. (natp n) ∧ (not (zp n)) ∧ φ|((n n-1)) ⇒ φ
   ```
 
- Separate /induction/ cases from /base cases/. 
- 
-  1. Expand out all the macros (we know what our macros are).
 
-  2. Find the terminals (doesn't have ifs, not (subexpr of) the test), no casing. Undconditional code execution. 
+### Example: `flatten` and `remove-all` lists:
 
-  3. Maximal non-terminals are the biggest ones. the return calls.
+```lisp
+(defdata nested-tls (oneof nil
+			   (cons atom nested-tls)
+			   (cons nested-tls nested-tls)))
 
-  4. Every terminals has the conditions required to reach it. (how you get down to it)
 
-  5. Set of recursive calls are the ones that have to be executed to execute the terminal. 
+;; Yes
+(check (nested-tlsp '(1 (2 3 4) ((b c)) d)))
+(check (nested-tlsp '(() 2 3 ((5)))))
+(check (nested-tlsp '()))
+(check (nested-tlsp '(a)))
 
-  6. Let t1 ... tk be the maximal terminals with corresponding conditions
-	  each with its corresponding sequence of recursive calls to f under a subst.
-	 
-	 - ¬ic ⇒ φ
-	 - For all ti that are basic terminals: ic ∧ ci ⇒ φ
-	 - For all ti that are recursive terminals: (ic ∧ ci ∧ ∧ 1 ≤ j ≤ |ri| φ|σji) ⇒ φ
+;; Out
+(check= (nested-tlsp '(a . d)) nil)
+(check= (nested-tlsp 'cat) nil)
+(check= (nested-tlsp '((a b . d) e)) nil)
+(check= (nested-tlsp '(((a . d)))) nil)
 
-# HW Setup Q
+(defunc remove-all (x my-nested-list)
+  :ic (and (atom x) (nested-tlsp my-nested-list))
+  :oc (nested-tlsp (remove-all x my-nested-list))
+  (cond
+    ((endp my-nested-list) nil)
+    ((nested-tlsp (car my-nested-list))
+     (cons
+      (remove-all x (car my-nested-list))
+      (remove-all x (cdr my-nested-list))))
+    ((atom (car my-nested-list))
+     (if (equal x (car my-nested-list))
+	 (remove-all x (cdr my-nested-list))
+       (cons (car my-nested-list) (remove-all x (cdr my-nested-list)))))))
+
+
+(defunc remove-all (x my-nested-list)
+  :ic (and (atom x) (nested-tlsp my-nested-list))
+  :oc (nested-tlsp (remove-all x my-nested-list))
+  (case-match my-nested-list
+    (() ())
+    (((aa . ad) . d) `(,(remove-all x `(,aa . ,ad)) . ,(remove-all x d)))
+    ((!x . d) (remove-all x d))
+    ((a . d)  (cons a (remove-all x d))))))
+    
+
+(implies (nested-tlp ls) (tlp ls))
+
+
+(defunc flatten (ls*)
+  :ic (nested-tlsp ls*)
+  :oc list-of-atomp (flatten ls*)
+
+```
+
+### Inductive proof 
+
+```
+Lemma del-ordered:
+(implies (and (lorp x)
+              (rationalp e)
+              (orderedp x))
+         (orderedp (del e x)))
+
+Proof by induction on (tlp x).
+|#
+
+Lemma del-ordered-contract:
+(implies (not (allp x))
+         (implies (and (lorp x)
+                       (rationalp e)
+                       (orderedp x))
+                  (orderedp (del e x))))
+
+Exportation:
+(implies (and (lorp x)
+              (not (allp x))
+              (rationalp e)
+              (orderedp x))
+         (orderedp (del e x)))
+
+Context:
+C1. (lorp x)
+C2. (not (allp x))
+C3. (rationalp e)
+C4. (orderedp x)
+
+Derived Context:
+D1. nil { C2, PL }
+
+QED
+
+
+
+Lemma del-ordered-base:
+(implies (not (consp x))
+         (implies (and (lorp x)
+                       (rationalp e)
+                       (orderedp x))
+                  (orderedp (del e x))))
+
+Exportation:
+(implies (and (lorp x)
+              (not (consp x))
+              (rationalp e)
+              (orderedp x))
+         (orderedp (del e x)))
+
+Context:
+C1. (lorp x)
+C2. (not (consp x))
+C3. (rationalp e)
+C4. (orderedp x)
+
+Derived Context:
+D1. (== x nil) { Def tlp, C1, C2 }
+
+Goal: (orderedp (del e x))
+
+Proof:
+(orderedp (del e x))
+= { Def del, D1 }
+(orderedp nil)
+= { Eval }
+t
+```
 
 ## Examples:
 
