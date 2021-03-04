@@ -27,6 +27,8 @@ sidebar-site-map:
     url: https://piazza.com/
   - title: "Syllabus"
     url: /syllabus/
+  - title: "Proof Checker"    
+    url: http://checker.atwalter.com/checker
   - title: "Tech"
     url: /tech/
   - title: "FAQ"
