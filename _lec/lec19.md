@@ -38,6 +38,27 @@ date: 2021-03-04
    take to prove some universal formula ϕ.
 
 
+## What does a ϕ look like? 
+
+`(equal (rec-sum n) (/ (* n (+ n 1)) 2))` (1) 
+
+### Q: How do I show (1) holds universally? For all acl2 data?
+
+
+ (a) Show that it holds for the violated input contract case. 
+
+ (b) Show that it holds for the 0 case
+
+ (c) Show that, if it holds for the n-1 case, then it also holds for the
+   n case.
+
+> Well, if I know under assumption (a), that 1 holds
+>  	    if I can show under assumption (b) that 1 holds
+>  and if I can show under assumption (c) that 1 holds
+> ... 
+> *That* allows me to conclude that 1 holds universally.
+
+
 ### Example: natrec 
 
    We might want to prove the formula `(equal (rec-sum n) (/ (* n (+ n
