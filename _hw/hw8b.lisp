@@ -73,7 +73,8 @@ HW 8b: Completing an inductive proof
 #| 
 
 In this second part of your homework, you will complete the remainder
-of that larger proof.
+of that larger proof. If you did not manage to complete this all on
+the previous part, then now is a great time to get it fix it!
 
 |# 
 
