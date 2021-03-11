@@ -143,7 +143,7 @@ Proof:
 (equal (rev2 (app2 x y)) (app2 (rev2 y) (rev2 x)))
 = { D1 }
 (equal (rev2 (app2 nil y)) (app2 (rev2 y) (rev2 nil)))
-= { Def app2 }
+= { Def app2, Def rev2 }
 (equal (rev2 y) (app2 (rev2 y) nil))
 
 ... 
@@ -197,6 +197,10 @@ Goal:
 Proof:
 (rev2 (rev2 x))
 = { Def rev2 }
+(rev2 (if (endp x)
+          x
+      (app2 (rev2 (cdr x)) (list (car x)))))
+= { C1 }    
 (rev2 (app2 (rev2 (cdr x)) (list (car x))))
 
 ...
