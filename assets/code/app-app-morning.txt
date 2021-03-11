@@ -1,0 +1,128 @@
+(definec app2 (a :tl b :tl) :tl
+  (if (endp a)
+    b
+    (cons (first a) (app2 (rest a) b))))
+
+#| 
+The easy way:  
+(defthm app2-assoc 
+  (implies (and (tlp x) (tlp y) (tlp z))
+    (equal (app2 (app2 x y) z) (app2 x (app2 y z))))
+  :hints (("Goal" :induct (tlp x))))
+|# 
+
+Lemma app2-assoc:
+(implies (and (tlp x) (tlp y) (tlp z))
+  (equal (app2 (app2 x y) z) (app2 x (app2 y z))))
+  
+Proof by: Induction on (tlp x)
+
+
+;; Induction Case base-case: 
+Lemma base-case-app2:
+(IMPLIES (NOT (CONSP X)) 
+  (implies (and (tlp x) (tlp y) (tlp z))
+    (equal (app2 (app2 x y) z) (app2 x (app2 y z)))))
+
+Exportation:
+(implies (and (not (consp x))
+              (tlp x)
+              (tlp y)
+              (tlp z))
+  (equal (app2 (app2 x y) z) (app2 x (app2 y z))))
+  
+Context:
+C1. (not (consp x))
+C2. (tlp x)
+C3. (tlp y)
+C4. (tlp z)
+
+Derived context:
+D1. (equal x nil) { C1, C2 }
+
+Goal:
+(equal (app2 (app2 x y) z) (app2 x (app2 y z)))
+
+Proof: 
+(equal (app2 (app2 x y) z) (app2 x (app2 y z)))
+= { D1 } 
+(equal (app2 (app2 nil y) z) (app2 nil (app2 y z)))
+= { Def app2 }
+(equal (app2 
+	 (if (endp nil)
+	   y
+	   (cons (first nil) (app2 (rest nil) y)))
+         z) 
+       (if (endp nil)
+	 (app2 y z)
+	 (cons (first nil) (app2 (rest nil) (app2 y z))))
+       )
+= { Obvious }
+(equal (app2 y z) 
+       (app2 y z))
+= { Obvious }
+t 
+
+QED
+
+
+;; Induction Case ind-case:
+Lemma ind-case-app2:
+(IMPLIES (AND (CONSP X) 
+              (implies (and (tlp (cdr x)) (tlp y) (tlp z))
+                (equal (app2 (app2 (cdr x) y) z) (app2 (cdr x) (app2 y z)))))
+  (implies (and (tlp x) (tlp y) (tlp z))
+    (equal (app2 (app2 x y) z) (app2 x (app2 y z)))))
+
+Exportation:
+(IMPLIES (AND (CONSP X) 
+              (implies (and (tlp (cdr x)) (tlp y) (tlp z))
+                (equal (app2 (app2 (cdr x) y) z) (app2 (cdr x) (app2 y z))))
+              (tlp x) 
+              (tlp y) 
+              (tlp z))
+  (equal (app2 (app2 x y) z) (app2 x (app2 y z))))
+  
+Context:
+C1. (CONSP X) 
+C2. (implies (and (tlp (cdr x)) (tlp y) (tlp z))
+      (equal (app2 (app2 (cdr x) y) z) (app2 (cdr x) (app2 y z))))
+C3. (tlp x) 
+C4. (tlp y) 
+C5. (tlp z)
+
+Derived context:
+D1. (tlp (cdr x)) { C1, C3 }
+D2. (equal (app2 (app2 (cdr x) y) z) (app2 (cdr x) (app2 y z))) { D1, C4, C5, C2, MP } 
+;; also without the goal it goes kablooey
+Goal: 
+(equal (app2 (app2 x y) z) (app2 x (app2 y z)))
+
+Proof: 
+(app2 (app2 x y) z)
+= { Def app2 } 
+(app2 (if (endp x)
+    y
+    (cons (first x) (app2 (rest x) y))) z)
+= { C1 }
+(app2 (cons (first x) (app2 (rest x) y)) z)
+= { Def app2 } 
+(if (endp (cons (first x) (app2 (rest x) y)))
+   z
+  (cons (first (cons (first x) (app2 (rest x) y)))
+        (app2 (rest (cons (first x) (app2 (rest x) y))) z)))
+= { Obvious }         
+  (cons (first (cons (first x) (app2 (rest x) y)))
+        (app2 (rest (cons (first x) (app2 (rest x) y))) z))        
+= { car-cdr axioms } 
+(cons (first x) (app2 (app2 (rest x) y) z))
+= { D2 } 
+(cons (first x) (app2 (cdr x) (app2 y z)))
+= { Def app2, C1 } 
+(app2 x (app2 y z))
+
+
+
+QED
+
+QED 

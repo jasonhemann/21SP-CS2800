@@ -1,0 +1,186 @@
+(definec app2 (x :tl y:tl) :tl 
+  (if (endp x)
+      y
+    (cons (first x) (app2 (rest x) y))))
+
+Theorem cdr-app2:
+(implies (and (ne-tlp x) (tlp y))
+  (equal (cdr (app2 x y)) (app2 (cdr x) y)))
+
+Context:
+C1. (ne-tlp x)
+C2. (tlp y)
+
+Goal: 
+(equal (cdr (app2 x y)) (app2 (cdr x) y))
+
+Proof:
+(cdr (app2 x y))
+= { car-cdr axioms, C1 } 
+(cdr (app2 (cons (car x) (cdr x)) y))
+= { Def app2 } 
+(cdr (if (endp (cons (car x) (cdr x)))
+       y
+       (cons (first (cons (car x) (cdr x))) (app2 (rest (cons (car x) (cdr x))) y))))
+= { Obvious } 
+(cdr (cons (first (cons (car x) (cdr x))) (app2 (rest (cons (car x) (cdr x))) y)))
+= { car-cdr axioms } 
+(cdr (cons (car x) (app2 (cdr x) y)))
+= { car-cdr axioms } 
+(app2 (cdr x) y)
+
+QED 
+
+Theorem car-app2: 
+(implies (and (ne-tlp x) (tlp y))
+  (equal (car x) (car (app2 x y))))
+  
+Context:
+C1. (ne-tlp x) 
+C2. (tlp y)
+
+Goal:
+(equal (car x) (car (app2 x y)))
+
+Proof: 
+(car (app2 x y))
+= { Def app2 }
+(car (if (endp x) 
+         y
+       (cons (first x) (app2 (rest x) y))))
+= { C1 } 
+(car (cons (first x) (app2 (rest x) y)))
+= { car-cdr axioms } 
+(first x)
+
+QED 
+
+Theorem test-above:
+(implies (and (ne-tlp x) (tlp y) (tlp z))
+   (equal (cons (first x) (app2 (app2 (cdr x) y) z))
+          (cons (first x) (app2 (cdr (app2 x y)) z))))
+
+Context:
+C1. (ne-tlp x)
+C2. (tlp y)
+C3. (tlp z)
+
+Goal:
+(equal (cons (first x) (app2 (app2 (cdr x) y) z))
+       (cons (first x) (app2 (cdr (app2 x y)) z)))
+
+Proof: 
+(cons (first x) (app2 (app2 (cdr x) y) z))
+= { C1, C2, Theorem cdr-app2 ((x x) (y y)) } 
+(cons (first x) (app2 (cdr (app2 x y)) z))
+
+QED
+
+Theorem app-assoc:
+(implies (and (tlp x) (tlp y) (tlp z))
+  (equal (app2 (app2 x y) z) (app2 x (app2 y z))))
+  
+Proof by: Induction on (tlp x)
+
+Induction Case app-assoc-base:
+(implies (not (consp x))
+  (implies (and (tlp x) (tlp y) (tlp z))
+    (equal (app2 (app2 x y) z) (app2 x (app2 y z)))))
+
+Exportation: 
+(implies (and (not (consp x))
+              (tlp x)
+              (tlp y) 
+              (tlp z))
+ (equal (app2 (app2 x y) z) (app2 x (app2 y z))))
+ 
+Context:
+C1. (not (consp x))
+C2. (tlp x)
+C3. (tlp y) 
+C4. (tlp z) 
+
+Derived Context:
+D1. (equal x nil) { C1, C2 } 
+
+Goal: 
+(equal (app2 (app2 x y) z) (app2 x (app2 y z)))
+
+Proof: 
+(equal (app2 (app2 x y) z) (app2 x (app2 y z)))
+= { D1 }
+(equal (app2 (app2 nil y) z) (app2 nil (app2 y z)))
+= { Def app2 }
+(equal (app2 
+         (if (endp nil)
+	      y
+	      (cons (first nil) (app2 (rest nil) y)))
+        z)
+(app2 nil (app2 y z)))
+= { Obvious } 
+(equal (app2 y z) (app2 nil (app2 y z)))
+= { Def app2 } 
+(equal (app2 y z)
+  (if (endp nil)
+      (app2 y z)
+    (cons (first nil) (app2 (rest nil) (app2 y z)))))
+= { Obvious } 
+(equal (app2 y z) (app2 y z))
+= { Obvious } 
+t 
+
+QED 
+
+Induction Case app-assoc-ind: 
+(implies (and (consp x)
+              (implies (and (tlp (cdr x)) (tlp y) (tlp z))
+                (equal (app2 (app2 (cdr x) y) z) (app2 (cdr x) (app2 y z)))))
+(implies (and (tlp x) (tlp y) (tlp z))
+  (equal (app2 (app2 x y) z) (app2 x (app2 y z)))))
+  
+Exportation:
+(implies (and (consp x)
+              (implies (and (tlp (cdr x)) (tlp y) (tlp z))
+                (equal (app2 (app2 (cdr x) y) z) (app2 (cdr x) (app2 y z))))
+              (tlp x)
+              (tlp y)
+              (tlp z))
+  (equal (app2 (app2 x y) z) (app2 x (app2 y z))))
+  
+Context:
+C1. (consp x)
+C2. (implies (and (tlp (cdr x)) (tlp y) (tlp z))
+      (equal (app2 (app2 (cdr x) y) z) (app2 (cdr x) (app2 y z))))
+C3. (tlp x)
+C4. (tlp y)
+C5. (tlp z)
+
+Derived context:
+D1. (tlp (cdr x)) { C1, C3 }
+D2. (equal (app2 (app2 (cdr x) y) z) (app2 (cdr x) (app2 y z))) { D1, C4, C5, C2, MP } 
+D3. (ne-tlp x) { D1 }
+
+Goal:
+(equal (app2 (app2 x y) z) (app2 x (app2 y z)))
+
+Proof: 
+(app2 x (app2 y z)) 
+= { Def app2 } 
+(if (endp x)
+   (app2 y z)
+  (cons (first x) (app2 (rest x) (app2 y z))))   
+= { C1 } 
+(cons (first x) (app2 (rest x) (app2 y z)))
+= { D2 } 
+(cons (first x) (app2 (app2 (cdr x) y) z))
+= { D3, C4, Theorem cdr-app2 ((x x) (y y)) } 
+(cons (first x) (app2 (cdr (app2 x y)) z))
+= { D3, C4, Theorem car-app2 ((x x) (y y)) } 
+(app2 (car (app2 x y)) (app2 (cdr (app2 x y)) z))
+= {Def app2 } 
+(app2 (app2 x y) z)
+
+QED
+
+
+QED
