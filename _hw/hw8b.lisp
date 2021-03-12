@@ -163,6 +163,7 @@ Proof:
 
 QED
 
+;; 2. YOU DO NOW
 Induction Case rev2-app2-ind:
 (implies (and (consp x)
 	      (implies (and (tlp (cdr x)) (tlp y))
@@ -192,7 +193,7 @@ Induction Case rev2-rev2-base:
 
 QED
 
-;; 2. YOU DO NOW
+;; 3. YOU DO NOW
 Induction Case rev2-rev2-ind:
 (implies (and (consp x)
               (implies (tlp (cdr x))
