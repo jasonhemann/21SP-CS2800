@@ -70,6 +70,19 @@ HW 8b: Completing an inductive proof
 
 |#
 
+;; Copy-and-paste mark.
+;; Ye olde pre-existing definitions
+
+(definec app2 (x :tl y :tl) :tl
+  (if (endp x)
+	  y
+    (cons (first x) (app2 (rest x) y))))
+
+ (definec rev2 (x :tl) :tl
+   (if (endp x)
+	   x
+     (app2 (rev2 (cdr x)) (list (car x)))))
+
 #| 
 
 In this second part of your homework, you will complete the remainder
@@ -146,7 +159,20 @@ Proof:
 = { Def app2, Def rev2 }
 (equal (rev2 y) (app2 (rev2 y) nil))
 
+...
+
+QED
+
+Induction Case rev2-app2-ind:
+(implies (and (consp x)
+	      (implies (and (tlp (cdr x)) (tlp y))
+		(equal (rev2 (app2 (cdr x) y)) (app2 (rev2 y) (rev2 (cdr x))))))
+  (implies (and (tlp x) (tlp y))
+    (equal (rev2 (app2 x y)) (app2 (rev2 y) (rev2 x)))))
+
 ... 
+
+QED
 
 QED
 
