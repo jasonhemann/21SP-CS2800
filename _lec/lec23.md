@@ -28,6 +28,9 @@ another function definition that is more complex, but efficient.
 
 ## Where have we seen similar situations before? 
 
+## The problem w/accumulators 
+
+
 ## Project description, status, setup, due dates, examples.
 
 ### Project Aim, goals
@@ -85,6 +88,7 @@ https://www.puzzle-nonograms.com/ (there's Scores! of them)!
 
 ##  For comparison and reference see [Shankar's Godel incompleteness theorem formalized](https://www.cambridge.org/core_title/gb/112885).
 
+  Minimal boolean formulae. 
   [another]({{ site.baseurl }}/assets/docs/Back_to_Basics_Solving_w_SAT.PDF)
 
 ### Student submissions 
