@@ -1,6 +1,6 @@
 ---
 title: Induction like a Pro
-date: 2021-10-29
+date: 2021-03-11
 ---
 
 # Induction like a pro: not so hard! 

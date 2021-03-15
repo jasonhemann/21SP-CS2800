@@ -26,10 +26,51 @@ another function definition that is more complex, but efficient.
 
 ## How should we proceed? 
 
+
 ## Where have we seen similar situations before? 
+
+`app2-assoc` ? 
 
 ## The problem w/accumulators 
 
+
+
+```
+(rev2 ls)
+  | |
+   v
+(rev2 (cdr ls))
+  | |
+   v
+...
+(rev2 '())
+```
+
+vs. 
+
+```
+(revt ls acc) ;; IF you start with the right initial value for the acc
+  | |
+   v
+(revt (cdr ls) (do-something acc))
+  | |
+   v
+(revt (cdr (cdr ls)) (do-something (do-something acc)))
+  | |
+   v
+(revt '() (do-something (... (do-something acc))))
+```
+
+## The main relationship
+
+```
+(rev2t '(c d e) '(b a)) ==   (app2 (app2  (rev2 '(c d e)) '(b)) '(a))
+                ~~~~~~       ~~~~~~~~~~~                  ~~~~~~~~~~~
+```
+
+```
+(rev2t '(c d e) '(b a)) ==   (app2 (rev2 '(c d e)) '(b a))
+```
 
 ## Project description, status, setup, due dates, examples.
 
