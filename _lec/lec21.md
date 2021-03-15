@@ -30,6 +30,14 @@ date: 2021-03-10
 	ORRR
 	C <- if A and B
 
+## Step back and look.
+
+  Every admissible recursive definition leads to a valid induction scheme.
+
+  What underlies both recursion and induction is _termination_.
+
+  So, terminating functions give us both recursion schemes and induction schemes.
+
 ### Recursion-induction connection
 
    Notice also that induction and recursionare tightly related
@@ -59,6 +67,66 @@ date: 2021-03-10
   definitional power weget when we move from straight-line code to
   recursive code.
 
+
+This isn't something I have much exciting to talk about.
+
+Generalization is not enough of a topic for one day's
+lecture. Honestly, a somewhat trivial section.
+
+In any case we've already had to go far past this in work we've done.
+Also we have already talked about it some. 
+
+# Generalization, generally.
+
+## To generalize, remove extraneous details
+
+### Key principle
+
+ϕ, then we also have ϕₛ, so don't concentrate on trying to prove ϕₛ.
+
+Often times the extraneous details would make your lemma less useful
+than they might otherwise be.
+
+## Generalize the theorems. 
+
+## Lemma Generation
+
+"Let the lemmas come to you"
+
+"Expand until you see the pattern emerge, then roll back up"
+
+## But wait what *is* going on w/that induction? 
+
+....
+
+ϕ 
+
+We proceed to prove by induction on x.
+
+P1. "contract case" (implies (not (tlp ls)) ϕ)
+P2. "function base case" (implies (and (tlp ls) (base ls)) ϕ)
+P3. "recursive case" 
+(implies (and (tlp ls) 
+              (not (basep ls))
+              ϕ_(ls (rest ls)))
+          ϕ)
+
+P1 ^ P2 ^ P3 -> ϕ.
+
+### So what do I put in my proof? like wording? 
+
+This will do.
+
+"Having proved P1 P2 P3, we now have ϕ".
+
+## Induction Failure
+
+Let the form of the induction follow the data. 
+
+Use a different induction system. 
+
 ## Continued Induction Proofs from last time
 
 # Extended Example
+
+## The problem where we left off
