@@ -64,6 +64,8 @@
 ; ******************* END INITIALIZATION FOR ACL2s MODE ******************* ;
 ;$ACL2s-SMode$;ACL2s
 
+;; HW9b. Proofs on your own.
+
 #| New Friends, Old Friends |# 
 
 (definec app2 (a :tl b :tl) :tl
@@ -90,9 +92,6 @@
   (or (endp a)
       (and (not (in2 (car a) (cdr a)))
 	   (no-dups (cdr a)))))
-
-
-;; Part II Proofs on your own.
 
 ;; I think you can work through these yourselves, soup to nuts. I will
 ;; let you think about how to accomplish them, and how to structure
