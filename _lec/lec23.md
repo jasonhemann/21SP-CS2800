@@ -209,7 +209,7 @@ puzzle/game kinds of things, the kind with a finite number of moves at
 every stage.
 
  - [Kenken](https://slate.com/human-interest/2020/11/best-puzzle-books-crosswords-kenken.html)
- - [lists of scores of these sort of puzzles](https://www.puzzle-nonograms.com/) (Scores! of them)!
+ - [lists of scores of these sort of puzzles](https://www.puzzle-nonograms.com/) (/Scores/ of them)!
  - [Mah-jongg and the 15 puzzle](https://arxiv.org/abs/cs/0512049)
  - [nonogram]()
  - [picross]()
@@ -228,15 +228,15 @@ solution to mine?"
 ####  For comparison and reference see 
 
   1. [that article/blog post](https://research.swtch.com/boolean) on Minimal Boolean Formulae
-  2. [another]({{ site.baseurl }}/assets/docs/Back_to_Basics_Solving_w_SAT.PDF)
+  2. [another exemplary piece]({{ site.baseurl }}/assets/docs/Back_to_Basics_Solving_w_SAT.PDF)
  
 #### Student submissions 
 
   1. [The Crowded Chessboard Problem]({{ site.baseurl }}/assets/docs/last-projects/crowded.pdf)
   2. [DPLL via the Design Recipe]({{ site.baseurl }}/assets/docs/last-projects/htdp-dpll.pdf) [cf](https://htdp.org/2018-01-06/Book/part_preface.html#%28part._sec~3asystematic-design%29)
-  3. [Solving Skeletal Division problems with SAT]({{ site.baseurl }}/assets/docs/last-projects/skeletal-division.pdf) [cf]()
-  4. [Blackbox]({{ site.baseurl }}/assets/docs/last-projects/lightsout.pdf) [cf](https://en.wikipedia.org/wiki/Black_Box_(game)) [cf](https://boardgamegeek.com/thread/185907/its-mastermind-meets-minesweeper) [cf](https://www.youtube.com/watch?v=dUZhqBCpXA0) 
-  5. [Lights out]({{ site.baseurl }}/assets/docs/last-projects/lightsout.pdf) [cf]() 
+  3. [Solving Skeletal Division problems with SAT]({{ site.baseurl }}/assets/docs/last-projects/skeletal-division.pdf) [cf](https://twitter.com/jhemann/status/1227749215406718982/retweets/with_comments)
+  4. [Blackbox]({{ site.baseurl }}/assets/docs/last-projects/blackbox.pdf) [cf](https://en.wikipedia.org/wiki/Black_Box_(game)) [cf](https://boardgamegeek.com/thread/185907/its-mastermind-meets-minesweeper) [cf](https://www.youtube.com/watch?v=dUZhqBCpXA0) 
+  5. [Lights out]({{ site.baseurl }}/assets/docs/last-projects/lightsout.pdf) [cf](https://en.wikipedia.org/wiki/Lights_Out_(game)) 
 
 ### Option 2: ACL2 Theorems
 
