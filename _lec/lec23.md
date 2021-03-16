@@ -48,7 +48,7 @@ efficient:
 (definec plus (n :nat m :nat) :nat
   (cond
     ((zp m) n)
-	(t (1+ (plus n (1- m))))))
+    (t (1+ (plus n (1- m))))))
 ```
 
 ```lisp
@@ -57,7 +57,7 @@ efficient:
 (definec plus-acc (n :nat m :nat) :nat
   (cond
     ((zp m) n)
-	(t (plus-acc (1+ n) (1- m)))))
+    (t (plus-acc (1+ n) (1- m)))))
 ```
 
 ```
@@ -92,7 +92,7 @@ and vica versa.
 (rev2 (cdr ls))
   | |
    v
-...
+  ...
 (rev2 '())
 ```
 
@@ -108,6 +108,7 @@ vs.
 (revt (cdr (cdr ls)) (do-something (do-something acc)))
   | |
    v
+  ...
 (revt '() (do-something (... (do-something acc))))
 ```
 
@@ -144,7 +145,7 @@ I have laid out for you two different kinds of general areas in which
 you should work: (1) SAT-reduction projects, or (2) ACL2 theorem
 proving projects.
 
-### Option 1 SAT reduction 
+### Project area option 1: Reduction to SAT 
 
 Problems in this space share having multiple discrete choices of
 answers, all of which you'd have to check to mechanically rule out a
@@ -197,12 +198,18 @@ solution to mine?"
 #### Student submissions 
 
   1. [The Crowded Chessboard Problem]({{ site.baseurl }}/assets/docs/last-projects/crowded.pdf)
-  2. [DPLL via the Design Recipe]({{ site.baseurl }}/assets/docs/last-projects/htdp-dpll.pdf) [cf](https://htdp.org/2018-01-06/Book/part_preface.html#%28part._sec~3asystematic-design%29)
-  3. [Solving Skeletal Division problems with SAT]({{ site.baseurl }}/assets/docs/last-projects/skeletal-division.pdf) [cf](https://twitter.com/jhemann/status/1227749215406718982/retweets/with_comments)
-  4. [Blackbox]({{ site.baseurl }}/assets/docs/last-projects/blackbox.pdf) [cf](https://en.wikipedia.org/wiki/Black_Box_(game)) [cf](https://boardgamegeek.com/thread/185907/its-mastermind-meets-minesweeper) [cf](https://www.youtube.com/watch?v=dUZhqBCpXA0) 
-  5. [Lights out]({{ site.baseurl }}/assets/docs/last-projects/lightsout.pdf) [cf](https://en.wikipedia.org/wiki/Lights_Out_(game)) 
+  2. [DPLL via the Design Recipe]({{ site.baseurl }}/assets/docs/last-projects/htdp-dpll.pdf) ([cf](https://htdp.org/2018-01-06/Book/part_preface.html#%28part._sec~3asystematic-design%29))
+  3. [Solving Skeletal Division problems with SAT]({{ site.baseurl }}/assets/docs/last-projects/skeletal-division.pdf) ([cf](https://twitter.com/jhemann/status/1227749215406718982/retweets/with_comments))
+  4. [Blackbox]({{ site.baseurl }}/assets/docs/last-projects/blackbox.pdf) ([cf](https://en.wikipedia.org/wiki/Black_Box_(game)) [cf](https://boardgamegeek.com/thread/185907/its-mastermind-meets-minesweeper) [cf](https://www.youtube.com/watch?v=dUZhqBCpXA0)) 
+  5. [Lights out]({{ site.baseurl }}/assets/docs/last-projects/lightsout.pdf) ([cf](https://en.wikipedia.org/wiki/Lights_Out_(game))) 
 
-### Option 2: ACL2 Theorems
+Note: student submissions from previous terms, as well as other
+published works, did not necessarily have the same length detail
+requirements, and were not assessed under exactly the same
+rubric. Please pay close attention to the guidelines as we lay out for
+your assignment for this semester.
+
+### Project area option 2: Proving a mildly non-trivial theorem in ACL2. 
 
 For this option, I strongly suggest you come up with some claims from
 properties of one or a couple of small, pure programs. Think about
@@ -264,6 +271,12 @@ HOL, ELF, etc.
  6. [Natural v. tail recursive Max-btree](Justin Bian)
  7. [Natural v. tail recursive triangular numbers](Ryan Jung)
  8. 
+
+Note: student submissions from previous terms, as well as other
+published works, did not necessarily have the same length detail
+requirements, and were not assessed under exactly the same
+rubric. Please pay close attention to the guidelines as we lay out for
+your assignment for this semester.
 
 # We permit other kinds of projects too!! 
 
