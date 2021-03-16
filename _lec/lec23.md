@@ -82,47 +82,8 @@ convenient. It would be great to prove that the accumulator based
 versions are drop-in replacements for the natural recursion versions,
 and vica versa.
 
- CAN
-+HAS
-CASH
-
- CAN
-+HAZ
-CASH
-
-  CAN
-* HAZ
- CASH
-
-
-
 ## The problem w/accumulators 
 
-v001, v002, v003, v004
-
-v001 or v002 or v003 or v004 ... 
-v001 ^ (not v101) ^ 
-
-
-v00, v01, ... v09
-v10, ...
-.
-.
-.
-v90, ......... v99
-
-. . . . . . .
-
-. . ._. . . .
-        | |
-. . . . ._. .
-
-. . . . . . ._ 
-
-. . . . . . .
-
-. . . . . . .
-  | 
 
 ```
 (rev2 ls)
@@ -216,7 +177,10 @@ every stage.
 
 Another way to go is to make a slight tweak on some existing problem:
 one I know still outstanding is to solve [0h h1]() on the surface of a
-cube.
+cube. Another one I know of still outstanding is to find all the
+English language semantic equivalents of `SEND+MORE=MONEY`. Or, if you
+know another language, perhaps you could use a corpus of that language
+instead. 
 
 You want to think about "how would I write a program that would make
 my instance of this problem true IFF a certain satisfiability problem
@@ -300,8 +264,6 @@ HOL, ELF, etc.
  6. [Natural v. tail recursive Max-btree](Justin Bian)
  7. [Natural v. tail recursive triangular numbers](Ryan Jung)
  8. 
-
-
 
 # We permit other kinds of projects too!! 
 
