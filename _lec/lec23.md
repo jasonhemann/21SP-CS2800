@@ -233,9 +233,9 @@ solution to mine?"
 #### Student submissions 
 
   1. [The Crowded Chessboard Problem]({{ site.baseurl }}/assets/docs/last-projects/crowded.pdf)
-  2. [DPLL via the Design Recipe]({{ site.baseurl }}/assets/docs/last-projects/htdp-dpll.pdf) [cf]()
+  2. [DPLL via the Design Recipe]({{ site.baseurl }}/assets/docs/last-projects/htdp-dpll.pdf) [cf](https://htdp.org/2018-01-06/Book/part_preface.html#%28part._sec~3asystematic-design%29)
   3. [Solving Skeletal Division problems with SAT]({{ site.baseurl }}/assets/docs/last-projects/skeletal-division.pdf) [cf]()
-  4. [Blackbox]() [cf](http://www.wikipedia.org/) [cf](https://boardgamegeek.com/thread/185907/its-mastermind-meets-minesweeper) [cf](http://www.youtube.com/) 
+  4. [Blackbox]({{ site.baseurl }}/assets/docs/last-projects/lightsout.pdf) [cf](https://en.wikipedia.org/wiki/Black_Box_(game)) [cf](https://boardgamegeek.com/thread/185907/its-mastermind-meets-minesweeper) [cf](https://www.youtube.com/watch?v=dUZhqBCpXA0) 
   5. [Lights out]({{ site.baseurl }}/assets/docs/last-projects/lightsout.pdf) [cf]() 
 
 ### Option 2: ACL2 Theorems
