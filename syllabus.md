@@ -289,7 +289,7 @@ your due dates for each stage. You should expect the following stages:
     submitted to me a "receipt" for either having checked out from the
     library one of several well-known and trusted [style
     guides](https://subjectguides.lib.neu.edu/c.php?g=713111&p=5073143#s-lg-box-wrapper-18808483)
-    for having had an
+    or for having had an
     [appointment](https://cssh.northeastern.edu/writingcenter/tutoring/online-appointments/)
     at the writing center where you have copy-edited your draft. They
     have a [whole bevy of resources for you]({{ site.baseurl
