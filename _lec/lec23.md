@@ -258,7 +258,7 @@ HOL, ELF, etc. But please see further below.
 #### Other Project ideas in this space
 
   1. [Japanese multiplication](https://vm.tiktok.com/J6j9TaW/)
-  2. Comparing two different definitions of `zip-lists`, recursive and not. 
+  2. `zip` through `reverse` functions.
   3. Russian peasant multiplication 
   4. Type checker, types with STLC 
   5. Lam-calc to deBruijn indices?
@@ -267,9 +267,10 @@ HOL, ELF, etc. But please see further below.
   8. Quines? (I don't yet know how to attack this problem)!
   9. [McCarthy reverse]() is way too big
   10. `(implies (sorted-tree tree) (sorted-listp (preorder-walk tree)))`
-  11. Permutation question on old/last semester HW assignment
-  12. Pascal triangle behavior implementation equivalence.
-  13. 
+  11. questions about lists and permutations. 
+  12. Equiv. of the two Pascal triangle implementations
+  13. `walk-symbol` termination 
+  14. `interleave-lists` simultaneously vs one-after-the-other.
 
 ### Exemplary model pieces: 
 
@@ -310,7 +311,7 @@ chance interested in non-classical logics or alternate proof systems
 and think you've got something interesting to say or to do here (if
 any, you should still try to make an educational, pedagogical
 contribution) that too might strike your fancy. I'd like to help you
-author relevant learning experiences!  Cross-course and
+author relevant learning experiences! Cross-course and
 interdisciplinary work is great! I'd still want it to be something
 exploratory, with at least a component of novelty.
 
