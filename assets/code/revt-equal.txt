@@ -1,0 +1,192 @@
+
+(definec app2 (a :tl b :tl) :tl
+  (if (endp a)
+      b
+    (cons (first a) (app2 (rest a) b))))
+
+(definec rev2 (x :tl) :tl
+  (if (endp x)
+      nil
+    (app2 (rev2 (rest x)) (list (first x)))))
+
+(definec in2 (a :all X :tl) :bool
+  (and (consp X)
+       (or (equal a (first X))
+           (in2 a (rest X)))))
+
+(definec rem-dups (a :tl) :tl
+  (cond ((endp a) nil)
+	((in2 (car a) (cdr a)) (rem-dups (cdr a)))
+	(t (cons (car a) (rem-dups (cdr a))))))
+
+(definec no-dups (a :tl) :bool
+  (or (endp a)
+      (and (not (in2 (car a) (cdr a)))
+	   (no-dups (cdr a)))))
+
+(definec revt (x :tl acc :tl) :tl
+  (if (endp x)
+    acc
+   (revt (rest x) (cons (first x) acc))))
+
+(definec rev* (x :tl) :tl
+  (revt x nil))
+    
+(defthm app-nil
+  (implies (tlp x)
+    (equal (app2 x nil) x)))
+    
+(defthm app2-assoc 
+  (implies (and (tlp x) (tlp y) (tlp z))
+    (equal (app2 x (app2 y z)) (app2 (app2 x y) z))))
+
+Lemma one:
+(implies (and (tlp x) (tlp acc))
+  (equal (revt x acc) (app2 (rev2 x) acc)))
+  
+Proof by: Induction on (revt x acc)
+
+Induction Case contr:
+(implies (not (and (tlp x) (tlp acc)))
+  (implies (and (tlp x) (tlp acc))
+   (equal (revt x acc) (app2 (rev2 x) acc))))
+
+Exportation:
+(implies (and (not (and (tlp x) (tlp acc)))
+              (tlp x) 
+              (tlp acc))
+  (equal (revt x acc) (app2 (rev2 x) acc)))
+
+Context:
+C1. (not (and (tlp x) (tlp acc)))
+C2. (tlp x)
+C3. (tlp acc)
+
+Derived Context:
+D1. (and (tlp x) (tlp acc)) { C2, C3 } 
+D2. nil { C1, D1 }
+
+QED
+
+Induction Case ind:
+(implies (and (tlp x) (tlp acc) (endp x))
+  (equal (revt x acc) (app2 (rev2 x) acc)))
+
+Context:
+C1. (tlp x)
+C2. (tlp acc)
+C3. (endp x)
+
+Derived context:
+D1. (equal x nil) { C1, C3 }
+
+Goal:
+(equal (revt x acc) (app2 (rev2 x) acc))
+
+Proof:
+(equal (revt x acc) (app2 (rev2 x) acc))
+= { D1 }
+(equal (revt nil acc) (app2 (rev2 nil) acc))
+= { Def rev2 } 
+(equal (revt nil acc) (app2 nil acc))
+= { Def app2, C2 }
+(equal (revt nil acc) acc)
+= { Def revt } 
+(equal (if (endp nil) 
+           acc
+           (revt (rest nil) (cons (first nil) acc)))
+        acc)
+= { Obvious } 
+(equal acc acc)
+= { Obvious } 
+t 
+
+QED 
+
+Induction Case ind:
+(implies (and (and (tlp x) (tlp acc)) 
+              (not (endp x))
+              (implies (and (tlp (cdr x)) (tlp (cons (car x) acc)))
+                (equal (revt (cdr x) (cons (car x) acc)) 
+                       (app2 (rev2 (cdr x)) (cons (car x) acc)))))
+  (implies (and (tlp x) (tlp acc))
+    (equal (revt x acc) (app2 (rev2 x) acc))))
+
+Exportation:
+(implies (and (tlp x) 
+              (tlp acc)
+              (not (endp x))
+              (implies (and (tlp (cdr x)) 
+                            (tlp (cons (car x) acc)))
+                (equal (revt (cdr x) (cons (car x) acc))
+                       (app2 (rev2 (cdr x)) (cons (car x) acc))))
+              (tlp x) 
+              (tlp acc))
+    (equal (revt x acc) (app2 (rev2 x) acc)))
+    
+Context:
+C1. (tlp x)
+C2. (tlp acc)
+C3. (not (endp x))
+C4. (implies (and (tlp (cdr x))
+                  (tlp (cons (car x) acc)))
+      (equal (revt (cdr x) (cons (car x) acc))
+             (app2 (rev2 (cdr x)) (cons (car x) acc))))
+
+Derived context:
+D1. (consp x) { C3 }
+D2. (tlp (cdr x)) { C1, D1 }
+D3. (tlp (cons (car x) acc)) { D1, C2 }
+D4. (equal (revt (cdr x) (cons (car x) acc))
+      (app2 (rev2 (cdr x)) (cons (car x) acc))) { C4, D2, D3 }
+
+Goal:
+(equal (revt x acc) (app2 (rev2 x) acc))
+
+Proof:
+(revt x acc) 
+= { Def revt } 
+(if (endp x)
+  acc
+  (revt (rest x) (cons (first x) acc)))
+= { C3 } 
+(revt (rest x) (cons (first x) acc))
+= { D4 } 
+(app2 (rev2 (cdr x)) (cons (car x) acc))
+= { Def app2 } 
+(app2 (rev2 (cdr x)) (cons (car x) (app2 nil acc)))
+= { Def app2, C2 } 
+(app2 (rev2 (cdr x)) (if (endp (cons (car x) nil))
+                       acc
+                       (cons (car x) (app2 nil acc))))
+= { cons axioms, D1 } 
+(app2 (rev2 (cdr x)) (app2 (list (car x)) acc))
+= { Lemma app2-assoc ((x (rev2 (cdr x))) (y (list (car x))) (z acc)) }
+(app2 (app2 (rev2 (cdr x)) (list (car x))) acc)
+= { Def rev2, D1, C2, C1 }
+(app2 (rev2 x) acc)
+
+QED
+
+QED
+
+Conjecture rev*-rev2: 
+(implies (tlp x)
+  (equal (rev2 x) (rev* x)))
+ 
+Context:
+C1. (tlp x)
+
+Goal:
+(equal (rev2 x) (rev* x))
+
+Proof:
+(rev* x)
+= { Def rev*, C1 }
+(revt x nil)
+= { Lemma one ((x x) (acc nil)) }
+(app2 (rev2 x) nil)
+= { Lemma app-nil ((x (rev2 x))) } 
+(rev2 x)
+
+QED 
