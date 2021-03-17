@@ -160,28 +160,36 @@ well-explored example and re-do that.
  Typical well-known examples include:
 
  - Sudoku
- - Graph coloring
- 
+ - map/graph coloring
+ - Any examples listed [here, e.g.](https://sat-smt.codes/SAT_SMT_by_example.pdf)
+ - word search w/<=k words?
+ - Crosswords w/a dictionary: feasible? 
+ - Marble/peg solitaire 15 golf ball tees puzzle
+ - The n-queens problem in chess
+
 *Do* use these to come up with an idea on how to do work in this
 space. *Don't* plan to use these as the/a project itself. We will
 search, google and github, for prior art describing a solution. 
 
 One easy choice to consider are newer/uncommon/understudied logic
 puzzle/game kinds of things, the kind with a finite number of moves at
-every stage.
+every stage. Some of the below will have been done, others will not
+have been.
 
  - [Kenken](https://slate.com/human-interest/2020/11/best-puzzle-books-crosswords-kenken.html)
  - [lists of scores of these sort of puzzles](https://www.puzzle-nonograms.com/) (/Scores/ of them)!
  - [Mah-jongg and the 15 puzzle](https://arxiv.org/abs/cs/0512049)
- - [nonogram]()
- - [picross]()
+ - [nonogram/picross](https://en.wikipedia.org/wiki/Nonogram)
+ - [go-to board game reference, logic puzzles or not](https://boardgamegeek.com/)
 
 Another way to go is to make a slight tweak on some existing problem:
-one I know still outstanding is to solve [0h h1]() on the surface of a
-cube. Another one I know of still outstanding is to find all the
-English language semantic equivalents of `SEND+MORE=MONEY`. Or, if you
-know another language, perhaps you could use a corpus of that language
-instead. 
+one I know still outstanding is to solve [0h h1](https://0hh1.com/) on
+the surface of a cube. Another one I know of still outstanding is to
+find all the English language semantic equivalents of
+`SEND+MORE=MONEY`. Or, if you know another language, perhaps you could
+use a corpus of that language instead.
+
+I'd like these to all be unique, so first come first served!
 
 You want to think about "how would I write a program that would make
 my instance of this problem true IFF a certain satisfiability problem
@@ -209,6 +217,11 @@ requirements, and were not assessed under exactly the same
 rubric. Please pay close attention to the guidelines as we lay out for
 your assignment for this semester.
 
+I am not opposed to you using SMT/CP/CLP solvers as well or in
+addition. If you have a reasonable justification for why you would
+want to go that direction, please let us know, make it clear that's
+what you're doing, and why, and this will likely be okay. 
+
 ### Project area option 2: Proving a mildly non-trivial theorem in ACL2. 
 
 For this option, I strongly suggest you come up with some claims from
@@ -229,7 +242,10 @@ that we can go get half a loaf at a time. No "moonshots."
 
 If you work in this area, as you likely now know from doing your own
 proofs, the space between trivial, doable, and dissertion-length is
-about thiiis far apart. It's far easier to start small and scale up.
+about thiiis far apart. It's far easier to start small and scale
+up. Mechanizing the proof will be more difficult than doing it on pen
+and paper, so factor that in when you choose a problem.
+
 
 I think it's dangerous to, unless you've already been working with
 some other theorem prover and its logic, to try to change horses in
@@ -237,12 +253,12 @@ midstream. Prof. Tripakis' class used something called Lean last term
 and if you know anyone in that class, I think if you compare notes
 you'll find that there's plenty of differences, even though Lean and
 ACL2 have similar broad aims. Mutatis muntandis Coq, Agda, Isabelle,
-HOL, ELF, etc. 
+HOL, ELF, etc. But please see further below.
 
 #### Other Project ideas in this space
 
   1. [Japanese multiplication](https://vm.tiktok.com/J6j9TaW/)
-  2. Comparing two different definitions of `zip-lists` recursive and not. 
+  2. Comparing two different definitions of `zip-lists`, recursive and not. 
   3. Russian peasant multiplication 
   4. Type checker, types with STLC 
   5. Lam-calc to deBruijn indices?
@@ -253,6 +269,7 @@ HOL, ELF, etc.
   10. `(implies (sorted-tree tree) (sorted-listp (preorder-walk tree)))`
   11. Permutation question on old/last semester HW assignment
   12. Pascal triangle behavior implementation equivalence.
+  13. 
 
 ### Exemplary model pieces: 
 
@@ -283,11 +300,46 @@ your assignment for this semester.
 If you *have* some other ideas though---something else on the topic of
 logic and computation that's grabbed your attention, or something else
 that you're interesting in pursuing, or that's related to the
-confluence of your other interests, talk to me! I'd like to help you
-author relevant learning experiences! Cross-course and
+confluence of your other interests, talk to me! If your group has some
+other kind of idea for something related to theorem proving---if for
+instance your mob has experience with Agda and you want to pursue
+something related to that, that's a suggestion. If you find yourselves
+really intrigued by Prolog or miniKanren and want to try your hand
+with something related that way, I can help guide you. If you are by
+chance interested in non-classical logics or alternate proof systems
+and think you've got something interesting to say or to do here (if
+any, you should still try to make an educational, pedagogical
+contribution) that too might strike your fancy. I'd like to help you
+author relevant learning experiences!  Cross-course and
 interdisciplinary work is great! I'd still want it to be something
 exploratory, with at least a component of novelty.
 
 If I can say more that's helpful to you, please let me know!
 
+Part II: A not-part of your homework.
 
+You all. This is not a part of your homework. You are not required to
+turn anything in for this. However, if you treat it like your
+homework, you'll be better prepared. I would like each posse to meet
+with Jason, Drew, Josh, or Ankit for approximately ~10m, after having
+submitted a draft proposal stating that they wish to prove in
+ACL2. This will also be a part of this assignment grade.
+
+But please be prepared to schedule a meeting with me on or hopefully
+between this Saturday the 14th and Wednesday the 18th of next week.
+When you schedule that meeting, 
+
+Submit a proposal of a couple of paragraphs describing precisely what
+you want to do. I want to put you all on a good, right track
+ASAP. Before you meet, try and have a back-up idea in your "back
+pocket", in case the first one won't make for some reason.
+
+
+I'll ask to receive a progress report from you all on the 30th, when
+we return from break, with an ultimate due date Wed, Dec
+9th. Presentations will have to be due on or before the 9th also.
+
+At student's/mob's requests, I can be persuaded to, for just this once
+to accept some late assignments---say, give you the weekend to put on
+finishing touches, and to have met with me on or before the evening of
+the 14th. However, I certainly can't and wouldn't mandate that.
