@@ -280,20 +280,20 @@ HOL, ELF, etc. But please see further below.
  
 #### Student submissions 
 
- 1. [Reverse of a list is a permutation](Payne)
- 2. [Length of a powerlist](Peter Kim)
- 3. [Magnetic Tower of Hanoi](Sean Kelly)
- 4. [Zip-unzip round trip](Siddharth Chennan)
- 5. [Valid family trees](Kelly Thieren)
- 6. [Natural v. tail recursive Max-btree](Justin Bian)
- 7. [Natural v. tail recursive triangular numbers](Ryan Jung)
- 8. 
+ 1. [Reverse of a list is a permutation]({{ site.baseurl }}/assets/docs/last-projects/rev-perm.pdf)
+ 2. [Length of a powerlist]({{ site.baseurl }}/assets/docs/last-projects/len-pow.pdf)
+ 3. [Magnetic Tower of Hanoi]({{ site.baseurl }}/assets/docs/last-projects/mtoh.pdf)
+ 4. [Zip-unzip round trip]({{ site.baseurl }}/assets/docs/last-projects/zip-unzip.pdf)
+ 5. [Pascal Triangle Problems]({{ site.baseurl }}/assets/docs/last-projects/pascal.pdf)
+ 6. [Natural v. tail recursive triangular numbers]({{ site.baseurl }}/assets/docs/last-projects/nth-triangular.pdf)
+
 
 Note: student submissions from previous terms, as well as other
 published works, did not necessarily have the same length detail
-requirements, and were not assessed under exactly the same
-rubric. Please pay close attention to the guidelines as we lay out for
-your assignment for this semester.
+requirements, and were not assessed under exactly the same rubric. In
+addition, you might find some of these were a bit simpler than I will
+expect of you all. Please pay close attention to the guidelines as we
+lay out for your assignment for this semester.
 
 # We permit other kinds of projects too!! 
 
@@ -315,31 +315,3 @@ interdisciplinary work is great! I'd still want it to be something
 exploratory, with at least a component of novelty.
 
 If I can say more that's helpful to you, please let me know!
-
-Part II: A not-part of your homework.
-
-You all. This is not a part of your homework. You are not required to
-turn anything in for this. However, if you treat it like your
-homework, you'll be better prepared. I would like each posse to meet
-with Jason, Drew, Josh, or Ankit for approximately ~10m, after having
-submitted a draft proposal stating that they wish to prove in
-ACL2. This will also be a part of this assignment grade.
-
-But please be prepared to schedule a meeting with me on or hopefully
-between this Saturday the 14th and Wednesday the 18th of next week.
-When you schedule that meeting, 
-
-Submit a proposal of a couple of paragraphs describing precisely what
-you want to do. I want to put you all on a good, right track
-ASAP. Before you meet, try and have a back-up idea in your "back
-pocket", in case the first one won't make for some reason.
-
-
-I'll ask to receive a progress report from you all on the 30th, when
-we return from break, with an ultimate due date Wed, Dec
-9th. Presentations will have to be due on or before the 9th also.
-
-At student's/mob's requests, I can be persuaded to, for just this once
-to accept some late assignments---say, give you the weekend to put on
-finishing touches, and to have met with me on or before the evening of
-the 14th. However, I certainly can't and wouldn't mandate that.
