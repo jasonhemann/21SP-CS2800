@@ -159,7 +159,7 @@ well-explored example and re-do that.
 
  Typical well-known examples include:
 
- - Sudoku
+ - [Sudoku](http://anytime.cs.umass.edu/aimath06/proceedings/P34.pdf)
  - map/graph coloring
  - Any examples listed [here, e.g.](https://sat-smt.codes/SAT_SMT_by_example.pdf)
  - word search w/<=k words?
