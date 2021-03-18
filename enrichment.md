@@ -32,6 +32,9 @@ classes: wide
 - [Keeping logic in the trivium of computer science: a teaching perspective](https://link.springer.com/article/10.1007/s10703-017-0301-z)
 - [Automatically generating /conjectures/](https://www.nature.com/articles/s41586-021-03229-4)
 
+- [Constraint solvers for the working PL researcher](https://www.youtube.com/watch?v=rTOqg-f2rNM)
+- [Theorem provers are a PL researcher's best friend](https://www.youtube.com/watch?v=QXRuvfs9gAc)
+
 - Chiang's short story ["Seventy-two Letters"](https://ia802706.us.archive.org/33/items/TedChiangSeventyTwoLetters/Ted_Chiang_72_Letters.pdf) ([Audio version](https://archive.org/details/TedChiangSeventyTwoLetters))
 
 - Chiang's ["Division by Zero"]({{ site.baseurl }}/assets/docs/Chiang-Division-by-Zero.pdf) (a story about ex-falso quodlibet)
