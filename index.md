@@ -8,6 +8,17 @@ sidebar:
   nav: sidebar-site-map
 ---
 
+## Book Meetings 
+
+<script type="text/javascript" id="STScript">
+  var STTag = document.createElement("script");
+  var protocol = "https:" == document.location.protocol ? "https://" : "http://";
+  STTag.src = protocol + "JasonHemann.schedulething.com/index/widget?widgetLocation=" + document.location.href.replace(/\?/gi, '%3F').replace(/\&/gi, '%26');
+  var s = document.getElementById("STScript"); s.parentNode.appendChild(STTag);
+</script>
+    
+
+
 > "Begin at the beginning," the King said, very gravely, "and go on till you come to the end: then stop."
 > ― Lewis Carroll, Alice in Wonderland
 
