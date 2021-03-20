@@ -125,6 +125,14 @@ vs.
 
 ## Project description, status, setup, due dates, examples.
 
+1. Be reading to book a proposal review appointment w/us, as outlined: 
+
+
+[Book your appointment here](http://jasonhemann.schedulething.com/)
+
+Please make sure you get a confirmation email. If you do not get a confirmation email, you do not have an appointment. 
+
+
 ### Project Aim, goals
 
 So, here's my thinking.
