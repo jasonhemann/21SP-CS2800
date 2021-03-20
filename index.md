@@ -8,15 +8,11 @@ sidebar:
   nav: sidebar-site-map
 ---
 
-## Book Meetings 
+## Book Proposal Review Meetings 
 
-<script type="text/javascript" id="STScript">
-  var STTag = document.createElement("script");
-  var protocol = "https:" == document.location.protocol ? "https://" : "http://";
-  STTag.src = protocol + "JasonHemann.schedulething.com/index/widget?widgetLocation=" + document.location.href.replace(/\?/gi, '%3F').replace(/\&/gi, '%26');
-  var s = document.getElementById("STScript"); s.parentNode.appendChild(STTag);
-</script>
-    
+[Book your appointment here](http://jasonhemann.schedulething.com/)
+
+Please make sure you get a confirmation email. If you do not get a confirmation email, you do not have an appointment. 
 
 
 > "Begin at the beginning," the King said, very gravely, "and go on till you come to the end: then stop."
