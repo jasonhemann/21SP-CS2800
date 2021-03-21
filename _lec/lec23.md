@@ -128,7 +128,7 @@ vs.
 1. Be reading to book a proposal review appointment w/us, as outlined: 
 
 
-[Book your appointment here](https://app.waitwhile.com/book/280018279office)
+[Book your appointment here](https://v2.waitwhile.com/book/280018279office)
 
 Please make sure you get a confirmation email. If you do not get a confirmation email, you do not have an appointment. 
 
