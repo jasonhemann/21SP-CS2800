@@ -267,7 +267,7 @@ HOL, ELF, etc. But please see further below.
 
   1. [Japanese multiplication](https://vm.tiktok.com/J6j9TaW/)
   2. `zip` through `reverse` functions.
-  3. Russian peasant multiplication 
+  3. [Peasant multiplication (EDIT: unfortunately too easy!)]({{ site.baseurl }}/assets/code/russian-peasant.lisp)
   4. Type checker, types with STLC 
   5. Lam-calc to deBruijn indices?
   6. DeBruijn `add1`, or that a closed `lambda` calc expr generates a closed DeBruijn index term.
