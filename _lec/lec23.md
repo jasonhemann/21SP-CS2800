@@ -265,7 +265,7 @@ HOL, ELF, etc. But please see further below.
 
 #### Other Project ideas in this space
 
-  1. [Japanese multiplication](https://vm.tiktok.com/J6j9TaW/)
+  1. [Japanese multiplication (EDIT: WITS prove the by-hand multiplication alg. correct)](https://vm.tiktok.com/J6j9TaW/)
   2. `zip` through `reverse` functions.
   3. [Peasant multiplication (EDIT: unfortunately too easy!)]({{ site.baseurl }}/assets/code/russian-peasant.lisp)
   4. Type checker, types with STLC 
@@ -273,12 +273,12 @@ HOL, ELF, etc. But please see further below.
   6. DeBruijn `add1`, or that a closed `lambda` calc expr generates a closed DeBruijn index term.
   7. Combinatory logic basis.
   8. Quines? (I don't yet know how to attack this problem)!
-  9. [McCarthy reverse]() is way too big
-  10. `(implies (sorted-tree tree) (sorted-listp (preorder-walk tree)))`
+  9. [McCarthy reverse]({{ site.baseurl }}/assets/docs/CAR-section-4.pdf) is way too big
+  10. `(implies (sorted-tree tree) (sorted-listp (inorder-walk tree)))`
   11. questions about lists and permutations. 
   12. Equiv. of the two Pascal triangle implementations
   13. `walk-symbol` termination 
-  14. `interleave-lists` simultaneously vs one-after-the-other.
+  14. [`interleave-lists` simultaneously vs one-after-the-other (Edit: unfortunately, turns out it's trivial!)]({{ site.baseurl }}/assets/code/interleave-lists.lisp)
 
 ### Exemplary model pieces: 
 
