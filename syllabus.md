@@ -237,6 +237,13 @@ to discuss and go over questions on the first half of these
 assignments, giving you both more incentive to get a jump start and
 also opportunities to check your understanding.
 
+The final two homeworks, however, will both be one-part, and worth
+half the usual homework weight. Since they're worth half the usual
+homework weight, I'll also not count that as a "full drop", but
+instead a "half drop." Which is to say, if that ends up being your
+worst assignment, I'll drop that as a "half hw" drop, rather than a
+full one, because it's worth half the others. 
+
 ### Submissions
 
 For a homework released on Monday, the first half is due Saturday at
