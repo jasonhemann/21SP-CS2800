@@ -32,10 +32,11 @@ classes: wide
 - [Keeping logic in the trivium of computer science: a teaching perspective](https://link.springer.com/article/10.1007/s10703-017-0301-z)
 - [Automatically generating /conjectures/](https://www.nature.com/articles/s41586-021-03229-4)
 
-- ["Gentle introduction to SMT" Video](https://www.youtube.com/watch?v=TgAVIqraCHo&t=688s)
+- ["Gentle introduction to SMT" Video](https://www.youtube.com/watch?v=TgAVIqraCHo)
 - [Constraint solvers for the working PL researcher](https://www.youtube.com/watch?v=rTOqg-f2rNM)
 - [Theorem provers are a PL researcher's best friend](https://www.youtube.com/watch?v=QXRuvfs9gAc)
 - [Pseudo-boolean constraints](https://www.youtube.com/watch?v=Ie5QcCR3JfY#t=75m18s)
+- [Programming with solver-aided systems](https://www.youtube.com/watch?v=P7ItR7WgnOk)
 
 - Chiang's short story ["Seventy-two Letters"](https://ia802706.us.archive.org/33/items/TedChiangSeventyTwoLetters/Ted_Chiang_72_Letters.pdf) ([Audio version](https://archive.org/details/TedChiangSeventyTwoLetters))
 
