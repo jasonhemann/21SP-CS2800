@@ -11,6 +11,8 @@ date: 2021-03-22
 
 ## SAT(-esque!) options:
 
+![Not this](https://imgs.xkcd.com/comics/np_complete.png)
+
 ### One kind of project
 
 #### NB: What you are /not/ implementing
