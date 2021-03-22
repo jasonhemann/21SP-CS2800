@@ -20,6 +20,8 @@ So meeting w/folk re: these.
 
 # Accumulators + Reasoning w/Accumulators
 
+[Additional documentation](https://www.cs.utexas.edu/users/moore/acl2/manuals/current/manual/index-seo.php/ACL2____EXAMPLE-INDUCTION-SCHEME-WITH-ACCUMULATORS)
+
 ## Recap what we saw w/accumulators on Last Mon.
 
 ## Defining functions w/accs
@@ -67,6 +69,4 @@ So meeting w/folk re: these.
 
 ## The main theorem
 
-
-# Time permitting: review more proof Qs from HW 
 
