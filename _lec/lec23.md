@@ -172,6 +172,7 @@ well-explored example and re-do that.
  - Any examples listed [here, e.g.](https://sat-smt.codes/SAT_SMT_by_example.pdf)
  - word search w/<=k words?
  - Crosswords w/a dictionary: feasible? 
+ - [The four fours puzzle](https://steemitimages.com/p/o1AJ9qDyyJNSg3j52kokyfvD831NZY7nurgU1VdMURXcJsQgN?format=match&mode=fit&width=1280)
  - Marble/peg solitaire 15 golf ball tees puzzle
  - The n-queens problem in chess
 
