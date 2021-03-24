@@ -10,13 +10,16 @@ sidebar:
 
 ## Book Proposal Review Meetings 
 
-[Book your appointment here](https://app.waitwhile.com/book/280018279office)
+[Book your appointment here](v2.waitwhile.com/book/280018279office)
 
 Please make sure you get a confirmation email. If you do not get a confirmation email, you do not have an appointment. 
 
-
-> "Begin at the beginning," the King said, very gravely, "and go on till you come to the end: then stop."
-> ― Lewis Carroll, Alice in Wonderland
+> "I know what you're thinking about," said Tweedledum; "but it isn't
+> so, nohow." "Contrariwise," continued Tweedledee, "if it was so, it
+> might be; and if it were so, it would be; but as it isn't, it
+> ain't. That's logic."
+>
+> Lewis Carroll, "Through the Looking Glass" 
 
 Welcome to the "Logic and Computation" for Spring 2021. We hope this
 will be an education and enjoyable experience. We endeavor to
