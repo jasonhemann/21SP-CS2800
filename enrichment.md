@@ -13,6 +13,7 @@ classes: wide
 - [Annotated ACL2 Examples](https://www.cs.utexas.edu/users/moore/acl2/v6-2/ANNOTATED-ACL2-SCRIPTS.html)
 - [Milestones from the 70s to ACL2](https://link.springer.com/article/10.1007/s00165-019-00490-3)
 - [Design Goals of ACL2](https://www.cs.utexas.edu/users/moore/publications/km94.pdf)
+- [Defdata in ACL2s](https://arxiv.org/pdf/1406.1557.pdf)
 - [More on the Ackermann Function + History]({{ site.baseurl }}/assets/code/ack-etc.rkt)
 - [Boolean Reasoning in ACL2](https://www.cs.utexas.edu/users/moore/acl2/manuals/current/manual/index-seo.php/ACL2____BOOLEAN-REASONING?path=3525/423) From the documentation.
 - Results of the [SAT Solver Competition](http://hdl.handle.net/10138/237063) at the [2018 Computational Logic Olympic Games](https://www.labri.fr/perso/lsimon/flog2018/)
