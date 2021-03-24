@@ -13,6 +13,7 @@ classes: wide
 - [Annotated ACL2 Examples](https://www.cs.utexas.edu/users/moore/acl2/v6-2/ANNOTATED-ACL2-SCRIPTS.html)
 - [Milestones from the 70s to ACL2](https://link.springer.com/article/10.1007/s00165-019-00490-3)
 - [Design Goals of ACL2](https://www.cs.utexas.edu/users/moore/publications/km94.pdf)
+- [Just what *is* the ACL2s sedan?](http://www.ccis.northeastern.edu/~pete/pub/tacas-acl2-sedan.pdf)
 - [Defdata in ACL2s](https://arxiv.org/pdf/1406.1557.pdf)
 - [More on the Ackermann Function + History]({{ site.baseurl }}/assets/code/ack-etc.rkt)
 - [Boolean Reasoning in ACL2](https://www.cs.utexas.edu/users/moore/acl2/manuals/current/manual/index-seo.php/ACL2____BOOLEAN-REASONING?path=3525/423) From the documentation.
@@ -42,3 +43,11 @@ classes: wide
 - Chiang's short story ["Seventy-two Letters"](https://ia802706.us.archive.org/33/items/TedChiangSeventyTwoLetters/Ted_Chiang_72_Letters.pdf) ([Audio version](https://archive.org/details/TedChiangSeventyTwoLetters))
 
 - Chiang's ["Division by Zero"]({{ site.baseurl }}/assets/docs/Chiang-Division-by-Zero.pdf) (a story about ex-falso quodlibet)
+
+
+# Other classes notes 
+
+- [Moore's](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.207.4867&rep=rep1&type=pdf)
+- [Pucella](http://www.ccs.neu.edu/home/riccardo/courses/csu290-sp09/index.html)
+- [Schmidt](https://www.cs.drexel.edu/~kschmidt/CS270/)
+
