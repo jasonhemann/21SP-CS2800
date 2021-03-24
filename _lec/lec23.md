@@ -326,9 +326,12 @@ with something related that way, I can help guide you. If you are by
 chance interested in non-classical logics or alternate proof systems
 and think you've got something interesting to say or to do here (if
 any, you should still try to make an educational, pedagogical
-contribution) that too might strike your fancy. I'd like to help you
-author relevant learning experiences! Cross-course and
-interdisciplinary work is great! I'd still want it to be something
-exploratory, with at least a component of novelty.
+contribution) that too might strike your fancy. If you want to try
+[mixing](https://arxiv.org/abs/1509.06082),
+[merging](https://www.cse.iitk.ac.in/users/karkare/pubs/icsews13formalise-id1-p-16138-preprint.pdf)
+these technologies together I'd like to help you author relevant
+learning experiences! Cross-course and interdisciplinary work is
+great! I'd still want it to be something exploratory, with at least a
+component of novelty.
 
 If I can say more that's helpful to you, please let me know!
