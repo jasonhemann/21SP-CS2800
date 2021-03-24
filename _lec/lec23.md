@@ -170,6 +170,7 @@ well-explored example and re-do that.
  - [Sudoku](http://anytime.cs.umass.edu/aimath06/proceedings/P34.pdf)
  - map/graph coloring
  - Any examples listed [here, e.g.](https://sat-smt.codes/SAT_SMT_by_example.pdf)
+ - [subset-sum](https://en.wikipedia.org/wiki/Subset_sum_problem) on nats
  - word search w/<=k words?
  - Crosswords w/a dictionary: feasible? 
  - [The four fours puzzle](https://steemitimages.com/p/o1AJ9qDyyJNSg3j52kokyfvD831NZY7nurgU1VdMURXcJsQgN?format=match&mode=fit&width=1280)
