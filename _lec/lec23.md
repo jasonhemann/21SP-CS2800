@@ -189,6 +189,8 @@ have been.
  - [lists of scores of these sort of puzzles](https://www.puzzle-nonograms.com/) (/Scores/ of them)!
  - [Mah-jongg and the 15 puzzle](https://arxiv.org/abs/cs/0512049)
  - [nonogram/picross](https://en.wikipedia.org/wiki/Nonogram)
+ - [0hn0](https://0hn0.com/)
+ - although [battleship is solved](http://www.mountainvistasoft.com/docs/lect-04.pdf) there are [open variants](http://www.mountainvistasoft.com/omnibus.htm#:~:text=Marcelo%20Inglesias%27s%20puzzle%20blog)
  - [go-to board game reference, logic puzzles or not](https://boardgamegeek.com/)
 
 Another way to go is to make a slight tweak on some existing problem:

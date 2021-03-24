@@ -38,8 +38,7 @@ let's prove them true.
 
 *Another* place you could go / thing you could do is try to prove
 formally some of those properties we've spelled out on the last couple
-of homework assignments. The "big ones." IMHO, `(defthm
-make-ACL2-accept-me (implies (lorp x) (permp x (rev x))))` is
+of homework assignments. The "big ones." IMHO, is
 *already* a beastly sort of proof. You could try and draw inspiration
 from some of the earlier sample middle lemmas that Shankar had to come
 up with in our recent lab. You could try and re-prove one of his
@@ -73,6 +72,9 @@ As you know with this stuff, there's often a reeeeeally narrow and
 deep chasm between the [trivial and the mighty
 tough](https://xkcd.com/1425/). So bear that in mind. Make sure it's
 not trivial (ACL2 proves it right away for you) and we'll go from
-there. So thinking about [how you'll use ACL2]({{
-site.baseurl}}/_FAQ/how-do-I-steer.md) can help you in selecting a
-problem.
+there. So thinking about [how you'll use ACL2]({{ site.baseurl
+}}/_FAQ/how-do-I-steer.md) can help you in selecting a problem.
+
+
+
+
