@@ -190,7 +190,7 @@ have been.
  - [Mah-jongg and the 15 puzzle](https://arxiv.org/abs/cs/0512049)
  - [nonogram/picross](https://en.wikipedia.org/wiki/Nonogram)
  - [0hn0](https://0hn0.com/)
- - although [battleship is solved](http://www.mountainvistasoft.com/docs/lect-04.pdf) there are [open variants](http://www.mountainvistasoft.com/omnibus.htm#:~:text=Marcelo%20Inglesias%27s%20puzzle%20blog)
+ - although [battleship is solved](http://www.mountainvistasoft.com/docs/lect-04.pdf) there are [many](http://www.mountainvistasoft.com/variations.htm) [variants](http://www.mountainvistasoft.com/omnibus.htm#:~:text=Marcelo%20Inglesias%27s%20puzzle%20blog) still open.
  - [go-to board game reference, logic puzzles or not](https://boardgamegeek.com/)
 
 Another way to go is to make a slight tweak on some existing problem:
