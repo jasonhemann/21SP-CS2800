@@ -192,6 +192,7 @@ have been.
  - [0hn0](https://0hn0.com/)
    - although [battleship is solved](http://www.mountainvistasoft.com/docs/lect-04.pdf) there are [many](http://www.mountainvistasoft.com/variations.htm) [variants](http://www.mountainvistasoft.com/omnibus.htm#:~:text=Marcelo%20Inglesias%27s%20puzzle%20blog) still open.
  - [go-to board game reference, logic puzzles or not](https://boardgamegeek.com/)
+ - [Rubik's cube](https://arxiv.org/abs/1105.1436) (although there are [plenty of open variants!](http://www.twistypuzzles.com/))
 
 Another way to go is to make a slight tweak on some existing problem:
 one I know still outstanding is to solve [0h h1](https://0hh1.com/) on
