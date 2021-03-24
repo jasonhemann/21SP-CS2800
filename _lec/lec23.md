@@ -153,7 +153,7 @@ I have laid out for you two different kinds of general areas in which
 you should work: (1) SAT-reduction projects, or (2) ACL2 theorem
 proving projects.
 
-### Project area option 1: Reduction to SAT 
+### Project area option 1: Encoding in SAT/SMT/CP
 
 Problems in this space share having multiple discrete choices of
 answers, all of which you'd have to check to mechanically rule out a
@@ -175,6 +175,9 @@ well-explored example and re-do that.
  - [The four fours puzzle](https://steemitimages.com/p/o1AJ9qDyyJNSg3j52kokyfvD831NZY7nurgU1VdMURXcJsQgN?format=match&mode=fit&width=1280)
  - Marble/peg solitaire 15 golf ball tees puzzle
  - The n-queens problem in chess
+ - [A recent set of solutions to a bunch of the common puzzles](https://www.researchgate.net/project/Combinatorial-problem-solving-with-Z3)
+ - [Rubik's cube](https://arxiv.org/abs/1105.1436) (although there are [plenty of open variants!](http://www.twistypuzzles.com/))
+ - [Filomino](https://github.com/tomvbussel/fillomino)
 
 *Do* use these to come up with an idea on how to do work in this
 space. *Don't* plan to use these as the/a project itself. We will
@@ -185,14 +188,15 @@ puzzle/game kinds of things, the kind with a finite number of moves at
 every stage. Some of the below will have been done, others will not
 have been.
 
- - [Kenken](https://slate.com/human-interest/2020/11/best-puzzle-books-crosswords-kenken.html)
+
  - [lists of scores of these sort of puzzles](https://www.puzzle-nonograms.com/) (/Scores/ of them)!
  - [Mah-jongg and the 15 puzzle](https://arxiv.org/abs/cs/0512049)
  - [nonogram/picross](https://en.wikipedia.org/wiki/Nonogram)
  - [0hn0](https://0hn0.com/)
    - although [battleship is solved](http://www.mountainvistasoft.com/docs/lect-04.pdf) there are [many](http://www.mountainvistasoft.com/variations.htm) [variants](http://www.mountainvistasoft.com/omnibus.htm#:~:text=Marcelo%20Inglesias%27s%20puzzle%20blog) still open.
  - [go-to board game reference, logic puzzles or not](https://boardgamegeek.com/)
- - [Rubik's cube](https://arxiv.org/abs/1105.1436) (although there are [plenty of open variants!](http://www.twistypuzzles.com/))
+
+ 
 
 Another way to go is to make a slight tweak on some existing problem:
 one I know still outstanding is to solve [0h h1](https://0hh1.com/) on
