@@ -190,13 +190,13 @@ have been.
  - [Mah-jongg and the 15 puzzle](https://arxiv.org/abs/cs/0512049)
  - [nonogram/picross](https://en.wikipedia.org/wiki/Nonogram)
  - [0hn0](https://0hn0.com/)
- - although [battleship is solved](http://www.mountainvistasoft.com/docs/lect-04.pdf) there are [many](http://www.mountainvistasoft.com/variations.htm) [variants](http://www.mountainvistasoft.com/omnibus.htm#:~:text=Marcelo%20Inglesias%27s%20puzzle%20blog) still open.
+   - although [battleship is solved](http://www.mountainvistasoft.com/docs/lect-04.pdf) there are [many](http://www.mountainvistasoft.com/variations.htm) [variants](http://www.mountainvistasoft.com/omnibus.htm#:~:text=Marcelo%20Inglesias%27s%20puzzle%20blog) still open.
  - [go-to board game reference, logic puzzles or not](https://boardgamegeek.com/)
 
 Another way to go is to make a slight tweak on some existing problem:
 one I know still outstanding is to solve [0h h1](https://0hh1.com/) on
 the surface of a cube. Another one I know of still outstanding is to
-find all the English language semantic equivalents of
+find all the [English](https://www.powerthesaurus.org/send/synonyms) [language](https://www.powerthesaurus.org/more/synonyms) [semantic equivalents](https://www.powerthesaurus.org/money/synonyms) of
 `SEND+MORE=MONEY`. Or, if you know another language, perhaps you could
 use a corpus of that language instead.
 
