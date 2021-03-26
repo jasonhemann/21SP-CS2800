@@ -174,11 +174,12 @@ well-explored example and re-do that.
  - word search w/<=k words?
  - Crosswords w/a dictionary: feasible? 
  - [The four fours puzzle](https://steemitimages.com/p/o1AJ9qDyyJNSg3j52kokyfvD831NZY7nurgU1VdMURXcJsQgN?format=match&mode=fit&width=1280)
- - Marble/peg solitaire 15 golf ball tees puzzle
+ - [Marble/peg solitaire 15 golf ball tees puzzle](https://ai.stanford.edu/~chuongdo/satpage/index.html)
  - The n-queens problem in chess
  - [A recent set of solutions to a bunch of the common puzzles](https://www.researchgate.net/project/Combinatorial-problem-solving-with-Z3)
  - [Rubik's cube](https://arxiv.org/abs/1105.1436) (although there are [plenty of open variants!](http://www.twistypuzzles.com/))
  - [Filomino](https://github.com/tomvbussel/fillomino)
+ - [nonogram/picross](https://en.wikipedia.org/wiki/Nonogram)
 
 *Do* use these to come up with an idea on how to do work in this
 space. *Don't* plan to use these as the/a project itself. We will
@@ -192,11 +193,10 @@ have been.
 
  - [lists of scores of these sort of puzzles](https://www.puzzle-nonograms.com/) (/Scores/ of them)!
  - [Mah-jongg and the 15 puzzle](https://arxiv.org/abs/cs/0512049)
- - [nonogram/picross](https://en.wikipedia.org/wiki/Nonogram)
+ - [Coingrab](https://steemit.com/gaming/@vibvir/coin-grab-game-2-for-gamezop)
  - [0hn0](https://0hn0.com/)
    - although [battleship is solved](http://www.mountainvistasoft.com/docs/lect-04.pdf) there are [many](http://www.mountainvistasoft.com/variations.htm) [variants](http://www.mountainvistasoft.com/omnibus.htm#:~:text=Marcelo%20Inglesias%27s%20puzzle%20blog) still open.
  - [go-to board game reference, logic puzzles or not](https://boardgamegeek.com/)
-
  
 
 Another way to go is to make a slight tweak on some existing problem:
