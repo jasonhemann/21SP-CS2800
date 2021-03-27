@@ -34,6 +34,9 @@ classes: wide
 - [Keeping logic in the trivium of computer science: a teaching perspective](https://link.springer.com/article/10.1007/s10703-017-0301-z)
 - [Automatically generating /conjectures/](https://www.nature.com/articles/s41586-021-03229-4)
 
+
+- [DeBruijn and Automath: the first proof checker](https://pure.tue.nl/ws/files/3614142/372812914182296.pdf)
+
 - ["Gentle introduction to SMT" Video](https://www.youtube.com/watch?v=TgAVIqraCHo)
 - [Constraint solvers for the working PL researcher](https://www.youtube.com/watch?v=rTOqg-f2rNM)
 - [Theorem provers are a PL researcher's best friend](https://www.youtube.com/watch?v=QXRuvfs9gAc)
