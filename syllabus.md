@@ -304,13 +304,13 @@ your due dates for each stage. You should expect the following stages:
     than an elementary grammar check and appropriate citations, I want
     you to thoroughly copy-edit your prose before submitting.
 
-  - Roughly a month after I've assigned your project, your
-    group will submit to me via a Dropbox your project report, either:
-	  1. as a zip archive containing your PDF and your source code,
-         with suitable instructions for me to build and run your
+  - Roughly a month after I've assigned your project, your group will
+    submit to me via a dropbox your project report, as follows:
+	  1. A stand-alone PDF document that contains a link to a source
+         repository that I can access. 
+      2. This repository must contain and your source code, with
+         suitable instructions for me to build and run your
          deliverable.
-	  2. If your document contains a link to a source repository that
-         I can access, you may simply submit a stand-alone PDF.
 
   - Roughly a 28 to 34 days after I've assigned your project, your
     group will meet with me virtually to discuss and demonstrate your
