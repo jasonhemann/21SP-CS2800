@@ -34,6 +34,9 @@ classes: wide
 - [Keeping logic in the trivium of computer science: a teaching perspective](https://link.springer.com/article/10.1007/s10703-017-0301-z)
 - [Automatically generating /conjectures/](https://www.nature.com/articles/s41586-021-03229-4)
 
+# miniKanren constraint systems
+- [Slides]({{ site.baseurl }}/assets/docs/defense.pdf)
+- [(Optional!)](https://scholarworks.iu.edu/dspace/handle/2022/25183)
 
 - [DeBruijn and Automath: the first proof checker](https://pure.tue.nl/ws/files/3614142/372812914182296.pdf)
 
