@@ -10,7 +10,7 @@ sidebar:
 
 ## Book Proposal Review Meetings 
 
-[Book your appointment here](v2.waitwhile.com/book/280018279office)
+[Project Description]({{ site.baseurl }}/project-description.txt)
 
 Please make sure you get a confirmation email. If you do not get a confirmation email, you do not have an appointment. 
 
