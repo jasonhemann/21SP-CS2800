@@ -1,74 +1,42 @@
 ---
-title: Implementing a language evaluator
-date: 2021-04-08
+title: Project description, discussion
+date: 2021-04-05
 ---
 
-# Preliminaries
 
-## Additional Bonus - TRACE surveys.
+## Notes: 
 
-If TRACE eval scores completion % >= 85%
-
-I'll add 2 overall grade points to class grade average. 
-
-# Implementing our own `lambda` calc language
-
-## Implementing languages in terms of host languages.
+### A better miniKanren
 
 ```
 #lang racket
-
-(define (evaluate exp env) 
-  (match exp
-    [b #:when (boolean? b) b]
-    [n #:when (number? n) n]
-    [y #:when (symbol? y) (apply-env env y)]
-    [`(zero? ,ne) (zero? (evaluate ne env))]
-    [`(+ ,ne1 ,ne2) (+ (evaluate ne1 env) (evaluate ne2 env))]
-    [`(sub1 ,ne) (sub1 (evaluate ne env))]
-    [`(if ,t ,c ,a) (if (evaluate t env) 
-                        (evaluate c env)
-                        (evaluate a env))]
-    [`(lambda (,x) ,b) `(closure ,x ,b ,env)]
-    ;; fix 	
-    [`(,rator ,rand)
-     (match-let ((`(closure ,x ,b ,env^) (evaluate rator env))
-                 (a (evaluate rand env)))
-       (evaluate b `((,x . ,a) . ,env^)))]))
-	
-;; Notice we disallowed looking things up in an empty environment
-(define (apply-env env y)
-  (cdr (assv env y))
-  
-;; point free definition
-(define apply-env (compose cdr assv))
-
-(define (apply-env env y)
-  (match-let ((`((,x . ,v) . ,d) env))
-    (cond
-      ((equal? x y) v)
-      ((not (equal? x y)) (apply-env d y)))))
-
-(define (empty-env) 
-  `())
-
-(evaluate '(((lambda (y) (lambda (x) y)) 5) 6) (empty-env))
+;; (require minikanren) -- remove this line, don't use this one
+(require minikanren-ee) ;; download install and use this
 ```
 
-## Compositionality
+### Some grades not being up to right %
 
-We build complicated expressions' meanings from their immediate sub-pieces.
+Thank you to Connor for mentioning this. Working on it. 
 
-## First-order implementation. 
+### Project description discussion
 
-Not using `lambdas` for `lambdas`
+Thank you to Julia for adding to this discussion.
 
-## Definition is a meaning, is a semantics.
+#### Additional notes and points that came up:
 
-## What about "broken" programs
+If you want to use a pre-blessed format, you can use the ACMART format, in either LaTeX or Word templates: https://www.acm.org/publications/proceedings-template
 
-We don't allow it. 
+If you don't know how to construct a README, then you should look at a list of them to learn from: https://github.com/matiassingers/awesome-readme
 
-# Happy Thanksgiving Break
+You should actually use [The Craft of Scientific
+Writing](https://onesearch.library.northeastern.edu/permalink/f/365rt0/NEU_ALMA51327615270001401). Check
+out the e-book from the NEU library. This matches up with the [guidelines and
+references](http://writing.engr.psu.edu/checklists/proposal.html) we mention, page number for page number. 
 
- See you when you get back.
+### I have adjusted schedule to reflect today:
+
+[https://pages.github.ccs.neu.edu/jhemann/21SP-CS2800/schedule/](https://pages.github.ccs.neu.edu/jhemann/21SP-CS2800/schedule/)
+
+
+
+
