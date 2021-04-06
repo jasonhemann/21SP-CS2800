@@ -1,6 +1,6 @@
 #lang racket
 (require minikanren-ee)
-
+(provide assoco reverseo stuttero)
 #| 
 
 HW10: Introduction to Logic Programming 
