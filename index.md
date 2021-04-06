@@ -8,7 +8,7 @@ sidebar:
   nav: sidebar-site-map
 ---
 
-## Book Proposal Review Meetings 
+## Project Description Here
 
 [Project Description]({{ site.baseurl }}/project-description.txt)
 
