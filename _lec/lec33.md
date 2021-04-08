@@ -68,7 +68,3 @@ Not using `lambdas` for `lambdas`
 ## What about "broken" programs
 
 We don't allow it. 
-
-# Happy Thanksgiving Break
-
- See you when you get back.
