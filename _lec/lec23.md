@@ -190,7 +190,8 @@ puzzle/game kinds of things, the kind with a finite number of moves at
 every stage. Some of the below will have been done, others will not
 have been.
 
-
+ - Wikipedia's [list of solitaire games](https://en.wikipedia.org/wiki/List_of_patience_games)
+ - StackOverflow's [Puzzling forum](https://puzzling.stackexchange.com/)
  - [lists of scores of these sort of puzzles](https://www.puzzle-nonograms.com/) (/Scores/ of them)!
  - [Mah-jongg and the 15 puzzle](https://arxiv.org/abs/cs/0512049)
  - [Coingrab](https://steemit.com/gaming/@vibvir/coin-grab-game-2-for-gamezop)
