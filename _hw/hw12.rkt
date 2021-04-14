@@ -22,7 +22,7 @@ HW12: Type Inference
 
 ;; Your assignment this week is to complete your own type inferencer
 ;; and inhabiter in miniKanren. You should start with the inferencer
-;; in this file, and to it *, add1, cons, car, and cdr. To be
+;; in this file, and to it +, add1, cons, car, and cdr. To be
 ;; clear, your solution should not involve match at all; it should be
 ;; written entirely in miniKanren.
 
@@ -44,24 +44,20 @@ mind:
 
 Other important hints for this assignment:
 
- * The type of a lambda expression is an //arrow type//. For
+* The type of a lambda expression is an //arrow type//. For
   example, the type of (lambda (x) (sub1 x)) is (Nat -> Nat), while
   the type of (lambda (x) (zero? x)) is (Nat -> Bool).
 
-* Gamma is a //type environment//, similar to the environment used
-  in our interpreter from last time. The only difference is that a
-  type environment binds lexical variables to types instead of
-  values.
-
-* In the lambda lines, you must ensure that the symbols and lambda
-  not appear as variables in the type environment. This is to avoid
-  shadowing. You should use the absento constraint.
+* The //type environment//, often called Gamma, is similar to the
+  environment used in our interpreter from last time. The only
+  difference is that a type environment binds lexical variables to types
+  instead of values.
 
 * In the lambda line, you should ensure that the binder (formal
-parameter to the function) is a symbol.
+  parameter to the function) is a symbol.
 
- * Your not operator should expect only expressions which type at
- Bool, unlike not in Racket.
+* Your not operator should expect only expressions which type at
+  Bool, unlike not in Racket.
 
 |# 
 
@@ -86,23 +82,12 @@ parameter to the function) is a symbol.
        (== 'Nat t)
        (!- G ne1 'Nat)
        (!- G ne2 'Nat)))
-    ((fresh (teste anse elsee)
-       (== `(if ,teste ,anse ,elsee) e)
+    ((fresh (teste conseqe alte)
+       (== `(if ,teste ,conseqe ,alte) e)
        (!- G teste 'Bool)
-       (!- G anse t)
-       (!- G elsee t)))
+       (!- G conseqe t)
+       (!- G alte t)))
     ((symbolo e)
-     (=/= e 't)
-     (=/= e 'nil)
-     (=/= e 'lambda)
-     (=/= e 'if)
-     (=/= e '*)
-     (=/= e '+)
-     (=/= e 'not)
-     (=/= e 'sub1)
-     (=/= e 'cons)
-     (=/= e 'car)
-     (=/= e 'cdr)
      (lookupo G e t))
     ((fresh (x b)
        (== `(lambda (,x) ,b) e)
@@ -164,15 +149,14 @@ parameter to the function) is a symbol.
    (!- '() '(not (zero? (add1 (add1 18)))) q))
  '(Bool))
 
-
-(test-equal? "test for *"
- (run* (q)
-   (!- '() '(add1 (* (add1 (add1 18)) (add1 (add1 18)))) q))
+(test-equal? "test for +"
+ (run* () (q)
+   (!- '() '(add1 (+ (add1 (add1 18)) (add1 (add1 18)))) q))
  '(Nat))
 
-(test-equal? "test for *"
+(test-equal? "test for +"
  (run* (q)
-   (!- '() '(add1 (* (add1 (add1 18)) (add1 (add1 18)))) q))
+   (!- '() '(add1 (+ (add1 (add1 18)) (add1 (add1 18)))) q))
  '(Nat))
 
 (test-equal? "If expressions work, and w/boolean expressions"
