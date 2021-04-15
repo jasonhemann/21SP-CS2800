@@ -77,11 +77,6 @@ Other important hints for this assignment:
      (conde
        ((== 't e))
        ((== 'nil e))))
-    ((fresh (ne1 ne2)
-       (== `(+ ,ne1 ,ne2) e)
-       (== 'Nat t)
-       (!- G ne1 'Nat)
-       (!- G ne2 'Nat)))
     ((fresh (teste conseqe alte)
        (== `(if ,teste ,conseqe ,alte) e)
        (!- G teste 'Bool)
@@ -148,11 +143,6 @@ Other important hints for this assignment:
  (run* (q)
    (!- '() '(not (zero? (add1 (add1 18)))) q))
  '(Bool))
-
-(test-equal? "test for +"
- (run* () (q)
-   (!- '() '(add1 (+ (add1 (add1 18)) (add1 (add1 18)))) q))
- '(Nat))
 
 (test-equal? "test for +"
  (run* (q)
@@ -277,15 +267,15 @@ Other important hints for this assignment:
  '(Bool))
 
 (test-equal? "We can get atomic values out of cons structures even with mixed types"
- (run* (t) (!- '() '((lambda (x) (zero? (car x))) (cons 0 'nil)) t))
+ (run* (t) (!- '() '((lambda (x) (zero? (car x))) (cons 0 nil)) t))
  '(Bool))
 
 (test-equal? "We can get atomic values out of cons structures even with nested structures and mixed types"
- (run* (t) (!- '() '((lambda (x) (car x)) (cons (cons 0 0) 'nil)) t))
+ (run* (t) (!- '() '((lambda (x) (car x)) (cons (cons 0 0) nil)) t))
  '((pairof Nat Nat)))
 
 (test-equal? "We can get atomic values out of cons structures even with nested structures and mixed types"
- (run* (t) (!- '() '((lambda (x) (zero? (car x))) (cons 'nil 0)) t))
+ (run* (t) (!- '() '((lambda (x) (zero? (car x))) (cons nil 0)) t))
  '())
 
 (test-equal? "cdr lets us take elements of a pair" 
@@ -297,9 +287,9 @@ Other important hints for this assignment:
  '(Bool))
 
 (test-equal? "With cdr, we can get atomic values out of cons structures even with mixed types"
- (run* (t) (!- '() '((lambda (x) (zero? (cdr x))) (cons 0 'nil)) t))
+ (run* (t) (!- '() '((lambda (x) (zero? (cdr x))) (cons 0 nil)) t))
  '())
 
 (test-equal? "With cdr, we can get atomic values out of cons structures even with mixed types"
- (run* (t) (!- '() '((lambda (x) (zero? (cdr x))) (cons 'nil 0)) t))
+ (run* (t) (!- '() '((lambda (x) (zero? (cdr x))) (cons nil 0)) t))
  '(Bool))
