@@ -12,7 +12,11 @@ sidebar:
 
 [Project Description]({{ site.baseurl }}/project-description.txt)
 
-Please make sure you get a confirmation email. If you do not get a confirmation email, you do not have an appointment. 
+
+## Book an appointment !
+[Book an appointment here!!](https://v2.waitwhile.com/book/280018279office/calendar)
+
+Please make sure you get a confirmation email. If you do not get a confirmation email, you do not have an appointment. (This time for real).
 
 > "I know what you're thinking about," said Tweedledum; "but it isn't
 > so, nohow." "Contrariwise," continued Tweedledee, "if it was so, it
