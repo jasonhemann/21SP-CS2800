@@ -199,7 +199,8 @@ have been.
  - [0hn0](https://0hn0.com/)
    - although [battleship is solved](http://www.mountainvistasoft.com/docs/lect-04.pdf) there are [many](http://www.mountainvistasoft.com/variations.htm) [variants](http://www.mountainvistasoft.com/omnibus.htm#:~:text=Marcelo%20Inglesias%27s%20puzzle%20blog) still open.
  - [go-to board game reference, logic puzzles or not](https://boardgamegeek.com/)
- 
+ - Show that the inefficient, obv. correct in-order walk is equiv. to
+   the efficient one w/acculumator params for max elem and min elem.
 
 Another way to go is to make a slight tweak on some existing problem:
 one I know still outstanding is to solve [0h h1](https://0hh1.com/) on
@@ -221,6 +222,7 @@ solution to mine?"
 
   1. [that article/blog post](https://research.swtch.com/boolean) on Minimal Boolean Formulae
   2. [another exemplary piece]({{ site.baseurl }}/assets/docs/Back_to_Basics_Solving_w_SAT.PDF)
+  3. [solving molecube by reduction](https://jdaymude.github.io/post/solving-the-molecube-by-reduction/)
  
 #### Student submissions 
 
@@ -290,6 +292,8 @@ HOL, ELF, etc. But please see further below.
   12. Equiv. of the two Pascal triangle implementations
   13. `walk-symbol` termination 
   14. [`interleave-lists` simultaneously vs one-after-the-other (Edit: unfortunately, turns out it's trivial!)]({{ site.baseurl }}/assets/code/interleave-lists.lisp)
+  15. Higher-order sudoku. Adding logical constraints, where the value in a given cell gives you the position of a constraint on another cell.
+  
 
 ### Exemplary model pieces: 
 
