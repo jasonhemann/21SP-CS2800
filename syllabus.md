@@ -256,7 +256,7 @@ mathematically for your overall final grade.
 
 The final two homeworks, will both be one-part, and worth half the
 usual homework weight. Since they're worth half the usual homework
-weight, I'll also not count that as dropping a "half an assignment"
+weight, I'll also count that as dropping a "half an assignment"
 rather than a full one, because it's worth half the others.
 
 
