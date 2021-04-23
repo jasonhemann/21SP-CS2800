@@ -237,13 +237,6 @@ to discuss and go over questions on the first half of these
 assignments, giving you both more incentive to get a jump start and
 also opportunities to check your understanding.
 
-The final two homeworks, however, will both be one-part, and worth
-half the usual homework weight. Since they're worth half the usual
-homework weight, I'll also not count that as a "full drop", but
-instead a "half drop." Which is to say, if that ends up being your
-worst assignment, I'll drop that as a "half hw" drop, rather than a
-full one, because it's worth half the others. 
-
 ### Submissions
 
 For a homework released on Monday, the first half is due Saturday at
@@ -255,11 +248,17 @@ chosen [group](Teamwork_and_Collaboration).
 ### Late / Mistaken Assignment Policy
 
 To universally, uniformly and preemptively account for any number of
-situations that arise, *I will drop every student's lowest homework
-assignment grade (both halves). I will after this drop students'
-lowest remaining half assignment.* This absolution for one and a half
-of our assignments _is_ our late/etc homework clemency. Please do
-consider what this does mathematically for your overall final grade. 
+situations that arise, *I will drop every student's lowest three
+half-homework assignment grades. This is effectively one and a half
+homeworks.* This absolution for one and a half of our assignments _is_
+our late/etc homework clemency. Please do consider what this does
+mathematically for your overall final grade.
+
+The final two homeworks, will both be one-part, and worth half the
+usual homework weight. Since they're worth half the usual homework
+weight, I'll also not count that as dropping a "half an assignment"
+rather than a full one, because it's worth half the others.
+
 
 I shan't accept late submissions except under the most exceptional of
 circumstances (family emergencies, hospitalizations, the like)---if
