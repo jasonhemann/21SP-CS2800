@@ -201,7 +201,8 @@ have been.
  - [go-to board game reference, logic puzzles or not](https://boardgamegeek.com/)
  - [lefun Rubik's cube](https://www.thecubicle.com/products/lefun-sudoku-3x3)
  - Higher-order sudoku. Adding logical constraints, where the value in a given cell gives you the position of a constraint on another cell.
-
+ - [Pipes game]() (on a torus, or a klein surface, or 3D rotations, or w/n-ary sources) 
+ - [Another set of sorts of puzzles](https://krazydad.com/) (Excepting obv. Kakuro, Sudoku, Killer Sudoku, etc)
 
 Another way to go is to make a slight tweak on some existing problem:
 one I know still outstanding is to solve [0h h1](https://0hh1.com/) on
