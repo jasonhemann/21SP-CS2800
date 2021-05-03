@@ -203,6 +203,7 @@ have been.
  - Higher-order sudoku. Adding logical constraints, where the value in a given cell gives you the position of a constraint on another cell.
  - [Pipes game]() (on a torus, or a klein surface, or 3D rotations, or w/n-ary sources) 
  - [Another set of sorts of puzzles](https://krazydad.com/) (Excepting obv. Kakuro, Sudoku, Killer Sudoku, etc)
+ - LightEmAll game (e.g https://github.com/jamesmedlin/LightEmAll)
 
 Another way to go is to make a slight tweak on some existing problem:
 one I know still outstanding is to solve [0h h1](https://0hh1.com/) on
@@ -295,8 +296,9 @@ HOL, ELF, etc. But please see further below.
   13. `walk-symbol` termination 
   14. [`interleave-lists` simultaneously vs one-after-the-other (Edit: unfortunately, turns out it's trivial!)]({{ site.baseurl }}/assets/code/interleave-lists.lisp)
   15. Show that the inefficient, obv. correct in-order walk is equiv. to the efficient one w/acculumator params for max elem and min elem.  
+  16. n-iterated run-length encoding, then n-iterated run-length decoding round-trips. 
 
-### Exemplary model pieces: 
+### exemplary model pieces: 
 
 #### For comparison and reference, see 
  
