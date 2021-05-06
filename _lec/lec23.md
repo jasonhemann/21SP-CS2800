@@ -204,6 +204,8 @@ have been.
  - [Pipes game]() (on a torus, or a klein surface, or 3D rotations, or w/n-ary sources) 
  - [Another set of sorts of puzzles](https://krazydad.com/) (Excepting obv. Kakuro, Sudoku, Killer Sudoku, etc)
  - LightEmAll game (e.g https://github.com/jamesmedlin/LightEmAll)
+ - [Dobble (Spot It)](https://youtu.be/VTDKqW_GLkw)
+
 
 Another way to go is to make a slight tweak on some existing problem:
 one I know still outstanding is to solve [0h h1](https://0hh1.com/) on
