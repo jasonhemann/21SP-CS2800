@@ -36,6 +36,8 @@ classes: wide
 - [Keeping logic in the trivium of computer science: a teaching perspective](https://link.springer.com/article/10.1007/s10703-017-0301-z)
 - [Automatically generating /conjectures/](https://www.nature.com/articles/s41586-021-03229-4)
 
+- Pfenning's [Lecture notes on the Curry-Howard isomorphism](http://citeseerx.ist.psu.edu/viewdoc/download;jsessionid=9DF04C851236C5FED9A23F1EE2242BDE?doi=10.1.1.10.7604&rep=rep1&type=pdf)
+
 # miniKanren constraint systems
 - [Slides]({{ site.baseurl }}/assets/docs/defense.pdf)
 - [(Optional!)](https://scholarworks.iu.edu/dspace/handle/2022/25183)
