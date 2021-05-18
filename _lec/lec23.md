@@ -192,6 +192,9 @@ have been.
 
  - Wikipedia's [list of solitaire games](https://en.wikipedia.org/wiki/List_of_patience_games)
  - StackOverflow's [Puzzling forum](https://puzzling.stackexchange.com/)
+ - [List of logic puzzles](https://www.conceptispuzzles.com/index.aspx)
+ - [Blogs about puzzles](https://justpuzzles.wordpress.com/)
+ - [Glossary of sudoku variants](https://en.wikipedia.org/wiki/Glossary_of_Sudoku)
  - [lists of scores of these sort of puzzles](https://www.puzzle-nonograms.com/) (/Scores/ of them)!
  - [Mah-jongg and the 15 puzzle](https://arxiv.org/abs/cs/0512049)
  - [Coingrab](https://steemit.com/gaming/@vibvir/coin-grab-game-2-for-gamezop)
