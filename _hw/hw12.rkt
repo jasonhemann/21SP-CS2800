@@ -8,11 +8,9 @@ HW12: Type Inference
 
 |# 
 
-;; 'Contrariwise,' continued Tweedledee, 'if it was so, it might be
-;; and if it were so, it would be; but as it isn't, it ain't. That 's
-;; logic.'
-;; 
-;; -- Lewis Carroll, Through The Looking-Glass
+;; The best way to understand type theory is to implement it!
+;;
+;; -- Anders Mörtberg
 
 ;; You may find the old notes on types and type inference on the
 ;; website to be of some use to you. Of course, the best and most
