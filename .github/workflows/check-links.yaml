@@ -7,4 +7,4 @@ jobs:
       - uses: actions/checkout@v2
       - uses: JustinBeckwith/linkinator-action@v1
         with:
-          paths: https://pages.github.ccs.neu.edu/jhemann/21SP-CS4400
+          paths: https://jasonhemann.github.io/21SP-CS4400
