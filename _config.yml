@@ -197,16 +197,11 @@ permalink: /:categories/:title/
 
 # Plugins (previously gems:)
 plugins:
-  - jekyll-sitemap
-  - jekyll-feed
   - jekyll-include-cache
   - jekyll-remote-theme
   - jekyll-optional-front-matter
-  - jekyll-watch-exclude 
 # mimic GitHub Pages with --safe
 whitelist:
-  - jekyll-sitemap
-  - jekyll-feed
   - jekyll-include-cache
   - jekyll-remote-theme
   - jekyll-optional-front-matter
