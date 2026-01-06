@@ -34,7 +34,7 @@ name                     : "Jason Hemann"
 description              : "Hemann's Logic and Computation Course"
 github                   : [metadata]
 # e.g. http://example.com
-url                      : "http://pages.github.ccs.neu.edu" 
+url                      : "https://jasonhemann.github.io"
 # the site subpath, e.g. /blog
 baseurl                  : "/jhemann/21SP-CS2800" 
 repository               : jhemann/21SP-CS2800
@@ -200,6 +200,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-feed
   - jekyll-include-cache
+  - jekyll-remote-theme
   - jekyll-optional-front-matter
   - jekyll-watch-exclude 
 # mimic GitHub Pages with --safe
@@ -207,6 +208,7 @@ whitelist:
   - jekyll-sitemap
   - jekyll-feed
   - jekyll-include-cache
+  - jekyll-remote-theme
   - jekyll-optional-front-matter
           
 collections:
