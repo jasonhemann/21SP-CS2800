@@ -36,8 +36,8 @@ github                   : [metadata]
 # e.g. http://example.com
 url                      : "https://jasonhemann.github.io"
 # the site subpath, e.g. /blog
-baseurl                  : "/jhemann/21SP-CS2800" 
-repository               : jhemann/21SP-CS2800
+baseurl                  : "/21SP-CS2800"
+repository               : "jasonhemann/21SP-CS2800"
 teaser                   : "/assets/images/500x300teaser.png" 
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : "SP21 2800"
