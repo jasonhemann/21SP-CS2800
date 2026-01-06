@@ -8,14 +8,13 @@ Project is due† the 21st, presentations also due† the 21st.
 † Yes, but you all do have the free unpenalized extensions, should you
 choose to take advantage of them.
 
-
 Q: How should I 'lint' my prose? 
 
 I use some of: 
 
   - `codespell`
   - [`anorak`](http://jwilk.net/software/anorack)
-  - `aspell` and `hunspell` via [`enchant-2`](https://en.wikipedia.org/wiki/Enchant_(software))
+  - `nuspell` via [`enchant-2`](https://en.wikipedia.org/wiki/Enchant_(software))
   - [`write-good`](https://github.com/btford/write-good) 
   - [GNU `style` and `diction`](https://www.gnu.org/software/diction/)
   - `atd` 

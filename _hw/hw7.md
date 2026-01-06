@@ -5,7 +5,10 @@ due:
 ---
 
 
-> [Proofs] are this crazy contact between an imaginary, nonphysical world and biologically evolved creatures. We did not evolve to do this.
+> [Proofs] are this crazy contact between an imaginary, nonphysical
+> world and biologically evolved creatures. We did not evolve to do
+> this.
+>
 > -- Simon DeDeo 
 
 
