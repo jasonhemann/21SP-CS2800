@@ -4,7 +4,8 @@ jobs:
   linkinator:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: JustinBeckwith/linkinator-action@v1
+      - uses: actions/checkout@v4
+      - uses: JustinBeckwith/linkinator-action@v2
         with:
           paths: https://jasonhemann.github.io/21SP-CS2800
+          config: linkinator.config.json
