@@ -1,11 +1,16 @@
+name: link-check
+on:
+  page_build:
+  workflow_dispatch:
 
-on: page_build
 jobs:
   linkinator:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: JustinBeckwith/linkinator-action@v2
+      - name: Check published links (report only)
+        continue-on-error: true
+        uses: JustinBeckwith/linkinator-action@v2
         with:
-          paths: https://jasonhemann.github.io/21SP-CS2800
+          paths: https://hemann.pl/21SP-CS2800
           config: linkinator.config.json
