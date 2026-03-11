@@ -74,7 +74,7 @@ Join [our group](https://hypothes.is/groups/97DiEo3n/cs2800) !
 I constructed our course homepage as a Jekyll site built with Github
 Pages. Student corrections and improvements are *incredibly* welcome!
 You can submit a [pull request
-(PR)](http://github.ccs.neu.edu/jhemann/21SP-CS2800) for a quick
+(PR)](https://github.com/jasonhemann/21SP-CS2800) for a quick
 correction and improvement. Every page on this website has a direct
 links to its `.md` file in this repository.
 
