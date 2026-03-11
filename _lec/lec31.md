@@ -35,7 +35,7 @@ references](http://writing.engr.psu.edu/checklists/proposal.html) we mention, pa
 
 ### I have adjusted schedule to reflect today:
 
-[https://pages.github.ccs.neu.edu/jhemann/21SP-CS2800/schedule/](https://pages.github.ccs.neu.edu/jhemann/21SP-CS2800/schedule/)
+[/21SP-CS2800/schedule/](/21SP-CS2800/schedule/)
 
 
 

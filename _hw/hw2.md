@@ -79,7 +79,7 @@ due:
 
  - You can use any types, functions and macros listed on the [ACL2s
    Language
-   Reference](http://pages.github.ccs.neu.edu/jhemann/21SP-CS2800/acl2s-reference/)
+   Reference](/21SP-CS2800/acl2s-reference/)
 
  - Since this is our first real programming exercise, we have
    simplified your interaction with ACL2s somewhat. Right now, we will

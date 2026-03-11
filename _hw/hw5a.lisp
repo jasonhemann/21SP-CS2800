@@ -74,7 +74,7 @@ Homework 5a. Substitution, Normalization, and Equational Reasoning
 
 To refresh yourself on substitutions and the definition of
 instantiation, see [Ch 4. pp
-76-77](https://pages.github.ccs.neu.edu/jhemann/21SP-CS2800/readings/).
+76-77](/21SP-CS2800/readings/).
 
 You all will recall we have expressed our substitutions as `let`
 bindings. And you know `test?` presents substitutions in this same

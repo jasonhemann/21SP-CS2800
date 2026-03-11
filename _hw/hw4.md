@@ -76,7 +76,7 @@ due:
 
  - You can use any types, functions and macros listed on the [ACL2s
    Language
-   Reference](http://pages.github.ccs.neu.edu/jhemann/21SP-CS2800/acl2s-reference/)
+   Reference](/21SP-CS2800/acl2s-reference/)
 
  - We have simplified your interaction with ACL2s somewhat. Right
    now, we will not require ACL2s to prove termination and
