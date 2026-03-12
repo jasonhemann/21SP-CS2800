@@ -12,7 +12,7 @@ In terms of the mechanics of reading through an ACL2 log, my advice is:
   1. [Don't panic](https://en.wikipedia.org/wiki/Phrases_from_The_Hitchhiker%27s_Guide_to_the_Galaxy#Don't_Panic)
   2. [I have linked you to some nice walk-through documentation of what to /do/ with a log]({{ site.baseurl }}/assets/docs/CAR-section-4.pdf)
   3. The ACL2 website also has a nice [interactive tutorial](https://www.cs.utexas.edu/users/moore/publications/flying-demo/script.html#slide3).
-  4. You might also see [Pete's chapter on the subject.](https://via.hypothes.is/https://www.khoury.northeastern.edu/~pete/courses/Logic-and-Computation/2021-Spring/rapsteering.pdf)
+  4. You might also see [Pete's chapter on the subject.](https://web.archive.org/web/*/https://www.khoury.northeastern.edu/~pete/courses/Logic-and-Computation/2020-Spring/rapsteering.pdf)
 
 But my advice is strongly to work with rewrite rules and inductive
 proofs. Those are methods of reasoning that I understand and ways that

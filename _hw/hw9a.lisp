@@ -69,7 +69,7 @@
 ;; At the URL
 ;; https://libkey.io/libraries/545/articles/15438718/full-text-file?utm_source=api_57
 ;; (reached from NEU via
-;; https://onesearch.library.northeastern.edu/permalink/f/t09un1/TN_cdi_gale_infotracacademiconefile_A6895045)
+;; https://library.northeastern.edu/)
 ;; you will find a JACM paper describing a mechanized proof of the
 ;; Church-Rosser theorem.
 

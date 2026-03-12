@@ -29,7 +29,7 @@ If you want to use a pre-blessed format, you can use the ACMART format, in eithe
 If you don't know how to construct a README, then you should look at a list of them to learn from: https://github.com/matiassingers/awesome-readme
 
 You should actually use [The Craft of Scientific
-Writing](https://onesearch.library.northeastern.edu/permalink/f/365rt0/NEU_ALMA51327615270001401). Check
+Writing](https://library.northeastern.edu/). Check
 out the e-book from the NEU library. This matches up with the [guidelines and
 references](http://writing.engr.psu.edu/checklists/proposal.html) we mention, page number for page number. 
 

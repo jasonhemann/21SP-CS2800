@@ -29,7 +29,7 @@ classes: wide
 - [Philosophy of Computer Science](https://cse.buffalo.edu/~rapaport/Papers/phics.pdf) (Draft text)
 - [Logicomix](https://en.wikipedia.org/wiki/Logicomix) (It's a comic about Russell and early 20th century mathematical logic. ᕕ( ᐛ )ᕗ) 
 - [An Introduction to Non-classical Logic](https://web.archive.org/web/20240726143131/https://onesearch.library.northeastern.edu/permalink/f/365rt0/NEU_ALMA51261636590001401) (The conditional beyond the material)
-- [The Craft of Scientific Writing](https://onesearch.library.northeastern.edu/permalink/f/365rt0/NEU_ALMA51327615270001401) E-Book available via NEU library. 
+- [The Craft of Scientific Writing](https://library.northeastern.edu/) E-Book available via NEU library. 
 - [Advice on Structure and Content](https://www.cl.cam.ac.uk/~lp15/Pages/Scream.html)
 - [SPJ Advice on how to write a research paper](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/07/How-to-write-a-great-research-paper.pdf)
 - [How to write a great Research paper](https://www.microsoft.com/en-us/research/academic-program/write-great-research-paper/#!other-resources)

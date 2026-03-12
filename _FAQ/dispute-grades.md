@@ -18,5 +18,5 @@ And of course, if you feel that /I/ haven't given adequate
 consideration to your situation or are otherwise unsatisfied, you
 should of course raise your concerns with the [Associate Dean of
 Undergraduate Education and
-Experience](http://google.com/search?q=Associate+Dean+of+Undergraduate+Education+and+Experience+site:khoury.northeastern.edu&btnI)
+Experience](https://www.khoury.northeastern.edu/)
 at Khoury.

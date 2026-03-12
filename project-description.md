@@ -210,7 +210,7 @@ consider a tool like http://www.hemingwayapp.com/. Treat the
 references](http://writing.engr.psu.edu/checklists/proposal.html) as
 the criteria by which we will assess your writing. For a copy of the
 reference text, [The Craft of Scientific
-Writing](https://onesearch.library.northeastern.edu/permalink/f/365rt0/NEU_ALMA51327615270001401)
+Writing](https://library.northeastern.edu/)
 check out the e-book from the NEU library.
 
 ## Presentation/Demonstration (10%)
