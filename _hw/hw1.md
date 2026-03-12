@@ -34,7 +34,7 @@ participate in class.
    
 ## Running ACL2s on Khoury Virtual Desktops
 
-You can run ACL2s using the Khoury Virtual Desktops Infrastructure (VDI). See the [documentation](https://www.khoury.northeastern.edu/systems/vdi/). You have many options including using an [HTML client](https://view.khoury.northeastern.edu/portal/webclient/index.html#/) that allows you to log into a virtual machine and run ACL2s using a browser. Use your Khoury CS account credentials and select `CCIS-WINDOWS`; then select `Linux Lab` and you will see a Desktop. Use the file explorer and click on `Other Locations > Computer > bin > acl2s`. Drap the `acl2s` icon to your Desktop while holding "Alt" (on Mac "Option") and when you release it, a menu will pop up; select "link here" and you will have a direct link to ACL2s in your Desktop. Double click on the acl2s icon on your desktop and this will start ACL2s on your Virtual Desktop Machine.
+You can run ACL2s using the Khoury Virtual Desktops Infrastructure (VDI). See the [documentation](https://web.archive.org/web/20200815193823/https://www.khoury.northeastern.edu/systems/vdi/). You have many options including using an [HTML client](https://view.khoury.northeastern.edu/portal/webclient/index.html#/) that allows you to log into a virtual machine and run ACL2s using a browser. Use your Khoury CS account credentials and select `CCIS-WINDOWS`; then select `Linux Lab` and you will see a Desktop. Use the file explorer and click on `Other Locations > Computer > bin > acl2s`. Drap the `acl2s` icon to your Desktop while holding "Alt" (on Mac "Option") and when you release it, a menu will pop up; select "link here" and you will have a direct link to ACL2s in your Desktop. Double click on the acl2s icon on your desktop and this will start ACL2s on your Virtual Desktop Machine.
 
 ## Hypothes.is 
 
@@ -42,7 +42,7 @@ You can run ACL2s using the Khoury Virtual Desktops Infrastructure (VDI). See th
   
 ## PollEverywhere
 
-  6. Make sure you can log in to your Northeastern (via your `@northeastern.edu` address) [PollEverywhere account and verify your phone number](https://web.northeastern.edu/nle/poll-everywhere-resources/#menu-item-359:~:text=faculty%2Fstaff-,Students,Verifying%20your%20phone%20number%20if%20you%E2%80%99re%20using%20text%20messages) if you answer PollEverywhere questions via text. 
+  6. Make sure you can log in to your Northeastern (via your `@northeastern.edu` address) [PollEverywhere account and verify your phone number](https://web.archive.org/web/20191228185219/https://web.northeastern.edu/nle/poll-everywhere-resources/#menu-item-359:~:text=faculty%2Fstaff-,Students,Verifying%20your%20phone%20number%20if%20you%E2%80%99re%20using%20text%20messages) if you answer PollEverywhere questions via text. 
 
 ## Optional - Local ACL2s Installation
 

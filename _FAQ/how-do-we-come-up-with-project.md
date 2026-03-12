@@ -9,8 +9,8 @@ mechanization (e.g [CompCert](https://en.wikipedia.org/wiki/CompCert))
 is extrinsic. We have a purpose in mind, and thus we do a proof.
 
 One bit of advice is to think about some function or functions from
-[fundies I](https://course.ccs.neu.edu/cs2500/) to the first half
-maybe of [fundies II](https://course.ccs.neu.edu/cs2510/), with some
+[fundies I](http://web.archive.org/web/20260208222733/https://course.ccs.neu.edu/cs2500/) to the first half
+maybe of [fundies II](https://web.archive.org/web/20241110215930/https://course.ccs.neu.edu/cs2510/), with some
 complicated interaction behavior. Think some specification of behavior
 more complex than it's type in Java. Something than even in Java you'd
 *have* to put in the comments because you couldn't express it in Java

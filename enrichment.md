@@ -13,7 +13,7 @@ classes: wide
 - [Annotated ACL2 Examples](https://www.cs.utexas.edu/users/moore/acl2/v6-2/ANNOTATED-ACL2-SCRIPTS.html)
 - [Milestones from the 70s to ACL2](https://link.springer.com/article/10.1007/s00165-019-00490-3)
 - [Design Goals of ACL2](https://www.cs.utexas.edu/users/moore/publications/km94.pdf)
-- [Just what *is* the ACL2s sedan?](http://www.ccis.northeastern.edu/~pete/pub/tacas-acl2-sedan.pdf)
+- [Just what *is* the ACL2s sedan?](https://web.archive.org/web/20220501030921/https://www.ccis.northeastern.edu/~pete/pub/tacas-acl2-sedan.pdf)
 - [Defdata in ACL2s](https://arxiv.org/pdf/1406.1557.pdf)
 - [More on the Ackermann Function + History]({{ site.baseurl }}/assets/code/ack-etc.rkt)
 - [Boolean Reasoning in ACL2](https://www.cs.utexas.edu/users/moore/acl2/manuals/current/manual/index-seo.php/ACL2____BOOLEAN-REASONING?path=3525/423) From the documentation.
@@ -28,7 +28,7 @@ classes: wide
 - A [Modern Program Synthesis Survey](https://www.microsoft.com/en-us/research/wp-content/uploads/2017/10/program_synthesis_now.pdf)
 - [Philosophy of Computer Science](https://cse.buffalo.edu/~rapaport/Papers/phics.pdf) (Draft text)
 - [Logicomix](https://en.wikipedia.org/wiki/Logicomix) (It's a comic about Russell and early 20th century mathematical logic. ᕕ( ᐛ )ᕗ) 
-- [An Introduction to Non-classical Logic](https://onesearch.library.northeastern.edu/permalink/f/365rt0/NEU_ALMA51261636590001401) (The conditional beyond the material)
+- [An Introduction to Non-classical Logic](https://web.archive.org/web/20240726143131/https://onesearch.library.northeastern.edu/permalink/f/365rt0/NEU_ALMA51261636590001401) (The conditional beyond the material)
 - [The Craft of Scientific Writing](https://onesearch.library.northeastern.edu/permalink/f/365rt0/NEU_ALMA51327615270001401) E-Book available via NEU library. 
 - [Advice on Structure and Content](https://www.cl.cam.ac.uk/~lp15/Pages/Scream.html)
 - [SPJ Advice on how to write a research paper](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/07/How-to-write-a-great-research-paper.pdf)
@@ -59,6 +59,6 @@ classes: wide
 # Other classes notes 
 
 - [Moore's](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.207.4867&rep=rep1&type=pdf)
-- [Pucella](http://www.ccs.neu.edu/home/riccardo/courses/csu290-sp09/index.html)
+- [Pucella](https://web.archive.org/web/20220505204258/http://www.ccs.neu.edu/home/riccardo/courses/csu290-sp09/index.html)
 - [Schmidt](https://www.cs.drexel.edu/~kschmidt/CS270/)
 

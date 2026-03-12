@@ -258,9 +258,9 @@ deck if it would help you walk me through your document.
 
 Submit to me a "receipt" for either having checked out from the
 library one of (several well-known and trusted style
-guides)[https://subjectguides.lib.neu.edu/c.php?g=713111&p=5073143#s-lg-box-wrapper-18808483]
+guides)[https://web.archive.org/web/20240603130811/https://subjectguides.lib.neu.edu/c.php?g=713111&p=5073143#s-lg-box-wrapper-18808483]
 or for having had (an appointment at the writing
-center)[https://cssh.northeastern.edu/writingcenter/tutoring/online-appointments/]
+center)[https://web.archive.org/web/20241202233649/https://cssh.northeastern.edu/writingcenter/tutoring/online-appointments/]
 where you have copy-edited your draft. They have a whole bevy of
 resources for you. Please note I am asking you to do more than an
 elementary grammar check and appropriate citations not just for

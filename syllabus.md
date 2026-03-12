@@ -52,7 +52,7 @@ ensuring software correctness. You will also familiarize yourself with
 
 as well as the common notations for the preceding. We will study logic
 from a computational perspective using the [ACL2 Sedan theorem proving
-system](http://acl2s.ccs.neu.edu/acl2s/doc). **Please do not use the
+system](https://web.archive.org/web/20240222074354/http://acl2s.ccs.neu.edu/acl2s/doc). **Please do not use the
 installation instructions on the this website. Instead follow the
 first lab assignment.**
 
@@ -74,7 +74,7 @@ hours]({{ site.baseurl }}/office-hours/).
 This semester I split the difference between exam-based summative
 assessments that are more traditional in this course with
 project-based ["authentic
-assessments"](https://learning.northeastern.edu/event/workshop-using-projects-and-presentations-as-assessment-strategies-in-nuflex/). These
+assessments"](https://web.archive.org/web/20210127124137/https://learning.northeastern.edu/event/workshop-using-projects-and-presentations-as-assessment-strategies-in-nuflex/). These
 projects will be uniquely tailored with and for the particular group
 of students, and may take the forms of proofs for topics that have
 come up in practice or programmatic reduction of a real world example.
@@ -94,7 +94,7 @@ automated theorem proving or the like, please let me know on that too!
 ## Required Texts 
 
 There are no required texts for this course. Our course will follow a
-draft of [Pete Manolios's](https://www.ccs.neu.edu/~pete/) [/Reasoning
+draft of [Pete Manolios's](https://web.archive.org/web/20230226074304/https://www.ccs.neu.edu/~pete/) [/Reasoning
 About Programs/ (2021)]({{ site.baseurl }}/readings/). You will find these
 notes linked from this website. I invite you to collaboratively
 annotate these notes with me, and with each other.
@@ -145,7 +145,7 @@ the aforementioned individual components of your final grade.
 
 We will track the completion portions of your lab and homework grades,
 as well as your project grades, in
-[Canvas](https://canvas.northeastern.edu/). You will have an
+[Canvas](https://web.archive.org/web/20241225174038/https://canvas.northeastern.edu/). You will have an
 approximate assessment of your *current* grade status before the
 Add/Drop deadline. We cannot give you a standing completion percentage
 of the participation component of your grade because, logically, there
@@ -294,9 +294,9 @@ your due dates for each stage. You should expect the following stages:
   - Roughly two to four days before the due date, you will have
     submitted to me a "receipt" for either having checked out from the
     library one of several well-known and trusted [style
-    guides](https://subjectguides.lib.neu.edu/c.php?g=713111&p=5073143#s-lg-box-wrapper-18808483)
+    guides](https://web.archive.org/web/20240603130811/https://subjectguides.lib.neu.edu/c.php?g=713111&p=5073143#s-lg-box-wrapper-18808483)
     or for having had an
-    [appointment](https://cssh.northeastern.edu/writingcenter/tutoring/online-appointments/)
+    [appointment](https://web.archive.org/web/20241202233649/https://cssh.northeastern.edu/writingcenter/tutoring/online-appointments/)
     at the writing center where you have copy-edited your draft. They
     have a [whole bevy of resources for you]({{ site.baseurl
     }}/faq/improve-writing/). Please note I am asking you to do more
@@ -328,9 +328,9 @@ add two points onto the class-wide final average.
 Students of course play an integral part in ensuring they receive the
 full benefit of their coursework. The students of 2800 are certainly
 beholden to the academic integrity policies of [Northeastern
-University](http://www.northeastern.edu/osccr/academic-integrity-policy/),
+University](http://web.archive.org/web/20210518231334/http://www.northeastern.edu/osccr/academic-integrity-policy),
 the [Khoury
-College](https://www.khoury.northeastern.edu/information-for-overview/current-undergrad/undergraduate-advising-academic-support/academic-policies/).
+College](https://web.archive.org/web/20240920031252/https://www.khoury.northeastern.edu/information-for-overview/current-undergrad/undergraduate-advising-academic-support/academic-policies/).
 
 ### Teamwork and Collaboration
 
@@ -371,7 +371,7 @@ staff privilege to reallocate group members.
 ## Academic Accommodations 
 
 If you have accommodations from the [Disability Resource Center
-(DRC)](http://www.northeastern.edu/drc/) please submit your Professor
+(DRC)](https://web.archive.org/web/20210327072511/http://www.northeastern.edu/drc/) please submit your Professor
 Notification Letter to me by email, preferably within the first two
 weeks of the quarter, so I can do my part to help you achieve equal
 access in this course. I am eager to discuss ways we can ensure your
@@ -379,14 +379,14 @@ full participation.
 
 I encourage all students who may benefit from learning more about DRC
 services to [contact the
-DRC](http://www.northeastern.edu/drc/#fp-blog-entry:~:text=Contact%20Information).
+DRC](https://web.archive.org/web/20210327072511/http://www.northeastern.edu/drc/#fp-blog-entry:~:text=Contact%20Information).
 
 ## Health and Safety
 
 The university has put into place a robust plan to make the campus
 healthy and safe for all — but you must do your part. On August 22, all
 students received an
-[email](https://news.northeastern.edu/coronavirus/university-messages/university-response-to-unsafe-behavior/)
+[email](https://web.archive.org/web/20241110214801/https://news.northeastern.edu/coronavirus/university-messages/university-response-to-unsafe-behavior/)
 from Senior Vice Chancellor for Student Affairs Madeleine Estabrook on
 the expectations for behavior both on campus and off campus. **Please
 read it carefully today.**
@@ -403,7 +403,7 @@ To summarize:
   from everyone.
 
 * Get tested every three days using the COVID-19 Test Scheduler
-  ([covid19-testing.northeastern.edu](https://northeastern.sharepoint.com/sites/covidscheduler).)
+  ([covid19-testing.northeastern.edu](https://web.archive.org/web/20250329231059/https://northeastern.sharepoint.com/sites/covidscheduler).)
   We may require more frequent testing as the semester progresses. It’s
   quick, easy and will help us to quickly identify and care for anyone
   who tests positive. I will not be told the identity of anyone who
@@ -413,15 +413,15 @@ To summarize:
   telehealth team who will provide you with next steps.
 
 * Do a Daily Wellness Check
-  ([wellness-check.northeastern.edu](https://wellness-check.northeastern.edu)),
+  ([wellness-check.northeastern.edu](https://web.archive.org/web/20210927132732/http://www.wellness-check.northeastern.edu/)),
   wash your hands well and regularly, and disinfect high-touch surfaces
   and spaces.
 
 * I will be wearing a [face
-  covering](https://news.northeastern.edu/coronavirus/reopening/frequently-asked-questions/#reopening)
+  covering](http://web.archive.org/web/20210815142735/https://news.northeastern.edu/coronavirus/reopening/frequently-asked-questions/#reopening)
   or mask as I teach and expect that you will do the same in class. If
   you come to class without a mask, I’ll ask you to go and [get one on
-  campus](https://news.northeastern.edu/coronavirus/reopening/policies-and-protocols/#face-covering-protocol).
+  campus](https://web.archive.org/web/20241103200633/https://news.northeastern.edu/coronavirus/reopening/policies-and-protocols/#face-covering-protocol).
   You can get a mask at the Visitor Center or at the Curry Student
   Center Help Desk. If you refuse to wear a mask in class, I won’t be
   able to continue the class. If you are not sitting six feet apart from
@@ -441,10 +441,10 @@ To summarize:
 One of our responsibilities in supporting student learning 360° is to
 help create a safe learning environment both in person and
 virtually. You should carefully consult the university's [relevant
-policies](https://www.northeastern.edu/ouec/title-ix-policy-2/), and
+policies](http://web.archive.org/web/20240319231315/https://www.northeastern.edu/ouec/title-ix-policy-2/), and
 if you have or experience any violations of the above I encourage you
 to take full advantage of the [university
-resources](https://www.northeastern.edu/ouec/resources/main-campus-resources/).
+resources](https://web.archive.org/web/20240227231642/https://www.northeastern.edu/ouec/resources/main-campus-resources/).
 
 It is also important that you know that federal regulations and
 University policy require me to promptly convey any information about
@@ -461,7 +461,7 @@ assist.
 
 Pete Manolios is responsible for much of our course infrastructure and
 assignments. Pete Manolios and [Stavros
-Tripakis](https://www.ccs.neu.edu/~stavros/) inspired some the lecture
+Tripakis](http://web.archive.org/web/20250126152956/http://www.ccs.neu.edu/~stavros/) inspired some the lecture
 contents and topics, and in some cases designed the slides. [Lindsey
 Kuper](https://users.soe.ucsc.edu/~lkuper/) inspires some of this site
 as well as being all-around inspirational. Suzanne Menzel also

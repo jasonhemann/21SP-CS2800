@@ -49,7 +49,7 @@ able to access the files you added.
 #|
 
    2. Next, follow the `Get Set`, `Go`, and `Line action` sections of
-   the [ACL2s tutorial](http://acl2s.ccs.neu.edu/acl2s/doc/#tutorial)
+   the [ACL2s tutorial](https://web.archive.org/web/20240222074354/http://acl2s.ccs.neu.edu/acl2s/doc/#tutorial)
    
       Make sure that you only follow the instructions starting with
       'Get Set'. The 'Unpack' section is covered in Lab 1 ('Unpack
