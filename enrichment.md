@@ -17,7 +17,7 @@ classes: wide
 - [Defdata in ACL2s](https://arxiv.org/pdf/1406.1557.pdf)
 - [More on the Ackermann Function + History]({{ site.baseurl }}/assets/code/ack-etc.rkt)
 - [Boolean Reasoning in ACL2](https://www.cs.utexas.edu/users/moore/acl2/manuals/current/manual/index-seo.php/ACL2____BOOLEAN-REASONING?path=3525/423) From the documentation.
-- Results of the [SAT Solver Competition](http://hdl.handle.net/10138/237063) at the [2018 Computational Logic Olympic Games](https://www.labri.fr/perso/lsimon/flog2018/)
+- Results of the [SAT Solver Competition](http://hdl.handle.net/10138/237063) at the [2018 Computational Logic Olympic Games](https://web.archive.org/web/20210412054352/https://www.labri.fr/perso/lsimon/flog2018/)
 - [SAT/SMT by Example](https://sat-smt.codes/SAT_SMT_by_example.pdf) As it suggests, scores of examples. Also a good place to start. SAT != SMT. 
 - [CNF, DNF Normalization, Visualized](https://www.mathematik.uni-marburg.de/~thormae/lectures/ti1/code/normalform/index.html)
 - [Zhegalkin polynomials](https://en.wikipedia.org/wiki/Zhegalkin_polynomial)
@@ -36,7 +36,7 @@ classes: wide
 - [Keeping logic in the trivium of computer science: a teaching perspective](https://link.springer.com/article/10.1007/s10703-017-0301-z)
 - [Automatically generating /conjectures/](https://www.nature.com/articles/s41586-021-03229-4)
 
-- Pfenning's [Lecture notes on the Curry-Howard isomorphism](http://citeseerx.ist.psu.edu/viewdoc/download;jsessionid=9DF04C851236C5FED9A23F1EE2242BDE?doi=10.1.1.10.7604&rep=rep1&type=pdf)
+- Pfenning's [Lecture notes on the Curry-Howard isomorphism](https://web.archive.org/web/20130509094726/http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.10.7604&rep=rep1&type=pdf)
 
 # miniKanren constraint systems
 - [Slides]({{ site.baseurl }}/assets/docs/defense.pdf)
@@ -50,15 +50,14 @@ classes: wide
 - [Pseudo-boolean constraints](https://www.youtube.com/watch?v=Ie5QcCR3JfY#t=75m18s)
 - [Programming with solver-aided systems](https://www.youtube.com/watch?v=P7ItR7WgnOk)
 
-- Chiang's short story ["Seventy-two Letters"](https://ia802706.us.archive.org/33/items/TedChiangSeventyTwoLetters/Ted_Chiang_72_Letters.pdf) ([Audio version](https://archive.org/details/TedChiangSeventyTwoLetters))
+- Chiang's short story ["Seventy-two Letters"](https://archive.org/download/TedChiangSeventyTwoLetters/Ted_Chiang_72_Letters.pdf) ([Audio version](https://archive.org/details/TedChiangSeventyTwoLetters))
 
 - Chiang's ["Division by Zero"]({{ site.baseurl }}/assets/docs/Chiang-Division-by-Zero.pdf) (a story about ex-falso quodlibet)
-- Russell's ["The Metaphysician's Nightmare"](http://www.naturalthinker.net/trl/texts/Russell,Bertrand/Philosophy/Russell,%20Bertrand%20-%20The%20Metaphysician%27s%20Nightmare.pdf) (a story about the troubles with negation).
+- Russell's ["The Metaphysician's Nightmare"](https://archive.org/details/nightmaresofemin00russ) (a story about the troubles with negation).
 
 
 # Other classes notes 
 
-- [Moore's](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.207.4867&rep=rep1&type=pdf)
+- [Moore's ACL2 papers page](https://www.cs.utexas.edu/users/moore/publications/acl2-papers.html)
 - [Pucella](https://web.archive.org/web/20220505204258/http://www.ccs.neu.edu/home/riccardo/courses/csu290-sp09/index.html)
-- [Schmidt](https://www.cs.drexel.edu/~kschmidt/CS270/)
-
+- [Schmidt's Drexel page](https://www.cs.drexel.edu/~kss35/) (see CS270 materials)

@@ -45,10 +45,10 @@ systems account username and password to login and to register. Go
 if you have forgotten. If it turns out you do not have one, apply
 [here](https://web.archive.org/web/20241009195059/https://my.khoury.northeastern.edu/account/apply).
 
-## [KCCS/CCIS/CCS Github](http://ccs.github.neu.edu)
+## KCCS/CCIS/CCS Github
 
-I will be utilizing the school's Enterprise git at
-[http://ccs.github.neu.edu]. You should have access to that with your
+I will be utilizing the school's historical Enterprise git
+(`ccs.github.neu.edu`). You should have access to that with your
 KCCS account. I will expect you to know how to access this, for your
 own benefits and for coursework. If you are not familiar, please
 consult the Khoury Systems group's [documentation and
@@ -173,7 +173,7 @@ chat](https://gitter.im/CodeTogether-com/community).
 
 One of the things I miss most about real, in-person classrooms is
 being able to applaud someone for a job well done, and for getting up
-and giving it a shot. Here's our [best
-alternative](https://applause.haggett.org/21SP-CS2800). If each of us
-goes here and enters his or her name then, when one of us presses the
+and giving it a shot. Here's our best
+alternative. If each of us
+enters his or her name there then, when one of us presses the
 applause button, we can all see and hear it.

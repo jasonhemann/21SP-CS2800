@@ -14,7 +14,7 @@ sidebar:
 
 
 ## Book an appointment !
-[Book an appointment here!!](https://v2.waitwhile.com/book/280018279office/calendar)
+[Book an appointment here!!](https://waitwhile.com/)
 
 Please make sure you get a confirmation email. If you do not get a confirmation email, you do not have an appointment. (This time for real).
 
@@ -59,4 +59,3 @@ your specific lab section.
  |       30004 | Drew       | Fri |  12:40-1:30 | Zoom             |
  |       30003 | Drew       | Fri |   1:35-2:25 | Zoom             |
  |       30002 | Drew       | Fri |   2:30-3:20 | Zoom             |
-

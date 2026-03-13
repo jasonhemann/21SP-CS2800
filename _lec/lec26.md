@@ -7,7 +7,7 @@ date: 2021-03-22
 
 ### Scheduling meeting
 
-[Scheduling](https://v2.waitwhile.com/book/280018279office)
+[Scheduling](https://waitwhile.com/)
 
 ## SAT(-esque!) options:
 
@@ -80,7 +80,6 @@ Video](https://www.youtube.com/watch?v=TgAVIqraCHo)
 ### Extended Example.
 
 [Example]({{ site.baseurl}}/assets/code/zero-h-h-one.py)
-
 
 
 

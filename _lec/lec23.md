@@ -128,7 +128,7 @@ vs.
 1. Be reading to book a proposal review appointment w/us, as outlined: 
 
 
-[Book your appointment here](https://v2.waitwhile.com/book/280018279office)
+[Book your appointment here](https://waitwhile.com/)
 
 Please make sure you get a confirmation email. If you do not get a confirmation email, you do not have an appointment. 
 
@@ -339,7 +339,7 @@ something related to that, that's a suggestion. If you find yourselves
 really intrigued by Prolog or miniKanren and want to try your hand
 with something related that way, I can help guide you. Maybe you're
 [interested in ML and want to apply it to theorem
-proving](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.751.3626&rep=rep1&type=pdf). If
+proving](https://arxiv.org/abs/1708.06963). If
 you are by chance interested in non-classical logics or alternate
 proof systems and think you've got something interesting to say or to
 do here (if any, you should still try to make an educational,
