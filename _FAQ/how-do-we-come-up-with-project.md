@@ -73,8 +73,7 @@ deep chasm between the [trivial and the mighty
 tough](https://xkcd.com/1425/). So bear that in mind. Make sure it's
 not trivial (ACL2 proves it right away for you) and we'll go from
 there. So thinking about [how you'll use ACL2]({{ site.baseurl
-}}/_FAQ/how-do-I-steer.md) can help you in selecting a problem.
-
+}}/FAQ/how-do-I-steer/) can help you in selecting a problem.
 
 
 

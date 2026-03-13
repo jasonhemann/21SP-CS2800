@@ -20,4 +20,4 @@ research papers useful:
      }}/enrichment/#page-title:~:text=How%20to%20write%20a%20great%20Research%20paper)
 
 Finally, don't forget the [great online apps and NEU resources!]({{
-site.baseurl}}/_FAQ/improve-writing.md)
+site.baseurl}}/FAQ/improve-writing/)

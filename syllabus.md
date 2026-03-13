@@ -168,8 +168,8 @@ experience with exam formats that worked particularly well in this
 hybrid class modality, please do make suggestions.
 
 We will not have a final exam. Instead, our course will have a [final
-project](Projects) component. During finals week, we will schedule
-slots for [groups](Teamwork_and_Collaboration) of students to present
+project](#projects) component. During finals week, we will schedule
+slots for [groups](#teamwork-and-collaboration) of students to present
 their final projects.
 
 <!-- ### Alternate/Additional Assignment/Project Option -->
@@ -221,7 +221,7 @@ either modality. Unless the student obtains permission from the
 instructor electronic video and/or audio recording of class is
 prohibited. If permission is granted, any distribution of the
 recording is prohibited. Students with specific electronic recording
-accommodations authorized by the [DRC](academic-accommodations) do not
+accommodations authorized by the [DRC](#academic-accommodations) do not
 require instructor permission; however, the instructor must be
 notified of any such accommodation prior to recording. Any
 distribution of such recordings is prohibited. Obviously I cannot
@@ -243,7 +243,7 @@ For a homework released on Monday, the first half is due Saturday at
 1pm, and the second half due the following Wednesday at 10pm (again
 unless otherwise indicated). Unless otherwise indicated, you will
 submit your homework on Gradescope. You will work on homework in your
-chosen [group](Teamwork_and_Collaboration).
+chosen [group](#teamwork-and-collaboration).
 
 ### Late / Mistaken Assignment Policy
 
@@ -299,7 +299,7 @@ your due dates for each stage. You should expect the following stages:
     [appointment](https://web.archive.org/web/20241202233649/https://cssh.northeastern.edu/writingcenter/tutoring/online-appointments/)
     at the writing center where you have copy-edited your draft. They
     have a [whole bevy of resources for you]({{ site.baseurl
-    }}/faq/improve-writing/). Please note I am asking you to do more
+    }}/FAQ/improve-writing/). Please note I am asking you to do more
     than an elementary grammar check and appropriate citations, I want
     you to thoroughly copy-edit your prose before submitting.
 
@@ -468,5 +468,4 @@ as well as being all-around inspirational. Suzanne Menzel also
 inspires some of this syllabus language.
 
 ![In the syllabus]({{ site.baseurl }}/assets/images/syllabus.gif "Might just be worth checking.")
-
 

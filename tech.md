@@ -135,7 +135,7 @@ ITS support](https://web.archive.org/web/20220430013611/http://its.northeastern.
 
 ## Eclipse & ACL2s
 
-This semester we will use the [Khoury VDI](VDI_Linux_Machines) to use ACL2s in Eclipse. 
+This semester we will use the [Khoury VDI](#vdi-linux-machines) to use ACL2s in Eclipse. 
 
 ## VDI Linux Machines 
 
