@@ -63,7 +63,7 @@ often find areas that are less clear than others, or sub-optimally
 ordered, or deficient in a variety of other ways.
 
 Chrome users can download and install the [extension](https://chrome.google.com/webstore/detail/bjfhmglciegochdpefhhlphglcehbmek), if you
-wish. Users of other browsers can [install the bookmarklet](https://web.hypothes.is/start/#chrome-missing:~:text=For%20any%20browser%2C%20drag%20this%20button,or%20right%2Dclick%2Fcontrol%2Dclick%20to%20bookmark%20the%20link.). I will link
+wish. Users of other browsers can [install the bookmarklet](https://web.hypothes.is/start/). I will link
 all our `.pdf` documents via hypothesis. FYI, if you are on an Android
 device, you can send any page to hypothesis via the [following app](https://play.google.com/store/apps/details?id=com.navasgroup.annoteweb).
 

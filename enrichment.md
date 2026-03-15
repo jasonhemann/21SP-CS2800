@@ -32,7 +32,7 @@ classes: wide
 - [The Craft of Scientific Writing](https://library.northeastern.edu/) E-Book available via NEU library. 
 - [Advice on Structure and Content](https://www.cl.cam.ac.uk/~lp15/Pages/Scream.html)
 - [SPJ Advice on how to write a research paper](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/07/How-to-write-a-great-research-paper.pdf)
-- [How to write a great Research paper](https://www.microsoft.com/en-us/research/academic-program/write-great-research-paper/#!other-resources)
+- [How to write a great Research paper](https://www.microsoft.com/en-us/research/academic-program/write-great-research-paper/) (see the "Other resources" section)
 - [Keeping logic in the trivium of computer science: a teaching perspective](https://link.springer.com/article/10.1007/s10703-017-0301-z)
 - [Automatically generating /conjectures/](https://www.nature.com/articles/s41586-021-03229-4)
 

@@ -103,7 +103,7 @@ When the set M computes does not include w.
 ## A Third View:
 
   [Diagonalization
-  POV](https://en.wikipedia.org/wiki/Halting_problem#Sketch_of_proof)
+  POV](https://en.wikipedia.org/wiki/Halting_problem)
 
 ## So What? 
  
@@ -127,6 +127,5 @@ property.
      about how it *behaves*
    
    You can't tell much of anything about _every_ program. 
-
 
 

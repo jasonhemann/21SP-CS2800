@@ -6,7 +6,7 @@ layout: single
 
   1. Install [VirtualBox version 6.1.16](https://www.virtualbox.org/wiki/Downloads) either by downloading the installer from the VirtualBox website or using your package manager. We have tested on version 6.1.16, but it is possible that other Virtualbox 6.1 releases will also work.
   2. Open VirtualBox, and leave it open. 
-  3. Download, then install the [VirtualBox extensions for your VirtualBox Version](https://www.virtualbox.org/wiki/Downloads#VirtualBox6.1.16OracleVMVirtualBoxExtensionPack). After downloading the file, you have to actually install the extensions. If you click on `Preferences > Extensions` you will see a green `+` icon that allows you to add extensions. Select the file you downloaded.
+  3. Download, then install the [VirtualBox extensions for your VirtualBox Version](https://www.virtualbox.org/wiki/Downloads). After downloading the file, you have to actually install the extensions. If you click on `Preferences > Extensions` you will see a green `+` icon that allows you to add extensions. Select the file you downloaded.
   4. Install [Vagrant version 2.2.10](https://www.vagrantup.com/downloads) either using your package manager or by using the installer from the Vagrant website. Any version of Vagrant >= 2.2.7 will probably work, but we've only tested 2.2.10.
   5. Create a directory on your machine where you want ACL2s to reside.
   6. Place the following [Vagrantfile]({{ site.baseurl }}/assets/code/Vagrantfile) in that newly-created directory. Ensure that the file doesn't have any extension; it should be just `Vagrantfile`.

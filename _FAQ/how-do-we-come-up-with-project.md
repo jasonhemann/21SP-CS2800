@@ -21,7 +21,7 @@ trees---inductively defined kinds of data structures. Maybe how they
 work in tandem. No need to drift into the kind of complex,
 number-theoretic sort of stuff. As we all know, [the natural numbers
 are a really an inductively defined data
-structure](https://github.com/idris-lang/Idris-dev/blob/a59c371b5dfe1bbeebc0ecccbfd094a6ae27628f/libs/prelude/Prelude/Nat.idr#L15-L21),
+structure](https://github.com/idris-lang/Idris2/blob/main/libs/base/Data/Nat.idr),
 and our grade school teachers were all holding out on us in some grand
 conspiracy. But the relationships are often murkier than with other
 kinds of examples.
@@ -66,7 +66,7 @@ that's extra.
 I was hoping that you all would be able to push it through with our
 own definitions (e.g. our `rev2`, not the ACL2 `rev`) so as not to
 piggyback on top of
-["magic"](https://en.wikipedia.org/wiki/Clarke%27s_three_laws#Clarke's_second_law:~:text=Any%20sufficiently%20advanced%20technology%20is%20indistinguishable%20from%20magic.).
+["magic"](https://en.wikipedia.org/wiki/Clarke%27s_three_laws#Clarke%27s_second_law).
 
 As you know with this stuff, there's often a reeeeeally narrow and
 deep chasm between the [trivial and the mighty
@@ -74,6 +74,4 @@ tough](https://xkcd.com/1425/). So bear that in mind. Make sure it's
 not trivial (ACL2 proves it right away for you) and we'll go from
 there. So thinking about [how you'll use ACL2]({{ site.baseurl
 }}/FAQ/how-do-I-steer/) can help you in selecting a problem.
-
-
 
