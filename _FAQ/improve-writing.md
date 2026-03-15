@@ -4,7 +4,7 @@ title: Where can I improve my (technical) writing products?
 
 I love this question in part because Northeastern offers a *terrific*
 answer! The Northeastern Writing Center offers a [whole *bevy* of
-resources](https://web.archive.org/web/20240912162435/https://cssh.northeastern.edu/writingcenter/writing-resources/),
+resources](https://cssh.northeastern.edu/writingcenter/writing-resources/),
 including some of them tailored *specifically* for writing in STEM fields. 
 
 They actually offer

@@ -20,7 +20,7 @@ date: 2021-03-29
 ## Colmerauer, the Marseilles group
 
   - Colmerauer was doing NLP
-  - [Colmerauer & Roussel](https://web.archive.org/web/20130624014203/http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.85.7438&rep=rep1&type=pdf)
+  - [Colmerauer & Roussel](http://alain.colmerauer.free.fr/alcol/ArchivesPublications/PrologHistory/19november92.pdf)
 
 
   BTW, if you want to know more, please see: 
@@ -165,6 +165,5 @@ Herbrand Models of A.
 ### recursion
 
 ### `appendo`
-
 
 

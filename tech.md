@@ -10,14 +10,14 @@ As a course and a student body, we are more remote than usual, and
 preferable. To help bridge the chasm, I will leverage some of the
 technology platforms Northeastern makes available to us.
 
-## [Duo 2FA](https://web.archive.org/web/20240912000806/https://get2fa.northeastern.edu/)
+## [Duo 2FA](https://get2fa.northeastern.edu/)
 
 Most if not all students will already have enrolled themselves for the
 Duo 2FA system. It is essential that you do so to access
 Northeastern's digital resources. Northeastern has at least two
 tutorials for installing and using the Duo 2FA system:
 
-   - [The express version](https://web.archive.org/web/20200726162700/https://express.northeastern.edu/get2fa/how-to-enroll-in-2fa/)
+   - [The express version](https://get2fa.northeastern.edu/)
    - [The `servicenow` guide, (with pictures)](https://northeastern.service-now.com/kb_view.do?sys_kb_id=436cd1dbdb808854c5575e38dc9619e3&sysparm_class_name=kb_knowledge)
 
 ## Piazza 
@@ -41,9 +41,9 @@ have the same concern or be feeling the same way.
 
 To access the following two resources, you will need your Khoury
 systems account username and password to login and to register. Go
-[here](https://web.archive.org/web/20241009194906/https://my.khoury.northeastern.edu/forgot/username) to find it
+[here](https://my.khoury.northeastern.edu/forgot/username) to find it
 if you have forgotten. If it turns out you do not have one, apply
-[here](https://web.archive.org/web/20241009195059/https://my.khoury.northeastern.edu/account/apply).
+[here](https://my.khoury.northeastern.edu/account/apply).
 
 ## KCCS/CCIS/CCS Github
 
@@ -127,11 +127,11 @@ comparison [here](https://support.zoom.us/hc/en-us/articles/360027397692#query:~
 
 ## NEU VPN 
 
-Go to [https://web.archive.org/web/20231012021843/https://vpn.northeastern.edu/](https://web.archive.org/web/20231012021843/https://vpn.northeastern.edu/), and follow the instructions to
+Go to [https://vpn.northeastern.edu/](https://vpn.northeastern.edu/), and follow the instructions to
 install the GlobalProctect VPN client on your machine. You will need
 this to use the VDI linux machines. If you have difficulty please
 consult the [relevant ITS KB articles](http://northeastern.service-now.com/tech?id=kb_category&kb_category=07d42f714f02cf0099c2fd511310c7b2), and if necessary [reach out to
-ITS support](https://web.archive.org/web/20220430013611/http://its.northeastern.edu/support/#et-boc:~:text=Still%20Need%20Support%3F).
+ITS support](https://its.northeastern.edu/resources/).
 
 ## Eclipse & ACL2s
 

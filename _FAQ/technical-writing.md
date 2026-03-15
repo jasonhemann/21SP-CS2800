@@ -9,7 +9,7 @@ site.baseurl
 
 I include here another that I have discussed and have even myself
 found useful and consulted at times: [Ramsey's Tech Writing in
-2hrs/week](https://web.archive.org/web/20120430215857/http://www.cs.tufts.edu/~nr/pubs/two-abstract.html).
+2hrs/week](https://www.cs.tufts.edu/~nr/pubs/two-abstract.html).
 
 You may also find the following general advice on writing great
 research papers useful: 

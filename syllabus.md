@@ -418,7 +418,7 @@ To summarize:
   and spaces.
 
 * I will be wearing a [face
-  covering](http://web.archive.org/web/20210815142735/https://news.northeastern.edu/coronavirus/reopening/frequently-asked-questions/#reopening)
+  covering](http://web.archive.org/web/20210815142735/https://news.northeastern.edu/coronavirus/reopening/frequently-asked-questions/)
   or mask as I teach and expect that you will do the same in class. If
   you come to class without a mask, I’ll ask you to go and [get one on
   campus](https://web.archive.org/web/20241103200633/https://news.northeastern.edu/coronavirus/reopening/policies-and-protocols/#face-covering-protocol).
@@ -444,7 +444,7 @@ virtually. You should carefully consult the university's [relevant
 policies](http://web.archive.org/web/20240319231315/https://www.northeastern.edu/ouec/title-ix-policy-2/), and
 if you have or experience any violations of the above I encourage you
 to take full advantage of the [university
-resources](https://web.archive.org/web/20240227231642/https://www.northeastern.edu/ouec/resources/main-campus-resources/).
+resources](https://ouec.northeastern.edu/).
 
 It is also important that you know that federal regulations and
 University policy require me to promptly convey any information about
@@ -468,4 +468,3 @@ as well as being all-around inspirational. Suzanne Menzel also
 inspires some of this syllabus language.
 
 ![In the syllabus]({{ site.baseurl }}/assets/images/syllabus.gif "Might just be worth checking.")
-

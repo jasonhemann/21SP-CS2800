@@ -28,7 +28,7 @@ classes: wide
 - A [Modern Program Synthesis Survey](https://www.microsoft.com/en-us/research/wp-content/uploads/2017/10/program_synthesis_now.pdf)
 - [Philosophy of Computer Science](https://cse.buffalo.edu/~rapaport/Papers/phics.pdf) (Draft text)
 - [Logicomix](https://en.wikipedia.org/wiki/Logicomix) (It's a comic about Russell and early 20th century mathematical logic. ᕕ( ᐛ )ᕗ) 
-- [An Introduction to Non-classical Logic](https://web.archive.org/web/20240726143131/https://onesearch.library.northeastern.edu/permalink/f/365rt0/NEU_ALMA51261636590001401) (The conditional beyond the material)
+- [An Introduction to Non-classical Logic](https://onesearch.library.northeastern.edu/permalink/f/365rt0/NEU_ALMA51261636590001401) (The conditional beyond the material)
 - [The Craft of Scientific Writing](https://library.northeastern.edu/) E-Book available via NEU library. 
 - [Advice on Structure and Content](https://www.cl.cam.ac.uk/~lp15/Pages/Scream.html)
 - [SPJ Advice on how to write a research paper](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/07/How-to-write-a-great-research-paper.pdf)
@@ -36,7 +36,7 @@ classes: wide
 - [Keeping logic in the trivium of computer science: a teaching perspective](https://link.springer.com/article/10.1007/s10703-017-0301-z)
 - [Automatically generating /conjectures/](https://www.nature.com/articles/s41586-021-03229-4)
 
-- Pfenning's [Lecture notes on the Curry-Howard isomorphism](https://web.archive.org/web/20130509094726/http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.10.7604&rep=rep1&type=pdf)
+- Danvy's [Back to Direct Style](https://doi.org/10.1007/3-540-55253-7_8)
 
 # miniKanren constraint systems
 - [Slides]({{ site.baseurl }}/assets/docs/defense.pdf)
@@ -47,7 +47,7 @@ classes: wide
 - ["Gentle introduction to SMT" Video](https://www.youtube.com/watch?v=TgAVIqraCHo)
 - [Constraint solvers for the working PL researcher](https://www.youtube.com/watch?v=rTOqg-f2rNM)
 - [Theorem provers are a PL researcher's best friend](https://www.youtube.com/watch?v=QXRuvfs9gAc)
-- [Pseudo-boolean constraints](https://www.youtube.com/watch?v=Ie5QcCR3JfY#t=75m18s)
+- [Pseudo-boolean constraints](https://www.youtube.com/live/Ie5QcCR3JfY?si=cvVy_yHxwWsBpW4W&t=4518)
 - [Programming with solver-aided systems](https://www.youtube.com/watch?v=P7ItR7WgnOk)
 
 - Chiang's short story ["Seventy-two Letters"](https://archive.org/download/TedChiangSeventyTwoLetters/Ted_Chiang_72_Letters.pdf) ([Audio version](https://archive.org/details/TedChiangSeventyTwoLetters))
