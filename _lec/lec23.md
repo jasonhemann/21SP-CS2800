@@ -200,7 +200,7 @@ have been.
  - [Coingrab](https://steemit.com/gaming/@vibvir/coin-grab-game-2-for-gamezop)
  - [Regex crossword](https://jimbly.github.io/regex-crossword/)
  - [0hn0](https://0hn0.com/)
-   - although [battleship is solved](http://www.mountainvistasoft.com/docs/lect-04.pdf) there are [many](http://www.mountainvistasoft.com/variations.htm) [variants](http://www.mountainvistasoft.com/omnibus.htm#:~:text=Marcelo%20Inglesias%27s%20puzzle%20blog) still open.
+   - although [battleship is solved](http://www.mountainvistasoft.com/docs/lect-04.pdf) there are [many](http://www.mountainvistasoft.com/variations.htm) [variants](http://www.mountainvistasoft.com/omnibus.htm) still open.
  - [go-to board game reference, logic puzzles or not](https://boardgamegeek.com/)
  - [lefun Rubik's cube](https://www.thecubicle.com/products/lefun-sudoku-3x3)
  - Higher-order sudoku. Adding logical constraints, where the value in a given cell gives you the position of a constraint on another cell.

@@ -19,7 +19,7 @@ I use some of:
   - [GNU `style` and `diction`](https://www.gnu.org/software/diction/)
   - `atd` 
   - [`retext`](https://github.com/retextjs/retext)
-  - `proselint`, via [`vale`](https://docs.errata.ai/vale/about)
+  - `proselint`, via [`vale`](https://vale.sh/docs)
   - [`textlint`](https://textlint.github.io/)
   
   Also, if I can't find the right word but I'd know it when I see it,
