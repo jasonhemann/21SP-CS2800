@@ -53,7 +53,7 @@ classes: wide
 - Chiang's short story ["Seventy-two Letters"](https://archive.org/download/TedChiangSeventyTwoLetters/Ted_Chiang_72_Letters.pdf) ([Audio version](https://archive.org/details/TedChiangSeventyTwoLetters))
 
 - Chiang's ["Division by Zero"]({{ site.baseurl }}/assets/docs/Chiang-Division-by-Zero.pdf) (a story about ex-falso quodlibet)
-- Russell's ["The Metaphysician's Nightmare"](https://archive.org/details/nightmaresofemin00russ) (a story about the troubles with negation).
+- Russell's ["The Metaphysician's Nightmare"](https://dhspriory.org/kenny/PhilTexts/Russell/Metaphysician's%20Nightmare.htm) (a story about the troubles with negation).
 
 
 # Other classes notes 
